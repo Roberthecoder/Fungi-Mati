@@ -12,7 +12,7 @@ Proyecto de Roberto Carlos Navarro Félix (Ingeniería en Biotecnología, Tec de
 1. **Guía.** La página abre con el destino y pregunta en qué etapa estás: a) apenas empiezo, b) ya tengo sustrato y micelio, c) ya inoculé, d) la bolsa ya está blanca, e) ya salieron hongos, f) tengo un problema. Cada etapa muestra solo su bloque: pasos cortos, una prueba verificable, qué hacer si sale mal, sus animaciones y, si quieres, el protocolo completo.
 2. **Calculadora.** Escribes los gramos de sustrato seco y te da agua, cal, micelio y tiempo de microondas, en gramos y en medidas de cocina.
 3. **Asistente (solo dentro de Claude).** Conversación con respuestas cortas y numeradas, glosario en línea, diagnóstico por foto, botón «Explícalo más simple» y animaciones que la IA puede mostrar arriba del chat. Si el visitante no da permiso, el chat se esconde y la guía sigue completa.
-4. **Bitácora (solo dentro de Claude).** Registro validado de cada bolsa. Tus registros son privados; una copia sin identificador se suma al dataset abierto. Quien edita el Artifact ve «Todas las bolsas» y puede exportar CSV.
+4. **Bitácora.** Registro validado de cada bolsa, guardado en el navegador de cada persona (sin cuenta). Cada quien descarga su archivo y lo envía a Fungi Mati; el dueño lo suma al dataset abierto desde la misma pestaña y exporta todo a CSV. Ver `data/README.md`.
 5. **Descargar mi protocolo.** Un archivo HTML imprimible o TXT con tus cantidades, los pasos, las pruebas, la seguridad y (opcional) tu conversación, para usarlo en la cocina sin internet.
 6. **Idiomas.** Español (por defecto) e inglés, más náhuatl, maya yucateco, purépecha y wixárika (ver «Lenguas indígenas»).
 
@@ -95,7 +95,7 @@ Si hablas alguna de estas lenguas:
 - **Live AI version:** a claude.ai Artifact published from `dist/index.html`, using each visitor's own Claude account.
 - **No-AI version:** any copy of `index.html` (e.g. GitHub Pages) works as a full guide: stages, calculator, tests, warning signs, safety, and a downloadable protocol.
 
-**Using the page.** Pick your stage (a–f) and get only that block: short steps, a test you can check, what to do if it fails, animations, and the full protocol on demand. The calculator scales water, lime, spawn and microwave time to your amount of dry substrate, in grams and kitchen measures. Inside Claude you also get the AI chat (short numbered answers, inline glossary, photo diagnosis, "explain it more simply", animations the AI can show above the chat) and the grow log (private per person; an anonymized copy feeds the open dataset; editors can export CSV). "Download my protocol" saves a printable HTML or TXT file for offline use in the kitchen.
+**Using the page.** Pick your stage (a–f) and get only that block: short steps, a test you can check, what to do if it fails, animations, and the full protocol on demand. The calculator scales water, lime, spawn and microwave time to your amount of dry substrate, in grams and kitchen measures. With a Claude account you also get the AI chat (short numbered answers, inline glossary, photo diagnosis, "explain it more simply", animations the AI can show above the chat). The grow log works for everyone without an account: it is saved in each person's browser, people download their file and send it, and the owner adds it to the open dataset and exports CSV. "Download my protocol" saves a printable HTML or TXT file for offline use in the kitchen.
 
 **Build.** Node 18+, no dependencies: `node build.mjs` writes `dist/index.html`.
 

@@ -900,7 +900,9 @@ async function saveFile(filename, data, msgEl){
 }
 
 /* ============ bitácora ============ */
-const LOG = { mine:[], all:[], unsubMine:null, unsubAll:null, editing:null, readonly:false, loading:true, slow:false, allLoading:true, delArm:null, warn:"" };
+const LOG = { mine: loadLocalSafe(), all:[], unsubAll:null, editing:null, allLoading:true, delArm:null, warn:"", storageOK: storageWorks() };
+function loadLocalSafe(){ try { const a = JSON.parse(localStorage.getItem("fm.bags") || "[]"); return Array.isArray(a) ? a.filter(b => b && b.id && b.data && b.data.bagId) : []; } catch { return []; } }
+function storageWorks(){ try { localStorage.setItem("fm.t", "1"); localStorage.removeItem("fm.t"); return true; } catch { return false; } }
 const SPECIES = ["ostreatus","columbinus","pulmonarius","otra"];
 const SPECIES_LABEL = {ostreatus:"Pleurotus ostreatus", columbinus:"P. ostreatus var. columbinus", pulmonarius:"P. pulmonarius"};
 const SUBS = ["pellet_aserrin","pellet_agave","fibra_agave","cafe","coco","otro"];
@@ -985,6 +987,17 @@ function anon(v, logId){
     notes:v.notes||null, lang:S.lang, updatedAt:new Date().toISOString() };
 }
 const rid = () => (crypto.randomUUID ? crypto.randomUUID().replace(/-/g,"") : Math.random().toString(36).slice(2)+Date.now().toString(36)).slice(0,20);
+/* La bitácora vive en el navegador de cada persona (funciona para cualquiera, sin cuenta).
+   Cuando el visitante puede escribir en la base de datos del Artifact (dueño o miembros de su organización),
+   la copia anónima también se suma sola a la colección "logs". Los demás descargan su archivo y lo envían. */
+function storeLocal(){
+  try { localStorage.setItem("fm.bags", JSON.stringify(LOG.mine)); LOG.storageOK = true; }
+  catch { LOG.storageOK = false; }
+}
+async function pushLog(logId, doc){ // copia anónima al dataset compartido, si este visitante puede escribir
+  if (!caps.db) return false;
+  try { await caps.db.doc("logs/" + logId).set(doc); return true; } catch { return false; }
+}
 async function saveBag(f){
   const v = readForm(f), {errors, warns} = validate(v);
   f.querySelectorAll("[data-f]").forEach(d => { const k = d.dataset.f; d.classList.toggle("field-bad", !!errors[k]); $("#le-"+k).textContent = errors[k] || ""; });
@@ -992,39 +1005,35 @@ async function saveBag(f){
   const msg = $("#logmsg");
   if (Object.keys(errors).length){ msg.textContent = t("log.v.fix"); const first = f.querySelector(".field-bad input,.field-bad select"); first && first.focus(); return; }
   if (warns.length && f.dataset.warned !== JSON.stringify(warns)){ f.dataset.warned = JSON.stringify(warns); msg.textContent = warns.join(" "); return; } // segundo clic guarda
-  msg.textContent = t("log.saving");
   const prev = LOG.editing ? LOG.mine.find(b => b.id === LOG.editing) : null;
   const id = prev ? prev.id : rid(), logId = prev && prev.data.logId ? prev.data.logId : rid();
   const now = new Date().toISOString();
-  const doc = Object.assign({}, v, {logId, createdAt: prev ? prev.data.createdAt : now, updatedAt: now});
-  try {
-    await caps.db.collection("data/users/"+caps.uid).doc(id).set(doc);
-    await caps.db.doc("logs/"+logId).set(anon(v, logId));
-    LOG.editing = null; LOG.warn = "";
-    renderLog(); $("#logmsg").textContent = t("log.saved");
-  } catch(e){
-    if (e && e.code === "invalid_argument"){ LOG.readonly = true; renderLog(); return; }
-    msg.textContent = e && e.code === "quota_exceeded" ? (e.message || t("log.error")) : t("log.error");
-  }
+  const bag = {id, data: Object.assign({}, v, {logId, createdAt: prev ? prev.data.createdAt : now, updatedAt: now})};
+  LOG.mine = LOG.mine.filter(b => b.id !== id).concat([bag]);
+  storeLocal();
+  LOG.editing = null; LOG.warn = "";
+  renderLog();
+  const synced = await pushLog(logId, anon(v, logId));
+  const m = $("#logmsg");
+  if (m) m.textContent = [t("log.saved"), LOG.storageOK ? t("log.localSaved") : t("log.noStorage"), synced ? t("log.synced") : ""].filter(Boolean).join(" ");
 }
 async function deleteBag(id){
   const b = LOG.mine.find(x => x.id === id); if (!b) return;
   if (LOG.delArm !== id){ LOG.delArm = id; renderLogLists(); return; }
   LOG.delArm = null;
-  try { await caps.db.collection("data/users/"+caps.uid).doc(id).delete(); if (b.data.logId) await caps.db.doc("logs/"+b.data.logId).delete(); } catch {}
+  LOG.mine = LOG.mine.filter(x => x.id !== id); storeLocal(); renderLogLists();
+  if (caps.db && b.data.logId){ try { await caps.db.doc("logs/" + b.data.logId).delete(); } catch {} }
 }
 function statusLabel(s){ return s ? t("log.st."+s) : "—"; }
 function renderLogLists(){
   const mine = $("#mybags");
   if (mine){
-    if (LOG.loading) mine.innerHTML = `<p class="note">${esc(t(LOG.slow ? "log.slow" : "log.loading"))}</p>`;
-    else if (!LOG.mine.length) mine.innerHTML = `<p>${esc(t("log.empty"))}</p>`;
+    if (!LOG.mine.length) mine.innerHTML = `<p>${esc(t("log.empty"))}</p>`;
     else mine.innerHTML = LOG.mine.slice().sort((a,b)=> (b.data.date||"").localeCompare(a.data.date||"")).map(b=>{ const d = b.data;
       const total = (d.flushes||[]).reduce((a,x)=>a+x,0);
       return `<div class="bag"><strong>${esc(d.bagId)}</strong> · ${esc(d.date)} · ${esc(SPECIES_LABEL[d.species]||d.species)} · ${esc(t("log.sub."+d.substrate))} · ${esc(d.dryGrams)} g
 <div class="note">7: ${esc(statusLabel(d.d7))} · 14: ${esc(statusLabel(d.d14))} · 21: ${esc(statusLabel(d.d21))}${total?` · ${esc(total)} g`:""}</div>
 <div class="row" style="margin-top:6px"><button type="button" class="small" data-act="log-edit" data-id="${esc(b.id)}">${esc(t("log.editBtn"))}</button><button type="button" class="small" data-act="log-del" data-id="${esc(b.id)}">${esc(t(LOG.delArm===b.id?"log.deleteConfirm":"log.deleteBtn"))}</button></div></div>`; }).join("");
-    if (LOG.slow && !LOG.loading) mine.insertAdjacentHTML("afterbegin", `<p class="note">${esc(t("log.slow"))}</p>`);
   }
   const all = $("#allbags");
   if (all){
@@ -1040,43 +1049,96 @@ const CSV_COLS = ["logId","inoculationDate","species","substrate","dryGrams","wa
 function csvVal(r, c){
   const d = r.data;
   if (c === "logId") return r.id;
+  if (c === "bagId") return r.bagId || "";
   const m = c.match(/^flush(\d)$/); if (m) return (d.flushGrams||[])[m[1]-1] ?? "";
   const v = d[c]; return v == null ? "" : typeof v === "boolean" ? (v ? "si" : "no") : String(v);
 }
-function toCSV(rows){
+function toCSV(rows, cols = CSV_COLS){
   const q = s => /[",\n\r]/.test(s) ? '"' + s.replace(/"/g,'""') + '"' : s;
-  return "﻿" + CSV_COLS.join(",") + "\r\n" + rows.map(r => CSV_COLS.map(c => q(csvVal(r,c))).join(",")).join("\r\n") + "\r\n";
+  return "﻿" + cols.join(",") + "\r\n" + rows.map(r => cols.map(c => q(csvVal(r,c))).join(",")).join("\r\n") + "\r\n";
+}
+/* Archivo del voluntario: el mismo formato del dataset + la columna bagId (solo para restaurar su propia bitácora). */
+const MY_COLS = CSV_COLS.concat(["bagId"]);
+function myRows(){ return LOG.mine.map(b => ({id: b.data.logId, bagId: b.data.bagId, data: anon(b.data, b.data.logId)})); }
+function parseCSV(text){
+  text = String(text).replace(/^﻿/, "");
+  const rows = []; let row = [], cur = "", q = false;
+  for (let i = 0; i < text.length; i++){
+    const c = text[i];
+    if (q){ if (c === '"'){ if (text[i+1] === '"'){ cur += '"'; i++; } else q = false; } else cur += c; }
+    else if (c === '"') q = true;
+    else if (c === ","){ row.push(cur); cur = ""; }
+    else if (c === "\n" || c === "\r"){ if (c === "\r" && text[i+1] === "\n") i++; row.push(cur); cur = ""; if (row.some(x => x !== "")) rows.push(row); row = []; }
+    else cur += c;
+  }
+  row.push(cur); if (row.some(x => x !== "")) rows.push(row);
+  if (!rows.length) return [];
+  const head = rows[0].map(h => h.trim());
+  return rows.slice(1).map(r => Object.fromEntries(head.map((h, i) => [h, (r[i] ?? "").trim()])));
+}
+const okId = s => /^[A-Za-z0-9_-]{6,40}$/.test(s);
+function rowToAnon(o){ // fila de CSV → documento anónimo del dataset (con tipos)
+  const num = x => x === "" || x == null ? null : (isFinite(Number(x)) ? Number(x) : null);
+  const str = x => x === "" || x == null ? null : String(x).slice(0, 600);
+  const flush = [1,2,3,4].map(i => num(o["flush"+i])).filter(x => x != null);
+  if (!okId(o.logId || "") || !/^\d{4}-\d{2}-\d{2}$/.test(o.inoculationDate || "")) return null;
+  return { schema:1, species:str(o.species), substrate:str(o.substrate), dryGrams:num(o.dryGrams), waterMl:num(o.waterMl), limeG:num(o.limeG),
+    method:str(o.method), knot:str(o.knot), holes:o.holes === "si", env:str(o.env), tempC:num(o.tempC), inoculationDate:o.inoculationDate,
+    d7:str(o.d7), d14:str(o.d14), d21:str(o.d21), firstHarvestDate:str(o.firstHarvestDate), flushGrams:flush,
+    totalGrams:flush.reduce((a,b)=>a+b,0), group:str(o.group), notes:str(o.notes), lang:str(o.lang) || S.lang, updatedAt:str(o.updatedAt) || new Date().toISOString() };
+}
+async function readFiles(input){ const out = []; for (const f of input.files) { try { out.push(...parseCSV(await f.text())); } catch {} } input.value = ""; return out; }
+async function restoreMine(input){
+  const msg = $("#logfilemsg"), rows = await readFiles(input); let n = 0;
+  for (const o of rows){
+    const a = rowToAnon(o); if (!a) continue;
+    const data = { bagId: (o.bagId || o.logId).slice(0, 40), group: a.group || "", date: a.inoculationDate, species: a.species, substrate: a.substrate,
+      dryGrams: a.dryGrams, waterMl: a.waterMl, limeG: a.limeG, method: a.method, knot: a.knot, holes: a.holes ? "si" : "no", env: a.env, tempC: a.tempC,
+      d7: a.d7 || "", d14: a.d14 || "", d21: a.d21 || "", harvestDate: a.firstHarvestDate || "", flushes: a.flushGrams, notes: a.notes || "",
+      logId: o.logId, createdAt: a.updatedAt, updatedAt: a.updatedAt };
+    const prev = LOG.mine.find(b => b.data.logId === o.logId);
+    LOG.mine = LOG.mine.filter(b => b !== prev).concat([{id: prev ? prev.id : rid(), data}]); n++;
+  }
+  storeLocal(); renderLog();
+  const m = $("#logfilemsg"); if (m) m.textContent = n ? t("log.restored", {n}) : t("log.fileError");
+}
+async function importToDataset(input){
+  const msg = $("#importmsg"), rows = await readFiles(input); let n = 0;
+  if (msg) msg.textContent = t("log.saving");
+  for (const o of rows.slice(0, 1000)){ const a = rowToAnon(o); if (a && await pushLog(o.logId, a)) n++; }
+  if (msg) msg.textContent = n ? t("log.imported", {n}) : t("log.fileError");
+}
+async function copyMine(btn){
+  const msg = $("#logfilemsg");
+  try { await navigator.clipboard.writeText(toCSV(myRows(), MY_COLS).replace(/^﻿/, "")); msg.textContent = t("log.copiedOk"); }
+  catch { msg.textContent = t("log.copyFail"); }
+}
+function sendHTML(){
+  const c = CFG.envioBitacora;
+  return `<p class="note">${esc(c ? t("log.sendTo", {c}) : t("log.sendGeneric"))}</p>`;
 }
 function renderLog(){
   const el = $("#v-bitacora");
   const formVals = LOG.editing ? (LOG.mine.find(b=>b.id===LOG.editing)||{}).data : null;
-  if (!caps.db || !caps.uid){
-    el.innerHTML = `<h1>${esc(t("log.title"))}</h1><p>${esc(t("log.intro"))}</p><div class="card"><p>${esc(t("log.signin"))}</p></div>`;
-    return;
-  }
   el.innerHTML = `<h1>${esc(t("log.title"))}</h1><p>${esc(t("log.intro"))}</p>
-${LOG.readonly ? `<div class="card"><p>${esc(t("log.readonly"))}</p></div>` : logFormHTML(formVals)}
+${LOG.storageOK ? "" : `<div class="box warn">${esc(t("log.noStorage"))}</div>`}
+${logFormHTML(formVals)}
 <h2>${esc(t("log.mine"))}</h2><div id="mybags"></div>
-${caps.canEdit ? `<h2>${esc(t("log.all"))}</h2><div class="row"><button type="button" class="primary" data-act="csv">${esc(t("log.export"))}</button></div><p class="note" id="csvmsg" role="status"></p><div id="allbags"></div>` : ""}`;
+<div class="card"><h3 style="margin-top:0">${esc(t("log.shareTitle"))}</h3>${sendHTML()}
+<div class="row"><button type="button" class="primary" data-act="log-dl"${LOG.mine.length?"":" disabled"}>${esc(t("log.download"))}</button><button type="button" data-act="log-copy"${LOG.mine.length?"":" disabled"}>${esc(t("log.copy"))}</button></div>
+<label for="logrestore">${esc(t("log.restore"))}</label><input id="logrestore" type="file" accept=".csv,text/csv">
+<p class="note" id="logfilemsg" role="status"></p></div>
+${caps.canEdit && caps.db ? `<h2>${esc(t("log.all"))}</h2><div class="row"><button type="button" class="primary" data-act="csv">${esc(t("log.export"))}</button></div><p class="note" id="csvmsg" role="status"></p>
+<label for="logimport">${esc(t("log.importOwner"))}</label><input id="logimport" type="file" accept=".csv,text/csv" multiple><p class="note" id="importmsg" role="status"></p><div id="allbags"></div>` : ""}`;
   renderLogLists();
 }
 function startLog(){
-  if (!caps.db || !caps.uid || LOG.unsubMine) return;
-  const timer = setTimeout(() => { LOG.slow = true; renderLogLists(); }, 10000);
+  if (!caps.db || !caps.canEdit || LOG.unsubAll) return;
   try {
-    LOG.unsubMine = caps.db.collection("data/users/"+caps.uid).onSnapshot(s => {
-      LOG.mine = s.docs.map(d => ({id:d.id, data:d.data()})).filter(b => b.data && b.data.bagId);
-      LOG.loading = false; if (!s.metadata.fromCache){ clearTimeout(timer); LOG.slow = false; }
-      renderLogLists();
-    }, () => { clearTimeout(timer); LOG.loading = false; renderLogLists(); });
-  } catch { LOG.loading = false; }
-  if (caps.canEdit){
-    try {
-      LOG.unsubAll = caps.db.collection("logs").limit(1000).onSnapshot(s => {
-        LOG.all = s.docs.map(d => ({id:d.id, data:d.data()})); LOG.allLoading = false; renderLogLists();
-      }, () => { LOG.allLoading = false; renderLogLists(); });
-    } catch { LOG.allLoading = false; }
-  }
+    LOG.unsubAll = caps.db.collection("logs").limit(1000).onSnapshot(s => {
+      LOG.all = s.docs.map(d => ({id:d.id, data:d.data()})); LOG.allLoading = false; renderLogLists();
+    }, () => { LOG.allLoading = false; renderLogLists(); });
+  } catch { LOG.allLoading = false; }
 }
 
 /* ============ vistas y eventos ============ */
@@ -1114,7 +1176,9 @@ document.addEventListener("click", e => {
   else if (act === "log-edit"){ LOG.editing = b.dataset.id; LOG.warn = ""; renderLog(); $("#logform").scrollIntoView({block:"start"}); }
   else if (act === "log-cancel"){ LOG.editing = null; renderLog(); }
   else if (act === "log-del"){ deleteBag(b.dataset.id); }
-  else if (act === "csv"){ saveFile(`fungi-mati-bitacora-${today()}.csv`, toCSV(LOG.all), $("#csvmsg")); }
+  else if (act === "csv"){ saveFile(`fungi-mati-dataset-${today()}.csv`, toCSV(LOG.all), $("#csvmsg")); }
+  else if (act === "log-dl"){ saveFile(`fungi-mati-mi-bitacora-${today()}.csv`, toCSV(myRows(), MY_COLS), $("#logfilemsg")); }
+  else if (act === "log-copy"){ copyMine(b); }
   else if (act === "media-del"){ mediaDelete(b.dataset.st, Number(b.dataset.i)); }
   else if (b.id === "chatstop"){ chat.ctl && chat.ctl.abort(); }
   else if (b.id === "theme"){ S.theme = S.theme === "auto" ? (matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "dark") : S.theme === "dark" ? "light" : "dark"; LS.set("theme", S.theme); applyTheme(); }
@@ -1143,6 +1207,8 @@ document.addEventListener("input", e => {
 });
 document.addEventListener("change", e => {
   if (e.target.id === "lang"){ S.lang = e.target.value; LS.set("lang", S.lang); renderAll(); }
+  else if (e.target.id === "logrestore"){ restoreMine(e.target); }
+  else if (e.target.id === "logimport"){ importToDataset(e.target); }
   else if (e.target.id === "chatphoto"){ const file = e.target.files[0]; if (!file) return; if (chat.photoURL) URL.revokeObjectURL(chat.photoURL); chat.photo = file; chat.photoURL = URL.createObjectURL(file); renderPhoto(); }
   else if (e.target.form && e.target.form.id === "calcform" && e.target.name === "type"){ S.calc.type = e.target.value; LS.set("calc", S.calc); renderCalc(); }
 });

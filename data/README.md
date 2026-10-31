@@ -1,11 +1,18 @@
 # Dataset abierto de Fungi Mati
 
-Cada bolsa registrada en la bitácora de la página genera dos documentos:
+## Cómo llegan los datos
 
-1. **Registro privado** en `data/users/<id>/<bolsa>`: solo lo ve y lo edita la persona que lo escribió. Ni el dueño del proyecto puede leerlo (regla de la plataforma de Artifacts). Incluye el identificador de bolsa que eligió la persona.
-2. **Copia anonimizada** en la colección `logs`: sin identificador de usuario, sin nombre de bolsa. Esta copia es la que forma el dataset abierto. Se actualiza cada vez que la persona edita su bolsa y se borra si la borra.
+La bitácora de la página funciona para cualquier persona, sin cuenta:
 
-El dueño (o quien tenga nivel de edición en el Artifact) ve «Todas las bolsas» en la página y exporta CSV con el botón **Exportar CSV**. También se puede leer con las herramientas de datos del Artifact. El dataset se publicará periódicamente como CSV anonimizado en este directorio, bajo licencia CC BY-SA 4.0.
+1. **Cada voluntario** registra sus bolsas en la página. Se guardan en **su propio navegador** (no salen de su teléfono hasta que él decida).
+2. Con **«Descargar mi bitácora (CSV)»** o **«Copiar para WhatsApp o correo»** envía su archivo a Fungi Mati. El archivo trae las columnas del dataset más `bagId`, el nombre que la persona le puso a cada bolsa (solo sirve para que ella misma restaure su bitácora en otro teléfono).
+3. **El dueño** (o un editor del Artifact) abre la pestaña Bitácora, usa **«Sumar al dataset los archivos que te enviaron»** y elige uno o varios CSV. La página descarta `bagId` y guarda cada registro en la colección `logs`, sin datos de la persona. Si el mismo archivo se sube dos veces, no se duplica: cada registro tiene un `logId` fijo.
+4. Las bolsas que registran el dueño o los miembros de su organización en Claude se suman a `logs` automáticamente al guardar.
+5. **«Exportar CSV»** descarga el dataset completo. Se publicará periódicamente en este directorio como CSV anonimizado, bajo licencia CC BY-SA 4.0.
+
+¿Por qué así? En los Artifacts de Claude solo los miembros de la organización del dueño pueden escribir datos compartidos; los visitantes por enlace público solo leen. Guardar en el navegador y enviar el archivo hace que la bitácora funcione para todos sin servidor ni costo.
+
+Dónde enviar el archivo: se configura en `config.json` (`envioBitacora`). TODO Robert: definir correo, WhatsApp o formulario.
 
 ## Reglas de acceso declaradas
 
@@ -14,9 +21,9 @@ El dueño (o quien tenga nivel de edición en el Artifact) ve «Todas las bolsas
 | raíz (todo lo demás) | `view` (cualquiera con acceso) | `admin` (editores y dueño) |
 | `logs` | `view` | `interact` (Contributor o más) |
 | `media` (fotos y videos de las fichas) | `view` | `admin` |
-| `data/users/{self}` | solo la propia persona | la propia persona con nivel `interact` o más |
+| `data/users/{self}` | solo la propia persona | la propia persona con nivel `interact` o más (la versión actual de la página ya no lo usa) |
 
-Nota: con `write: interact` en `logs`, un Contributor técnicamente podría modificar copias ajenas; la página nunca lo hace. Antes de publicar el CSV, revisar valores atípicos.
+Nota: con `write: interact` en `logs`, un miembro de la organización técnicamente podría modificar copias ajenas; la página nunca lo hace. Los archivos que envían los voluntarios no se validan contra la página al importarlos más allá del formato: antes de publicar el CSV, revisar valores atípicos.
 
 ## Columnas del CSV
 
