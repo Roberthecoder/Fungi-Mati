@@ -36,7 +36,7 @@ Recorrido completo:
    - En la ferretería, lee el costal: si dice «cal viva», «óxido de calcio», «CaO» o «quicklime», no la compres. Busca «cal hidratada», «hidróxido de calcio» o «Ca(OH)2».
    - Si solo tienes cal viva o no tienes cal: no la uses. Haz la pasteurización térmica sostenida (hervir 15 a 20 minutos sumergido, o tapar y aislar al menos una hora). Nunca intentes «apagar» cal viva en casa.
 2. **Agua hirviendo.** Nunca viertas agua hirviendo directo en una bolsa de plástico delgada: se puede derretir o reventar. Usa una olla o un recipiente resistente al calor (peltre, acero, cubeta para alimentos de plástico grueso apto para calor). Pasa el sustrato a la bolsa ya tibio.
-3. **Protección mínima.** Manos lavadas con jabón, cubrebocas y guantes al manejar la cal y al inocular; lentes si tienes. No respires el polvo de la cal.
+3. **Protección mínima.** Manos lavadas con jabón, cubrebocas y guantes al manejar la cal y al inocular, y lentes al medir y mezclar la cal: el polvo de cal irrita y puede dañar los ojos. Si te cae en los ojos, enjuaga con agua limpia durante 15 minutos y busca atención médica. No respires el polvo.
 4. **Qué no comer.** No comas hongos de una bolsa con manchas verdes o negras ni con olor agrio o fermentado. No rescates bolsas contaminadas.
 5. **Esporas.** Ventila el lugar donde fructifican y cosecha antes de que el sombrero se aplane: respirar muchas esporas durante mucho tiempo puede causar alergia respiratoria.
 6. **Toxicidad: tranquilidad con criterio.** La seta *Pleurotus* cultivada a partir de micelio comprado a un vendedor confiable, en una bolsa sin contaminación, es comestible; es de los hongos más cultivados del mundo. Cómela siempre cocida (cruda puede caer pesada). Desconfía y no comas si: aparecen manchas verdes, negras o rosadas; huele agrio; ves colores o formas raras que no se parecen a una seta; o no sabes qué micelio usaste. Nunca uses este protocolo para identificar hongos silvestres.
@@ -55,9 +55,7 @@ Recomendadas para principiantes: *Pleurotus ostreatus* (seta gris) y *P. ostreat
 | *P. djamor* | Seta rosa | 24–28 °C | 20–30 °C | Fácil |
 | *P. eryngii* | Seta de cardo | 21–24 °C | 10–21 °C | Intermedio |
 
-> TODO Robert: las temperaturas de var. columbinus (21–27 / 12–18 °C) no tienen fuente específica de la variedad; los rangos generales de P. ostreatus son compatibles.
-
-Nota sobre la seta azul: coloniza rápido; su color azul grisáceo es más intenso al principio y se desvanece al madurar. Ideal para climas frescos.
+Nota sobre la seta azul: es una variedad de *P. ostreatus*, así que sigue sus mismas reglas; prefiere el lado fresco del rango para fructificar. Cada cepa varía un poco: si tu proveedor da temperaturas, úsalas. coloniza rápido; su color azul grisáceo es más intenso al principio y se desvanece al madurar. Ideal para climas frescos.
 
 Otras especies (shiitake, reishi, oreja de Judas) piden más experiencia y no forman parte de este protocolo. La melena de león (*Hericium erinaceus*) es una línea futura de Fungi Mati, no un protocolo todavía.
 
@@ -65,18 +63,19 @@ Otras especies (shiitake, reishi, oreja de Judas) piden más experiencia y no fo
 ## Etapa a) Apenas empiezo: qué conseguir
 
 1. **Micelio de *Pleurotus ostreatus*** (o var. *columbinus*). Cómo se ve: granos blancos, como arroz o sorgo, cubiertos de una capa algodonosa blanca; huele a hongo fresco. En México, Mercado Libre es una opción con protección al comprador: busca «micelio Pleurotus» y elige vendedores con reseñas recientes positivas. Próximamente habrá micelio directo de Fungi Mati.
-2. **Sustrato.** Estándar: pellets de aserrín o de bagazo de agave (se almacenan bien y dan resultados parejos). Cómo se ven los pellets: parecen croquetas de gato color café claro, cilindros duros de 6 a 8 mm. Alternativas: bagazo de agave en fibra, bagazo de café, fibra de coco. Suplemento opcional: 20 % de cascarilla de soya en pellets.
-3. **Cal hidratada** (ver Seguridad). Una cucharadita rasa pesa de 4 a 5 g; para una bolsa casera necesitas apenas una pizca.
-4. **Equipo de cocina**: una olla o recipiente resistente al calor con tapa; una toalla o una hielera si vas a aislar; una bolsa de plástico gruesa y limpia (de 2 a 5 kg de capacidad); un aspersor; cubrebocas y guantes; alfiler.
+2. **Sustrato.** Estándar: pellets de aserrín o de bagazo de agave (se almacenan bien y dan resultados parejos). De preferencia pellets de madera dura (encino, álamo, haya): el aserrín de pino y otras coníferas tiene resinas que hacen más lenta la colonización y bajan la cosecha. Cómo se ven los pellets: parecen croquetas de gato color café claro, cilindros duros de 6 a 8 mm. Alternativas: bagazo de agave en fibra, bagazo de café (mejor mezclado con otro sustrato), fibra de coco.
+   **Suplemento opcional:** hasta 20 % del peso seco de cascarilla de soya en pellets (para 400 g de sustrato: 320 g de pellet de madera + 80 g de soya). Aporta nitrógeno, baja la relación carbono-nitrógeno (C:N) y sube la cosecha. Más no es mejor: con demasiado nitrógeno la fructificación se retrasa y aumenta el riesgo de contaminación.
+3. **Cal hidratada** (ver Seguridad). Para una bolsa de 400 g de pellet necesitas 6 g (2½ cucharaditas medidoras rasas).
+4. **Equipo de cocina**: taza y cucharas medidoras (o una botella de agua de 600 ml); una olla o recipiente resistente al calor con tapa; una toalla o una hielera si vas a aislar; una bolsa de plástico gruesa y limpia (de 2 a 5 kg de capacidad); un aspersor; cubrebocas, guantes y lentes; alfiler. Recomendado: un termómetro de ambiente.
 5. **Lugar**: un rincón oscuro y sin corrientes (clóset, caja, bajo la cama) para incubar, y luego un lugar con luz indirecta.
 
 **Prueba:** al abrir el empaque, el micelio debe verse blanco y oler a hongo fresco, sin manchas verdes, negras ni rosadas.
 **Si sale mal:** si el micelio llega con manchas o se contamina en los primeros 8 días, probablemente venía contaminado de origen. Si lo compraste en Mercado Libre, reclama la garantía con fotos antes de volver a intentar.
 
-**Cuidado del micelio:** guárdalo lejos del sol y úsalo pronto. El micelio de *Pleurotus* aguanta aproximadamente 6 meses a temperatura ambiente si no se contamina ni le da la luz directa.
+**Cuidado del micelio:** guárdalo en el refrigerador (1 a 4 °C), en su bolsa cerrada, y úsalo lo antes posible. A temperatura ambiente puede entrar alguna bacteria oportunista y comérselo. Sácalo unas horas antes de inocular para que tome la temperatura del cuarto. Excepción: la seta rosa (*P. djamor*) no tolera el refrigerador; guárdala en un lugar fresco y úsala pronto.
 
-> TODO Robert: la viabilidad de 6 meses a temperatura ambiente no tiene respaldo en literatura revisada; las guías de proveedores dicen refrigerar a 1–4 °C y usar en semanas (P. djamor no tolera refrigeración). ¿Cambiamos a «refrigerar y usar pronto»?
-> TODO Robert: el suplemento de cascarilla de soya al 20 % no tiene respaldo específico en Pleurotus; tampoco encontramos estudios con pellets de madera comprimida (solo pellets de paja de trigo).
+> TODO Robert: cuánto tiempo aguanta refrigerado (las guías de proveedores dicen de semanas hasta unos 3 meses; sin fuente revisada).
+> TODO Robert: la cascarilla de soya en particular solo tiene respaldo en una tesis (hasta 37.5 %); el 20 % está dentro de los rangos estudiados para suplementos en Pleurotus (3 a 45 %). Pellets de madera: hay literatura de aserrín y de briquetas comprimidas, no de pellets de combustible como tal.
 
 <!-- es:preparacion -->
 ## Etapa b) Ya tengo sustrato y micelio: preparar e inocular
@@ -87,65 +86,79 @@ Otras especies (shiitake, reishi, oreja de Judas) piden más experiencia y no fo
 - **Protocolo C**: los mismos sustratos, pasteurizados en microondas.
 - **Protocolo A**: sustratos fibrosos (bagazo de agave en fibra, fibra de coco, paja, rastrojo).
 
+### Medidas que vas a usar
+
+Todo se mide con cosas que hay en casa y que siempre miden lo mismo:
+- **Taza medidora** = 240 ml. **Cucharada medidora** = 15 ml. **Cucharadita medidora** = 5 ml. Siempre **rasas**: llena y pasa el canto de un cuchillo por encima, sin apretar el polvo.
+- **Botella de agua** de 600 ml o de 1.5 L (la etiqueta dice cuánto trae).
+- **Paquete de micelio**: viene por peso (250 g, 500 g, 1 kg). Divídelo en partes iguales.
+
+Equivalencias (polvo o grano suelto, sin apretar):
+
+| Material | 1 taza medidora (240 ml) | 1 cucharada (15 ml) | 1 cucharadita (5 ml) |
+|---|---|---|---|
+| Pellet de madera | ≈ 155 g | — | — |
+| Micelio en grano (sorgo) | ≈ 150 g | — | — |
+| Cal hidratada | ≈ 120 g | ≈ 7.5 g | ≈ 2.5 g |
+
+La cal es un polvo muy ligero y cambia según qué tan suelto esté (de 0.35 a 0.64 g por ml). Por eso la dosis tiene margen: cualquier cantidad entre la mitad y el doble de la de la tabla sigue dentro de lo estudiado.
+Si tienes báscula de cocina, úsala; si no, el costal de pellet y el paquete de micelio traen el peso impreso.
+
 ### Escalado: primero, cuánto sustrato tienes
 
 Todo se calcula a partir de los gramos de sustrato seco. Reglas:
 - **Agua (pellets)**: 1.5 veces el peso seco. Si hierves el agua destapada, agrega 5 % por evaporación.
-- **Cal hidratada**: 1 g por cada litro de agua.
+- **Cal hidratada**: 10 g por cada litro de agua (1 %).
 - **Micelio**: 10 % del peso húmedo (seco + agua). Desde 3 a 5 % funciona, pero más lento y con más riesgo.
-- **Microondas**: 8 a 10 minutos por kilo de sustrato ya empapado.
+- **Microondas**: 15 minutos por kilo de sustrato empapado, en tandas de máximo 1 kg.
 
-| Pellet seco | Agua | Medida casera | Cal hidratada | Peso húmedo | Micelio (10 %) |
+| Pellet seco | Agua | Cal hidratada | Peso húmedo | Micelio (10 %) | Microondas |
 |---|---|---|---|---|---|
-| 200 g | 300 ml | 1¼ tazas | 0.3 g (pizca chica) | 500 g | 50 g (medio puñado) |
-| 400 g | 600 ml | 2½ tazas | 0.6 g (una pizca, ⅛ de cucharadita) | 1 kg | 100 g (un puñado generoso) |
-| 500 g | 750 ml | 3 tazas | 0.75 g (pizca) | 1.25 kg | 125 g (puñado y cuarto) |
-| 1 kg | 1.5 L | 6¼ tazas | 1.5 g (⅓ de cucharadita) | 2.5 kg | 250 g (unos 2½ puñados) |
-
-Medidas caseras: 1 taza = 240 ml; 1 cucharadita rasa de cal = 4 a 5 g; un puñado generoso de micelio en grano ≈ 100 g, «del tamaño de una pelota de tenis» apretada.
-Sin báscula: la bolsa de pellets trae el peso impreso; medio costal de 1 kg son 500 g.
-
-> TODO Robert: confirmar a cuánto pellet seco equivale una taza, para quien tenga pellets sueltos sin etiqueta.
+| 200 g (1¼ tazas) | 300 ml (1¼ tazas, ½ botella de 600 ml) | 3 g (1¼ cucharaditas) | 500 g | 50 g (⅓ de taza; 1/10 de un paquete de 500 g) | 7½ min |
+| 400 g (2½ tazas) | 600 ml (1 botella de 600 ml, 2½ tazas) | 6 g (2½ cucharaditas) | 1 kg | 100 g (⅔ de taza; 1/5 de un paquete de 500 g) | 15 min |
+| 500 g (3¼ tazas) | 750 ml (1¼ botellas de 600 ml) | 7.5 g (1 cucharada) | 1.25 kg | 125 g (¾ de taza + 1 cucharada; 1/4 de un paquete de 500 g) | 2 tandas de 9½ min |
+| 1 kg | 1.5 L (1 botella de 1.5 L) | 15 g (2 cucharadas) | 2.5 kg | 250 g (1⅔ tazas; ½ paquete de 500 g) | 3 tandas de 12½ min |
 
 ### Protocolo B (estufa): hidratar y pasteurizar pellets
 
-1. Mide el agua (1.5 veces el peso del pellet) y disuelve la cal hidratada (1 g por litro; para 600 ml, una pizca). La cal sube el pH (lo vuelve alcalino, alrededor de 11 a 12) para frenar mohos y bacterias. No es opcional: si no tienes cal hidratada, la pasteurización tiene que ser térmica sostenida.
+1. Mide el agua (1.5 veces el peso del pellet) y mezcla la cal hidratada: 10 g por litro (para 600 ml, 6 g = 2½ cucharaditas medidoras rasas). No se disuelve toda: el agua queda blanca y turbia, es normal; revuelve antes de usarla. No es opcional: si no tienes cal hidratada, la pasteurización tiene que ser térmica sostenida.
 2. Elige una de dos formas, siempre en olla o recipiente resistente al calor, nunca en la bolsa:
    - **Hervir**: pon los pellets en la olla con el agua con cal y hierve todo sumergido de 15 a 20 minutos, revolviendo.
    - **Verter y aislar**: hierve el agua con cal, viértela sobre los pellets dentro de la olla o cubeta resistente, tapa de inmediato y envuelve con toallas o mete en una hielera al menos 1 hora.
-3. Deja enfriar tapado hasta temperatura ambiente: que no queme la mano (varias horas; lo puedes dejar de un día para otro tapado).
+3. Deja enfriar tapado toda la noche (8 a 12 horas), hasta temperatura ambiente. Antes de inocular, mete la mano: no debe sentirse caliente.
 4. Haz la **prueba del puño**: aprieta con fuerza un puñado. Deben salir 1 o 2 gotas.
 
-**Por qué no basta con verter:** si viertes agua hirviendo y esperas sin tapar ni aislar, la mezcla baja de temperatura en minutos y pasa horas entre 30 y 50 °C, justo la zona donde crecen *Trichoderma* (el moho verde) y las bacterias. Eso solo hidrata, no pasteuriza. Hervir o aislar mantiene el calor el tiempo suficiente.
+**Por qué la cal:** el agua con cal llega a pH 12.4, tan alcalina que frena a *Trichoderma* (el moho verde) y a muchas bacterias, mientras que el micelio de *Pleurotus* la tolera. Al mezclarse con el sustrato el pH baja (a 8 o 9) y sigue protegiendo durante la colonización. Como el pellet absorbe toda el agua, la cal se queda en el sustrato: con 10 g por litro queda en 1.5 % del peso seco, dentro del rango que funciona mejor (hasta 2 %; con 4 a 6 % el micelio crece más lento).
 
-> TODO Robert: humedad. 1.5× da ≈ 62–64 % de humedad; la literatura sitúa el óptimo en 65–75 %. Se mantiene la cifra validada W4; revisar si el hervido sumergido sube la humedad final.
-> TODO Robert: cal. 1 g/L (0.1 %) está por debajo de los rangos probados en Pleurotus (5–20 g/L, óptimo 10 g/L). Y el pH 11–12 no está medido en las fuentes (una fuente midió 9.5 con 5 g/L). Medir con tiras de pH o decir solo «alcalino».
-> TODO Robert: definir el tiempo de contacto con la cal en «verter y aislar», y medir con termómetro si el sustrato se mantiene ≥ 60 °C la hora completa.
+**Por qué no basta con verter:** si viertes agua hirviendo y esperas sin tapar ni aislar, la mezcla baja de temperatura en minutos y pasa horas entre 30 y 50 °C, justo la zona donde crecen *Trichoderma* y las bacterias. Eso solo hidrata, no pasteuriza. Hervir o aislar mantiene el calor el tiempo suficiente.
+
+> TODO Robert: la dosis de cal sube de 1 g/L (validada W4) a 10 g/L (óptimo de literatura) por decisión del autor; validar en el próximo taller que el micelio colonice igual o mejor.
+> TODO Robert: medir con termómetro si en «verter y aislar» el sustrato se mantiene ≥ 60 °C la hora completa.
 
 ### Protocolo C (microondas)
 
-1. Hidrata primero: mezcla pellets, agua (1.5×) y cal en un recipiente apto para microondas y deja que los pellets se deshagan (10 a 15 minutos).
+1. Hidrata primero: mezcla pellets, agua (1.5×) y cal (10 g por litro) en un recipiente apto para microondas y espera 15 minutos a que los pellets se deshagan.
 2. Tapa sin sellar (tapa encimada o plato) para que salga el vapor.
-3. Calienta 8 a 10 minutos por kilo de sustrato empapado; para unos 400 g de sustrato empapado, 4 a 5 minutos. Si es más de 1 kg, hazlo en tandas. A la mitad, revuelve con cuchara (con guante: quema).
-4. Deja enfriar tapado hasta que no queme la mano.
+3. Calienta 15 minutos por kilo de sustrato empapado (400 g de pellet + 600 ml ≈ 1 kg → 15 minutos). Más de 1 kg: hazlo en tandas de máximo 1 kg. A la mitad, revuelve con cuchara (con guante: quema).
+4. Deja enfriar tapado toda la noche (8 a 12 horas).
 
-> TODO Robert: confirmar si «4–5 min para 400 g» se refiere a 400 g de sustrato empapado (así lo calcula la página: 1 kg húmedo → 8–10 min) o a 400 g de pellet seco. Tampoco hay estudio de Pleurotus que valide tiempos en horno doméstico; verificar con termómetro que todo el sustrato llegue a ≥ 60–80 °C. Potencia del horno supuesta: TODO.
+> TODO Robert: 15 min/kg es empírico; no hay estudio de Pleurotus con tiempos de microondas. Supone un horno doméstico de 700–1000 W; verificar con termómetro que todo el sustrato pase de 70 °C.
 
 ### Protocolo A (fibra): bagazo de agave en fibra, fibra de coco, paja
 
-1. Pon agua suficiente para cubrir la fibra en una olla grande y disuelve la cal hidratada: 1 g por litro (para 5 L, 5 g, aproximadamente una cucharadita rasa).
-2. Hierve el agua con cal, sumerge la fibra y mantén a fuego medio.
-3. Retira del fuego y deja enfriar tapado por completo.
-4. Escurre hasta que no gotee pero siga húmeda, como un trapo mojado bien exprimido. Haz la prueba del puño.
-5. Calcula el micelio con el peso escurrido (10 %); sin báscula, un puñado generoso por cada kilo escurrido.
+1. Pon agua suficiente para cubrir la fibra en una olla grande y agrega la cal hidratada: 10 g por litro (para 5 L, 50 g = 6¾ cucharadas medidoras rasas).
+2. Hierve el agua con cal, sumerge la fibra y mantén a fuego medio durante 1 hora. La fibra es un material más crudo y heterogéneo que el pellet (el pellet ya pasó por calor y presión al fabricarse), por eso necesita más tiempo.
+3. Retira del fuego y deja enfriar tapado toda la noche (8 a 12 horas).
+4. Escurre hasta que no gotee. Haz la prueba del puño: 1 o 2 gotas.
+5. Calcula el micelio con el peso escurrido: 10 %, es decir 100 g (⅔ de taza medidora) por cada kilo escurrido. Sin báscula: el peso escurrido suele ser de 2 a 3 veces el peso seco; usa el valor alto para no quedarte corto.
 
-> TODO Robert: el protocolo v1 hervía la fibra 1 hora; ¿se mantiene 1 hora para fibra o se iguala a 15–20 minutos como en pellets?
+> TODO Robert: confirmar cuánto pesa la fibra escurrida respecto a la seca (2 a 3 veces es estimación).
 
 ### Inoculación
 
 1. Lava bien tus manos con jabón; limpia la superficie; ponte cubrebocas y guantes. Si la bolsa o recipiente ya se usó, límpialo con alcohol al 70 %.
-2. Confirma que el sustrato ya está frío (no quema la mano). Si está caliente, mata al micelio.
-3. Mezcla el micelio: 10 % del peso húmedo. Para 400 g de pellet + 600 ml (≈ 1 kg húmedo) son unos 100 g, un puñado generoso. Pon capas: sustrato, micelio, sustrato, micelio, o mezcla con las manos dentro de la olla y luego pasa todo a la bolsa.
+2. Confirma que el sustrato ya está frío (8 a 12 horas tapado; al meter la mano no se siente caliente). Si está caliente, mata al micelio.
+3. Mezcla el micelio: 10 % del peso húmedo. Para 400 g de pellet + 600 ml (≈ 1 kg húmedo) son 100 g: ⅔ de taza medidora, o una quinta parte de un paquete de 500 g. Pon capas: sustrato, micelio, sustrato, micelio, o mezcla con las manos dentro de la olla y luego pasa todo a la bolsa.
 4. Abre la bolsa lo menos posible y trabaja rápido.
 5. Cierra según el bloque de oxígeno (abajo).
 
@@ -159,7 +172,7 @@ Sin báscula: la bolsa de pellets trae el peso impreso; medio costal de 1 kg son
 4. **Contra tu instinto:** te va a dar ganas de cerrar bien para que no entre contaminación. No lo hagas. Un nudo apretado mata más cultivos que el aire del cuarto, y produce el olor agrio de las bacterias que viven sin oxígeno.
 
 **Prueba:** después de cerrar, la prueba del aire sale bien y la prueba del puño dio 1 o 2 gotas.
-**Si sale mal:** sale un chorro al apretar el sustrato → escurre o exprime antes de cerrar; se desmorona seco → agrega agua poco a poco; no sale aire → afloja el nudo o perfora.
+**Si sale mal:** sale un chorro al apretar el sustrato → escurre o exprime antes de cerrar; se desmorona seco → agrega agua de cucharada en cucharada y vuelve a probar; no sale aire → afloja el nudo o perfora.
 
 Cuando termines de inocular, sigue con la etapa c) Incubación: ahí está cada cuánto revisar, cómo se ve el micelio sano y qué hacer si se contamina.
 
@@ -167,7 +180,7 @@ Cuando termines de inocular, sigue con la etapa c) Incubación: ahí está cada 
 ## Etapa c) Ya inoculé: incubación y seguimiento
 
 1. **Dónde:** lugar oscuro o en penumbra, sin corrientes de aire: clóset, caja de zapatos, bajo la cama.
-2. **Temperatura objetivo:** 24 a 28 °C. Sin termómetro: un lugar donde estés cómodo con manga corta. Con frío, el micelio crece más lento pero sigue.
+2. **Temperatura objetivo:** 24 a 28 °C. Mídela con un termómetro de ambiente puesto junto a la bolsa. Sin termómetro, consulta la temperatura de tu ciudad en el pronóstico del clima y elige el lugar más cálido y estable de la casa, lejos de ventanas y puertas. Debajo de 20 °C el micelio crece más lento pero sigue.
 3. **Humedad y aire:** no hace falta regar ni abrir. La bolsa conserva su humedad. El nudo flojo o las perforaciones bastan; el micelio tolera bien el CO2 que se junta en esta etapa.
 4. **Cada cuánto revisar:** cada 2 o 3 días, mirando por fuera, sin abrir y moviendo lo menos posible.
 5. **Cómo se ve el micelio sano:** entre el día 5 y el 7 aparece crecimiento blanco o beige que sale de cada grano hacia los lados (radial), como algodón. Si lo ves al día 7, el éxito al día 21 es casi seguro.
@@ -184,9 +197,7 @@ Cuando termines de inocular, sigue con la etapa c) Incubación: ahí está cada 
 3. Humedad alta: rocía las paredes del espacio, el aire alrededor o una tela cercana 2 o 3 veces al día; no empapes la bolsa ni los cortes. Una caja de plástico transparente volteada encima, con hoyos, ayuda a guardar humedad.
 4. Aire fresco: ventila varias veces al día. Sin aire fresco, los hongos salen con sombreros chicos o deformes y tallos largos.
 5. Evita corrientes fuertes y sol directo: el hongo puede abortar.
-6. Los primordios aparecen de 7 a 14 días después de abrir. Un poco más fresco (de 13 a 24 °C para *P. ostreatus*) ayuda a que broten.
-
-> TODO Robert: la literatura (Stamets vía Grimm et al., 2024) da 3–5 días a primordios; se mantienen los 7–14 días del protocolo v1.
+6. Los primordios aparecen de 1 a 2 semanas (7 a 14 días) después de abrir. En condiciones ideales y con ciertas cepas pueden salir en 3 a 5 días, pero en una casa lo normal es más. Un poco más fresco (de 13 a 24 °C para *P. ostreatus*) ayuda a que broten.
 
 **Prueba:** en pocos días ves bolitas blancas o grises en los cortes.
 **Si sale mal:** primordios secos o amarillentos → falta humedad en el ambiente; tallos largos con sombrero chico → falta aire fresco o luz; nada después de 2 semanas → ventila más y baja un poco la temperatura.
@@ -231,7 +242,7 @@ Un crecimiento blanco algodonoso, aunque tenga zonas amarillentas con gotitas (e
 
 **¿Dónde compro micelio en México?** Mercado Libre, buscando «micelio Pleurotus», con vendedores de reseñas recientes positivas; tiene protección al comprador. Pronto también con Fungi Mati.
 
-**¿Cuánto dura el micelio guardado?** Aproximadamente 6 meses a temperatura ambiente, sin luz directa y sin contaminación. Mejor úsalo pronto.
+**¿Cómo guardo el micelio?** En el refrigerador (1 a 4 °C), en su bolsa cerrada, y úsalo lo antes posible; a temperatura ambiente lo pueden invadir bacterias oportunistas. La seta rosa (*P. djamor*) es la excepción: no la refrigeres.
 
 **¿Cuánto cuesta empezar?** Ver el costo por bolsa en la página (rango por confirmar). El sustrato puede conseguirse gratis como residuo local.
 
@@ -280,7 +291,7 @@ The whole path:
 
 1. **Hydrated lime, never quicklime.** Use only hydrated lime: calcium hydroxide, Ca(OH)2, also sold as slaked lime or builder's/whitewash lime. It is a very fine, dry, cool white powder. Never use quicklime (calcium oxide, CaO): it comes as lumps and heats up by itself with water; it can boil, spatter and burn. Read the sack: "quicklime", "cal viva", "calcium oxide" or "CaO" means no. If you only have quicklime or no lime, do not use it: pasteurize with sustained heat (boil 15–20 min submerged, or cover and insulate at least 1 hour).
 2. **Boiling water.** Never pour boiling water straight into a thin plastic bag. Use a pot or heat-resistant container and move the substrate to the bag once it is lukewarm.
-3. **Minimum protection.** Washed hands, face mask and gloves when handling lime and inoculating; glasses if you have them.
+3. **Minimum protection.** Washed hands, face mask and gloves when handling lime and inoculating, and glasses when measuring and mixing lime: lime dust can damage the eyes. If it gets in your eyes, rinse with clean water for 15 minutes and seek medical care.
 4. **What not to eat.** Mushrooms from a bag with green or black spots or a sour smell.
 5. **Spores.** Ventilate the fruiting area and harvest before caps flatten; breathing lots of spores over time can cause respiratory allergy.
 6. **Toxicity.** Cultivated *Pleurotus* from purchased spawn in an uncontaminated bag is edible. Always eat it cooked. Do not eat it if there are green, black or pink spots, a sour smell, odd shapes or colors, or if you don't know what spawn you used. Never use this protocol to identify wild mushrooms.
@@ -299,59 +310,63 @@ Recommended for beginners: *Pleurotus ostreatus* (grey oyster) and *P. ostreatus
 | *P. djamor* | Pink oyster | 24–28 °C | 20–30 °C | Easy |
 | *P. eryngii* | King oyster | 21–24 °C | 10–21 °C | Intermediate |
 
+Blue oyster is a variety of *P. ostreatus* and follows the same rules; it prefers the cooler side of the range for fruiting. Strains vary: if your supplier gives temperatures, use them.
+
 Lion's mane (*Hericium erinaceus*) is a future Fungi Mati line, not yet a protocol.
 
 <!-- en:inicio -->
 ## Stage a) Just starting: what to get
 
 1. **Spawn of *Pleurotus ostreatus*** (or var. *columbinus*): white grains, like rice or sorghum, covered with a cottony white layer; smells like fresh mushroom. In Mexico, Mercado Libre offers buyer protection: search "micelio Pleurotus" and pick sellers with recent good reviews.
-2. **Substrate.** Standard: sawdust or agave-bagasse pellets. Pellets look like light-brown cat kibble, hard cylinders 6–8 mm wide. Alternatives: agave bagasse fiber, spent coffee grounds, coconut coir. Optional supplement: 20 % soybean-hull pellets.
-3. **Hydrated lime** (see Safety). One level teaspoon weighs 4–5 g; a home bag needs only a pinch.
-4. **Kitchen gear**: a heat-resistant pot with a lid; a towel or cooler for insulating; a thick clean plastic bag (2–5 kg capacity); a spray bottle; mask and gloves; a pin.
+2. **Substrate.** Standard: sawdust or agave-bagasse pellets, preferably hardwood (oak, poplar, beech): pine and other conifer sawdust has resins that slow colonization and lower yields. Pellets look like light-brown cat kibble, hard cylinders 6–8 mm wide. Alternatives: agave bagasse fiber, spent coffee grounds (best mixed), coconut coir. Optional supplement: up to 20 % of dry weight as soybean-hull pellets (for 400 g: 320 g wood pellets + 80 g soy). It adds nitrogen, lowers the carbon-to-nitrogen (C:N) ratio and raises yield; more is not better, since too much nitrogen delays fruiting and invites contamination.
+3. **Hydrated lime** (see Safety). A 400 g pellet bag needs 6 g (2½ level measuring teaspoons).
+4. **Kitchen gear**: measuring cup and spoons (or a 600 ml water bottle); a heat-resistant pot with a lid; a towel or cooler for insulating; a thick clean plastic bag (2–5 kg capacity); a spray bottle; mask, gloves and glasses; a pin. Recommended: a room thermometer.
 5. **Place**: a dark corner with no drafts for incubation; later a spot with indirect light.
 
 **Test:** the spawn looks white and smells fresh, with no green, black or pink spots.
 **If it goes wrong:** if the spawn arrives spotted or gets contaminated within the first 8 days, it was probably contaminated at the source. If you bought it on Mercado Libre, file a warranty claim with photos.
 
-Spawn storage: away from sunlight; use it soon. *Pleurotus* spawn lasts about 6 months at room temperature if uncontaminated and kept out of direct light.
+Spawn storage: in the fridge (1–4 °C), in its closed bag; use it as soon as possible, because at room temperature opportunistic bacteria can take over. Let it warm to room temperature for a few hours before inoculating. Exception: pink oyster (*P. djamor*) does not tolerate the fridge.
 
 <!-- en:preparacion -->
 ## Stage b) I have substrate and spawn: prepare and inoculate
 
 **Protocols:** B (stove) for pellets and powders; C (microwave) for the same; A for fibers.
 
+**Measures.** Use tools that always measure the same: measuring cup = 240 ml, measuring tablespoon = 15 ml, measuring teaspoon = 5 ml, always level (scrape off with a knife, don't pack); a 600 ml or 1.5 L water bottle; and spawn packs, which are sold by weight (250 g, 500 g, 1 kg) — divide them into equal parts. Loose, unpacked: 1 cup of wood pellets ≈ 155 g; 1 cup of grain spawn ≈ 150 g; hydrated lime ≈ 7.5 g per tablespoon, 2.5 g per teaspoon (lime density varies, so anything from half to double the dose stays within studied ranges).
+
 **Scaling rules** (from grams of dry substrate):
 - **Water (pellets)**: 1.5 × dry weight; add 5 % if you boil the water uncovered.
-- **Hydrated lime**: 1 g per litre of water.
+- **Hydrated lime**: 10 g per litre of water (1 %).
 - **Spawn**: 10 % of the wet weight (dry + water); 3–5 % still works, slower.
-- **Microwave**: 8–10 minutes per kilo of soaked substrate.
+- **Microwave**: 15 minutes per kilo of soaked substrate, in batches of at most 1 kg.
 
-| Dry pellet | Water | Kitchen measure | Hydrated lime | Wet weight | Spawn (10 %) |
+| Dry pellet | Water | Hydrated lime | Wet weight | Spawn (10 %) | Microwave |
 |---|---|---|---|---|---|
-| 200 g | 300 ml | 1¼ cups | 0.3 g (small pinch) | 500 g | 50 g (half handful) |
-| 400 g | 600 ml | 2½ cups | 0.6 g (a pinch, ⅛ tsp) | 1 kg | 100 g (a generous handful) |
-| 500 g | 750 ml | 3 cups | 0.75 g (pinch) | 1.25 kg | 125 g |
-| 1 kg | 1.5 L | 6¼ cups | 1.5 g (⅓ tsp) | 2.5 kg | 250 g (about 2½ handfuls) |
-
-1 cup = 240 ml; a generous handful of grain spawn ≈ 100 g, about the size of a squeezed tennis ball.
+| 200 g (1¼ cups) | 300 ml (1¼ cups) | 3 g (1¼ tsp) | 500 g | 50 g (⅓ cup; 1/10 of a 500 g pack) | 7½ min |
+| 400 g (2½ cups) | 600 ml (one 600 ml bottle) | 6 g (2½ tsp) | 1 kg | 100 g (⅔ cup; 1/5 of a 500 g pack) | 15 min |
+| 500 g (3¼ cups) | 750 ml (1¼ bottles of 600 ml) | 7.5 g (1 tbsp) | 1.25 kg | 125 g (¾ cup + 1 tbsp; 1/4 of a 500 g pack) | 2 batches of 9½ min |
+| 1 kg | 1.5 L (one 1.5 L bottle) | 15 g (2 tbsp) | 2.5 kg | 250 g (1⅔ cups; ½ of a 500 g pack) | 3 batches of 12½ min |
 
 **Protocol B (stove).**
-1. Dissolve the lime in the water (1 g per litre). Lime makes the water alkaline (around pH 11–12) to hold back molds and bacteria. It is not optional; without hydrated lime, pasteurization must be sustained heat.
+1. Measure the water (1.5 × pellet weight) and mix in the hydrated lime: 10 g per litre (6 g = 2½ level teaspoons for 600 ml). Not all of it dissolves; cloudy white water is normal, stir before use. It is not optional; without hydrated lime, pasteurization must be sustained heat.
 2. In a pot, never in the bag: **boil** the pellets submerged 15–20 minutes, stirring; **or pour and insulate**: pour the boiling lime water over the pellets in a heat-resistant pot or bucket, cover at once and wrap in towels or put in a cooler for at least 1 hour.
-3. Let it cool covered until it doesn't burn your hand.
+3. Let it cool covered overnight (8–12 hours), to room temperature; it should not feel warm to your hand.
 4. **Fist test:** squeeze a handful hard; 1–2 drops should come out.
 
-Why pouring is not enough: if you pour boiling water and wait uncovered, the mix cools in minutes and spends hours at 30–50 °C, where *Trichoderma* (green mold) and bacteria thrive. That only hydrates; it doesn't pasteurize.
+Why lime: lime water reaches pH 12.4, alkaline enough to hold back *Trichoderma* (green mold) and many bacteria, which *Pleurotus* mycelium tolerates. Mixed into the substrate the pH drops to about 8–9 and keeps protecting it during colonization. Since the pellets absorb all the water, the lime stays in the substrate: 10 g per litre means 1.5 % of the dry weight, within the best-performing range (up to 2 %; 4–6 % slows the mycelium).
 
-**Protocol C (microwave).** Hydrate first (pellets, 1.5 × water, lime; 10–15 min), cover loosely in a microwave-safe container, heat 8–10 minutes per kilo of soaked substrate (about 4–5 minutes for 400 g soaked), in batches above 1 kg, stirring halfway with a glove. Cool covered.
+Why pouring is not enough: if you pour boiling water and wait uncovered, the mix cools in minutes and spends hours at 30–50 °C, where *Trichoderma* and bacteria thrive. That only hydrates; it doesn't pasteurize.
 
-**Protocol A (fiber).** Cover the fiber with water plus 1 g of lime per litre, boil, keep on medium heat, cool covered, drain until it no longer drips but stays moist like a well-wrung cloth. Spawn: 10 % of the drained weight, or a generous handful per drained kilo.
+**Protocol C (microwave).** Hydrate first (pellets, 1.5 × water, lime; wait 15 min), cover loosely in a microwave-safe container, heat 15 minutes per kilo of soaked substrate (400 g pellets + 600 ml ≈ 1 kg → 15 min), in batches of at most 1 kg, stirring halfway with a glove. Cool covered overnight.
 
-**Inoculation.** Wash hands, clean surface, mask and gloves; make sure the substrate is cool; mix in 10 % spawn (≈ 100 g for 400 g pellets + 600 ml) in layers or by hand; open the bag as little as possible.
+**Protocol A (fiber).** Cover the fiber with water plus 10 g of lime per litre (50 g = 6¾ level tablespoons for 5 L), boil, keep on medium heat for 1 hour (fiber is rawer than pellets, which were already heated and pressed), cool covered overnight, drain until it no longer drips; fist test 1–2 drops. Spawn: 10 % of the drained weight, 100 g (⅔ cup) per drained kilo; drained fiber usually weighs 2–3 × its dry weight.
+
+**Inoculation.** Wash hands, clean surface, mask and gloves; make sure the substrate is cool (8–12 hours covered); mix in 10 % spawn (100 g = ⅔ cup or 1/5 of a 500 g pack, for 400 g pellets + 600 ml) in layers or by hand; open the bag as little as possible.
 
 **Sealing and oxygen (always with the reason).** The mycelium breathes: it uses oxygen and gives off CO2. Rule: a loose knot, the bag must be able to puff up and deflate a little. Air test: squeeze the bag; air should come out at the knot. Micro-holes: 4–6 pin pricks in the upper half. One of the two always, never neither. Your instinct says close it tight to keep contamination out: don't. A tight knot kills more cultures than room air, and produces the sour smell of oxygen-free bacteria.
 
-**Test:** fist test 1–2 drops; air test passes. **If it goes wrong:** a stream → drain or squeeze; crumbles dry → add water little by little; no air → loosen or prick.
+**Test:** fist test 1–2 drops; air test passes. **If it goes wrong:** a stream → drain or squeeze; crumbles dry → add water one tablespoon at a time and test again; no air → loosen or prick.
 
 When you finish inoculating, continue with stage c) for follow-up.
 
@@ -359,7 +374,7 @@ When you finish inoculating, continue with stage c) for follow-up.
 ## Stage c) Inoculated: incubation and follow-up
 
 1. Dark or dim place, no drafts: closet, shoebox, under the bed.
-2. Target 24–28 °C (where you are comfortable in short sleeves).
+2. Target 24–28 °C, measured with a room thermometer next to the bag. Without one, check your city's temperature in the weather forecast and pick the warmest, most stable spot in the house, away from windows and doors.
 3. No watering, no opening; the loose knot or holes are enough; the mycelium tolerates the CO2 that builds up at this stage.
 4. Check every 2–3 days from the outside, moving it as little as possible.
 5. Healthy mycelium: between days 5 and 7, white cottony growth spreads outward from each grain.
@@ -410,7 +425,7 @@ When you finish inoculating, continue with stage c) for follow-up.
 
 **Which bag?** A thick clean plastic bag, 2–5 kg capacity. Never put boiling substrate in a thin bag.
 **Where to buy spawn in Mexico?** Mercado Libre ("micelio Pleurotus"), sellers with recent good reviews.
-**How long does spawn keep?** About 6 months at room temperature, out of direct light; better to use it soon.
+**How do I store spawn?** In the fridge (1–4 °C), closed, and use it soon; pink oyster (*P. djamor*) is the exception.
 **How much does it cost?** See the cost range on the page (to be confirmed). Substrate can be free local waste.
 **Special equipment?** No: a pot, water, hydrated lime, a spray bottle, a thick bag.
 **Any organic waste?** Materials rich in lignin or cellulose: wood pellets and sawdust, agave bagasse, coconut coir, straw, coffee grounds (best mixed), cardboard, corn stalks. No greasy, meat or chemical waste.
