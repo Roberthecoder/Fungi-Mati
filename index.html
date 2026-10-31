@@ -182,7 +182,7 @@ const LS = {
 const S = {
   lang: LS.get("lang", null) || "es", // español por defecto
   stage: LS.get("stage", null),
-  calc: Object.assign({grams:400, type:"pellet", boilOpen:false, liters:5}, LS.get("calc", {})),
+  calc: Object.assign({grams:400, type:"pellet", boilOpen:false, liters:5, pack:""}, LS.get("calc", {})),
   theme: LS.get("theme", "auto"),
 };
 if (!LANGS.includes(S.lang)) S.lang = "es";
@@ -465,42 +465,60 @@ function animHTML(name){
 }
 
 /* ============ cálculos ============ */
+/* Medidas caseras cuantificables. Los valores vienen de config.json ("medidas") para poder calibrarlos sin tocar código. */
+const M = Object.assign({tazaMl:240, cucharadaMl:15, cucharaditaMl:5, botellaMl:600, calGL:10, microMinPorKg:15, microTandaMaxG:1000,
+  densidad:{pellet:0.65, cal:0.5, micelio:0.6}, paqueteMicelioG:[250,500,1000]}, CFG.medidas || {});
+M.densidad = Object.assign({pellet:0.65, cal:0.5, micelio:0.6}, (CFG.medidas || {}).densidad || {});
 function frac(n){ // a cuartos, con símbolos
   const q = Math.round(n*4)/4, w = Math.floor(q), r = q - w;
   const f = r === .25 ? "¼" : r === .5 ? "½" : r === .75 ? "¾" : "";
   return (w ? String(w) : (f ? "" : "0")) + f;
 }
+function smallFrac(x){ const opts = [[1/8,"⅛"],[1/4,"¼"],[1/3,"⅓"],[1/2,"½"],[2/3,"⅔"],[3/4,"¾"],[1,"1"]]; let best = opts[0]; for (const o of opts) if (Math.abs(o[0]-x) < Math.abs(best[0]-x)) best = o; return best[1]; }
 const fmt = (n, d=0) => Number(n).toLocaleString(S.lang === "en" ? "en-US" : "es-MX", {maximumFractionDigits:d, minimumFractionDigits:0});
-function cupsText(ml){ const c = ml/240; if (c < .2) return ""; if (Math.abs(c-1) < .13) return t("calc.cup1"); return t("calc.cups", {n: frac(c)}); }
-function tspFrac(x){ const opts = [[1/8,"⅛"],[1/4,"¼"],[1/3,"⅓"],[1/2,"½"],[2/3,"⅔"],[3/4,"¾"],[1,"1"]]; let best = opts[0]; for (const o of opts) if (Math.abs(o[0]-x) < Math.abs(best[0]-x)) best = o; return best[1]; }
-function limeText(g){ const x = g/4.5; if (g < .9) return t("calc.pinch"); if (x < 1.1) return t("calc.tspFrac", {n: tspFrac(x)}); return t("calc.tsp", {n: frac(x)}); }
-function spawnText(g){ const h = g/100; if (h < .35) return t("calc.halfHandful").replace(/^./, c=>c); if (h < .75) return t("calc.halfHandful"); if (h < 1.5) return t("calc.handful"); return t("calc.handfuls", {n: frac(h)}); }
+function cupsOf(ml){ const c = ml / M.tazaMl; if (Math.abs(c-1) < .13) return t("calc.cup1"); if (c < 1) return t("calc.cupFrac", {n: smallFrac(c)}); return t("calc.cups", {n: frac(c)}); }
+function bottlesOf(ml){
+  if (ml >= 1400){ const b = ml / 1500; if (Math.abs(b - Math.round(b*4)/4) < .06) return t("calc.bigBottles", {n: frac(b)}); }
+  const b = ml / M.botellaMl; return b >= .45 ? t("calc.bottles", {n: frac(b)}) : ""; }
+/* polvo (cal): gramos → cucharaditas o cucharadas medidoras rasas */
+function spoonsOf(g, dens){
+  const ml = g / dens, tsp = ml / M.cucharaditaMl;
+  if (tsp < 1.1) return t("calc.tspFrac", {n: smallFrac(tsp)});
+  if (tsp < 3) return frac(tsp) === "1" ? t("calc.tsp1") : t("calc.tsp", {n: frac(tsp)});
+  const tb = frac(ml / M.cucharadaMl); return tb === "1" ? t("calc.tbsp1") : t("calc.tbsp", {n: tb});
+}
+function packOf(g, pack){ if (!pack) return ""; const parts = pack / g; if (parts < 1.05) return t("calc.packAll"); return t("calc.pack1n", {n: fmt(Math.round(parts*2)/2, 1), p: fmt(pack)}); }
 function calc(){
-  const c = S.calc, g = Number(c.grams);
+  const c = S.calc, g = Number(c.grams), pack = Number(c.pack) || 0;
   if (!(g >= 50 && g <= 20000)) return null;
   if (c.type === "fiber"){
     const L = Math.max(1, Number(c.liters) || 5);
-    return {type:"fiber", grams:g, liters:L, lime:L*1};
+    return {type:"fiber", grams:g, liters:L, lime:L*M.calGL, pack};
   }
   const water = g*1.5*(c.boilOpen ? 1.05 : 1);
   const wet = g*2.5, spawn = wet*.10;
-  return {type:"pellet", grams:g, water, lime: water/1000, wet, spawn, spawnMin:[wet*.03, wet*.05], micro:[Math.round(wet/1000*8*2)/2, Math.round(wet/1000*10*2)/2]};
+  const batches = Math.max(1, Math.ceil(wet / M.microTandaMaxG));
+  const perBatch = Math.round(M.microMinPorKg * (wet/batches) / 1000 * 2) / 2;
+  return {type:"pellet", grams:g, water, lime: water/1000*M.calGL, wet, spawn, spawnMin:[wet*.03, wet*.05], batches, perBatch, pack};
 }
 function calcLines(r){
   if (!r) return [];
+  const spawnHow = g => [t("calc.spawnCups", {c: cupsOf(g / M.densidad.micelio)}), packOf(g, r.pack)].filter(Boolean).join("; ");
   if (r.type === "fiber") return [
     [t("calc.water"), `${fmt(r.liters,1)} L`, ""],
-    [t("calc.lime"), `${fmt(r.lime,1)} g`, limeText(r.lime)],
-    [t("calc.spawn"), "10 %", t("calc.fiberText")],
+    [t("calc.lime"), `${fmt(r.lime,1)} g`, spoonsOf(r.lime, M.densidad.cal)],
+    [t("calc.fiberStove"), "", t("calc.fiberText")],
+    [t("calc.spawn"), "", t("calc.fiberSpawn")],
   ];
   return [
-    [t("calc.water"), `${fmt(r.water)} ml`, cupsText(r.water)],
-    [t("calc.lime"), `${fmt(r.lime, r.lime < 1 ? 2 : 1)} g`, limeText(r.lime)],
+    [t("calc.pellet"), `${fmt(r.grams)} g`, cupsOf(r.grams / M.densidad.pellet)],
+    [t("calc.water"), `${fmt(r.water)} ml`, [cupsOf(r.water), bottlesOf(r.water)].filter(Boolean).join(" · ")],
+    [t("calc.lime"), `${fmt(r.lime, 1)} g`, spoonsOf(r.lime, M.densidad.cal)],
     [t("calc.wet"), `${fmt(r.wet)} g`, ""],
-    [t("calc.spawn"), `${fmt(r.spawn)} g`, spawnText(r.spawn)],
+    [t("calc.spawn"), `${fmt(r.spawn)} g`, spawnHow(r.spawn)],
     [t("calc.spawnMin"), `${fmt(r.spawnMin[0])}–${fmt(r.spawnMin[1])} g`, ""],
     [t("calc.stove"), "", t("calc.stoveText")],
-    [t("calc.micro"), "", t("calc.microText", {min:fmt(r.micro[0],1), max:fmt(r.micro[1],1)})],
+    [t("calc.micro"), "", t("calc.microText", {min: fmt(r.perBatch,1), n: r.batches})],
   ];
 }
 
@@ -600,12 +618,15 @@ function renderCalc(){
 <label for="cg">${esc(t("calc.grams"))}</label>
 <input id="cg" name="grams" type="number" inputmode="numeric" min="50" max="20000" step="10" value="${esc(c.grams)}">
 <div class="row" style="margin-top:8px">${[200,400,500,1000].map(n=>`<button type="button" class="small" data-g="${n}">${n} g</button>`).join("")}</div>
-<p class="note">${esc(t("calc.noScale"))}</p>
+<p class="note">${esc(t("calc.noScale", {g: fmt(Math.round(M.densidad.pellet*M.tazaMl/5)*5)}))}</p>
 <fieldset style="border:0;padding:0;margin:12px 0 0"><legend style="font-weight:600">${esc(t("calc.type"))}</legend>
 <label class="inline"><input type="radio" name="type" value="pellet"${c.type==="pellet"?" checked":""}>${esc(t("calc.type.pellet"))}</label>
 <label class="inline"><input type="radio" name="type" value="fiber"${c.type==="fiber"?" checked":""}>${esc(t("calc.type.fiber"))}</label></fieldset>
 ${c.type==="pellet" ? `<label class="inline"><input type="checkbox" name="boilOpen"${c.boilOpen?" checked":""}>${esc(t("calc.boilOpen"))}</label>`
  : `<label for="cl">${esc(t("calc.potLiters"))}</label><input id="cl" name="liters" type="number" inputmode="decimal" min="1" max="100" step="0.5" value="${esc(c.liters)}">`}
+<label for="cp">${esc(t("calc.packLabel"))}</label>
+<select id="cp" name="pack"><option value="">—</option>${M.paqueteMicelioG.map(n=>`<option value="${n}"${Number(c.pack)===n?" selected":""}>${n} g</option>`).join("")}</select>
+<p class="note">${esc(t("calc.measuresNote"))}</p>
 </form><div id="calcout" aria-live="polite"></div></div>
 <div class="box warn">${safe("safety.lime")}</div>
 <div class="box warn">${safe("safety.water")}</div>
@@ -1104,6 +1125,7 @@ document.addEventListener("input", e => {
     if (el.name === "grams") S.calc.grams = el.value;
     if (el.name === "liters") S.calc.liters = el.value;
     if (el.name === "boilOpen") S.calc.boilOpen = el.checked;
+    if (el.name === "pack") S.calc.pack = el.value;
     LS.set("calc", S.calc);
     if (el.name === "type"){ S.calc.type = el.value; LS.set("calc", S.calc); renderCalc(); return; }
     renderCalcOut();

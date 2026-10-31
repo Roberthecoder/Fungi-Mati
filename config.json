@@ -8,5 +8,25 @@
     "nota": "TODO Robert: confirmar costo por unidad. 10 USD sale del protocolo v1 y 30 USD de otros materiales; mientras no se confirme, la página muestra el rango."
   },
   "garantiaDias": 8,
-  "mercadoLibre": true
+  "mercadoLibre": true,
+  "medidas": {
+    "_comment": "Conversiones caseras de la calculadora. tazaMl/cucharadaMl/cucharaditaMl son medidas estándar (taza y cucharas medidoras). densidad = gramos por mililitro de polvo o grano suelto, sin apretar; calibrar pesando una taza rasa.",
+    "tazaMl": 240,
+    "cucharadaMl": 15,
+    "cucharaditaMl": 5,
+    "botellaMl": 600,
+    "calGL": 10,
+    "microMinPorKg": 15,
+    "microTandaMaxG": 1000,
+    "densidad": {
+      "pellet": 0.65,
+      "cal": 0.5,
+      "micelio": 0.6
+    },
+    "paqueteMicelioG": [
+      250,
+      500,
+      1000
+    ]
+  }
 }
