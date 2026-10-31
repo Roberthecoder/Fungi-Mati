@@ -50,13 +50,17 @@ La versión 1 (mayo de 2026) alimentó al primer chatbot en Botpress. El experim
 | Tema | v1 | v2 | Por qué |
 |---|---|---|---|
 | Agua para pellets | 60 % del peso seco (1 kg → 600 ml) | 1.5 veces el peso seco (400 g → 600 ml; 1 kg → 1.5 L) + prueba del puño | Validado en W4: 60 % deja el pellet comprimido seco |
-| Cal | 1 cucharada (10–15 g) por 5 L | 1 g por litro (una pizca para 600 ml) + advertencia de cal viva contra cal hidratada | Validado en W4; hubo confusión con cal viva |
+| Cal | 1 cucharada (10–15 g) por 5 L | 10 g por litro (1 %; 6 g = 2½ cucharaditas medidoras para 600 ml) + advertencia de cal viva contra cal hidratada | W4 usó 1 g/L; la literatura sitúa el óptimo en 1 % y, como el pellet absorbe toda el agua, queda en 1.5 % del peso seco (mejor rango: hasta 2 %). Hubo confusión con cal viva |
 | Pasteurización de pellets | Verter agua caliente en la bolsa «pasteuriza e hidrata» | Protocolo B: hervir sumergido 15–20 min, o verter, tapar y aislar ≥ 1 h, siempre en olla. Nuevo Protocolo C de microondas | Verter sin aislar baja en minutos a 30–50 °C (zona de moho); agua hirviendo en bolsa delgada quema |
 | Sellado | «Nudo simple, no muy apretado» | Bloque de oxígeno: razón, prueba del aire, 4–6 microperforaciones | Nudos apretados causaron olor agrio y pérdidas |
+| Microondas | — | 15 min por kg de sustrato empapado, en tandas de máximo 1 kg (empírico) | Nuevo Protocolo C |
+| Fibra | Hervir 1 h | Hervir 1 h | Material más crudo que el pellet |
+| Micelio | ~6 meses a temperatura ambiente | Refrigerar (1–4 °C), salvo *P. djamor* | Bacterias oportunistas a temperatura ambiente |
+| Medidas | Cucharada, puñado, pizca | Taza y cucharas medidoras rasas, botella de 600 ml, fracción del paquete de micelio (densidades editables en `config.json`) | Que cualquiera pueda replicarlas igual |
 | Costo | ~10 USD | Rango configurable en `config.json`, pendiente de confirmar | Había dos cifras distintas (10 y 30 USD) |
 | Nuevo | — | Glosario en línea, identificación visual de materiales, escalado a cualquier cantidad, bloque de seguridad, seguimiento posinoculación, respuesta al miedo a la toxicidad | Vocabulario y miedo fueron barreras en W4 |
 
-Las cifras validadas en W4 se conservaron aunque la literatura sugiera otra cosa; esas diferencias están en `knowledge/FUENTES.md` como `TODO Robert:` para decisión del autor (por ejemplo, la dosis de cal de 1 g/L está por debajo de los rangos publicados).
+Las cifras validadas en W4 se conservaron salvo decisión explícita del autor (la cal pasó de 1 g/L a 10 g/L). Las diferencias pendientes están en `knowledge/FUENTES.md` como `TODO Robert:`; las decisiones tomadas, en su sección «Decisiones del autor».
 
 ## Cómo contribuir al protocolo
 
@@ -95,7 +99,7 @@ Si hablas alguna de estas lenguas:
 
 **Build.** Node 18+, no dependencies: `node build.mjs` writes `dist/index.html`.
 
-**Protocol v2.** v1 (May 2026) fed the first Botpress chatbot. The W4 kitchen experiment with 16 novice volunteers showed it failed at execution: amounts without a scale, jargon, bag sealing, a "pasteurization" that didn't pasteurize, and the wrong lime. v2 changes water to 1.5× dry weight with the fist test, lime to 1 g/L with a quicklime warning, replaces pour-in-the-bag with boil-or-insulate in a pot (plus a microwave protocol), adds the oxygen block (loose knot, air test, pinholes), and adds an inline glossary, material identification, scaling, a safety block, post-inoculation follow-up and a toxicity answer. Every figure is checked against *Pleurotus* literature in `knowledge/FUENTES.md`; where literature disagrees with a W4-validated figure, the validated figure stays and the discrepancy is flagged `TODO Robert:`.
+**Protocol v2.** v1 (May 2026) fed the first Botpress chatbot. The W4 kitchen experiment with 16 novice volunteers showed it failed at execution: amounts without a scale, jargon, bag sealing, a "pasteurization" that didn't pasteurize, and the wrong lime. v2 changes water to 1.5× dry weight with the fist test, lime to 10 g/L (1 %, the literature optimum) with a quicklime warning, uses only reproducible measures (measuring cups and spoons, 600 ml bottles, fractions of the spawn pack), refrigerates spawn, boils fiber 1 hour, replaces pour-in-the-bag with boil-or-insulate in a pot (plus a microwave protocol), adds the oxygen block (loose knot, air test, pinholes), and adds an inline glossary, material identification, scaling, a safety block, post-inoculation follow-up and a toxicity answer. Every figure is checked against *Pleurotus* literature in `knowledge/FUENTES.md`; where literature disagrees with a W4-validated figure, the validated figure stays and the discrepancy is flagged `TODO Robert:`.
 
 **Contributing.** Edit `knowledge/protocolo.md` (keep the `<!-- es:id -->` / `<!-- en:id -->` markers and change both languages); back new figures with a *Pleurotus* reference in `knowledge/FUENTES.md`. Native speakers of Nahuatl, Yucatec Maya, Purépecha or Wixárika: the translations in `knowledge/i18n/` are AI drafts — please correct them by pull request (edit the values, not the keys or `{placeholders}`), or open an issue with your corrections.
 
