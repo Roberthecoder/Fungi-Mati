@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Fungi Mati: guía para cultivar setas en casa</title>
+<style>
+:root{
+  --bg:#f6f0e1; --card:#fffaf0; --fg:#1c1a15; --muted:#544e42; --line:#d8cdb4;
+  --green:#22412c; --green2:#3b6a49; --on-green:#fffaf0; --soft:#e7efe2;
+  --warn:#8f2d0f; --warn-bg:#fbe5d6; --ok:#25643a; --water:#4a8cc4;
+  --pellet:#a87f4f; --saw:#cfab7b; --myc:#ffffff; --mold:#3d8b37; --gray:#8a8a80;
+  --focus:#c45a12;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme=light]){
+    --bg:#11150f; --card:#1a2018; --fg:#f2ecdc; --muted:#c3bba8; --line:#3a4535;
+    --green:#a6d1ad; --green2:#7fb78b; --on-green:#11150f; --soft:#22301f;
+    --warn:#ffb08a; --warn-bg:#3b1f12; --ok:#8fd19f; --water:#7db4e6;
+    --pellet:#b98d5a; --saw:#d8b585; --myc:#f4f1e8; --mold:#62b85a; --gray:#9a9a90;
+  }
+}
+:root[data-theme=dark]{
+  --bg:#11150f; --card:#1a2018; --fg:#f2ecdc; --muted:#c3bba8; --line:#3a4535;
+  --green:#a6d1ad; --green2:#7fb78b; --on-green:#11150f; --soft:#22301f;
+  --warn:#ffb08a; --warn-bg:#3b1f12; --ok:#8fd19f; --water:#7db4e6;
+  --pellet:#b98d5a; --saw:#d8b585; --myc:#f4f1e8; --mold:#62b85a; --gray:#9a9a90;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif;overflow-x:hidden}
+a{color:var(--green2)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+.wide{max-width:none}
+header.top{position:sticky;top:0;z-index:10;background:var(--green);color:var(--on-green)}
+.top .row{display:flex;align-items:center;gap:12px;padding:10px 16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:8px;font-weight:700;font-size:20px;margin-right:auto}
+.brand svg{width:30px;height:30px}
+.top select{width:auto;max-width:60vw}
+.top select,.top button{font:inherit;font-size:16px;min-height:44px;border-radius:10px;border:2px solid var(--on-green);background:transparent;color:var(--on-green);padding:4px 10px}
+.top select option{color:#1c1a15;background:#fffaf0}
+nav.tabs{display:flex;overflow-x:auto;gap:4px;padding:0 12px 8px;scrollbar-width:none}
+nav.tabs a{flex:0 0 auto;color:var(--on-green);text-decoration:none;padding:8px 14px;border-radius:999px;font-weight:600;font-size:17px}
+nav.tabs a[aria-current=page]{background:var(--on-green);color:var(--green)}
+main{padding:16px 0 48px}
+section.view{display:none}
+section.view.on{display:block}
+h1{font-size:28px;line-height:1.2;margin:8px 0 12px}
+h2{font-size:23px;line-height:1.25;margin:28px 0 10px}
+h3{font-size:20px;margin:18px 0 8px}
+p{margin:8px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin:14px 0}
+.lead{font-size:21px;font-weight:600}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){.grid2{grid-template-columns:1fr}}
+button,.btn{font:inherit;font-weight:600;min-height:48px;padding:10px 16px;border-radius:12px;border:2px solid var(--green);background:var(--card);color:var(--green);cursor:pointer;text-align:left}
+button.primary{background:var(--green);color:var(--on-green)}
+button:disabled{opacity:.5;cursor:not-allowed}
+button.small{min-height:40px;padding:6px 12px;font-size:16px}
+button.stage{display:flex;gap:10px;align-items:center;width:100%}
+button.stage b{display:inline-grid;place-items:center;min-width:32px;height:32px;border-radius:50%;background:var(--green);color:var(--on-green)}
+button.stage[aria-pressed=true]{background:var(--soft)}
+ol.steps{padding-left:28px;margin:8px 0}
+ol.steps li{margin:8px 0}
+.box{border-left:5px solid var(--green2);background:var(--soft);padding:10px 14px;border-radius:8px;margin:10px 0}
+.box.warn{border-color:var(--warn);background:var(--warn-bg)}
+.warn-t{color:var(--warn);font-weight:700}
+.es-below{display:block;margin-top:6px;font-size:16px;color:var(--muted)}
+.note{font-size:16px;color:var(--muted)}
+.banner{background:var(--warn-bg);border-bottom:2px solid var(--warn);padding:10px 16px;font-size:16px}
+details{margin:12px 0}
+summary{cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center}
+.md table{border-collapse:collapse;width:100%;font-size:16px;display:block;overflow-x:auto}
+.md th,.md td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+.md blockquote{margin:8px 0;padding:6px 12px;border-left:4px solid var(--line);color:var(--muted)}
+.md code{font-size:15px;background:var(--soft);padding:1px 4px;border-radius:4px}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input,select,textarea{font:inherit;width:100%;min-height:48px;padding:8px 10px;border-radius:10px;border:2px solid var(--line);background:var(--card);color:var(--fg)}
+input[type=checkbox],input[type=radio]{width:24px;min-height:24px;height:24px;vertical-align:middle;margin-right:8px}
+label.inline{display:flex;align-items:center;font-weight:500}
+.err{color:var(--warn);font-size:16px;font-weight:600;min-height:0}
+.field-bad input,.field-bad select{border-color:var(--warn)}
+.res{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-items:baseline}
+.res dt{font-weight:700}
+.res dd{margin:0}
+.res .big{font-size:22px;font-weight:700}
+.anim{margin:12px 0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px}
+.anim svg{display:block;width:100%;height:auto;max-height:340px}
+.anim figcaption{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;font-size:16px}
+.anim.paused *{animation-play-state:paused!important}
+.animgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.media img,.media video{max-width:100%;border-radius:10px;display:block}
+/* chat */
+#chatlog{display:flex;flex-direction:column;gap:12px;margin:12px 0}
+.msg{padding:12px 14px;border-radius:14px;max-width:100%;border:1px solid var(--line);background:var(--card)}
+.msg.user{background:var(--soft);align-self:flex-end;max-width:min(100%,760px)}
+.msg .who{font-size:14px;font-weight:700;color:var(--muted);margin-bottom:4px}
+.msg img{max-width:220px;border-radius:8px;display:block;margin:6px 0}
+.msg ol,.msg ul{padding-left:26px;margin:6px 0}
+.composer{position:sticky;bottom:0;background:var(--bg);padding:10px 0;border-top:1px solid var(--line)}
+.composer textarea{min-height:80px;resize:vertical}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+#chatvisual:empty{display:none}
+#stagecard,#logform{scroll-margin-top:140px}
+.thinking{color:var(--muted);font-style:italic}
+table.data{border-collapse:collapse;font-size:15px;width:100%}
+table.data th,table.data td{border:1px solid var(--line);padding:6px;text-align:left;white-space:nowrap}
+.scrollx{overflow-x:auto;max-width:100%}
+.bag{border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0;background:var(--card)}
+footer{border-top:1px solid var(--line);padding:20px 16px 40px;font-size:16px;color:var(--muted)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.hidden{display:none!important}
+/* svg shared */
+.s-ln{stroke:var(--fg);stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.s-tx{fill:var(--fg);font:600 13px system-ui,sans-serif}
+.s-txs{fill:var(--muted);font:12px system-ui,sans-serif}
+.s-warn{fill:var(--warn)}
+.s-ok{fill:var(--ok)}
+.s-bag{fill:var(--card);stroke:var(--fg);stroke-width:2.5}
+.tb{transform-box:view-box}
+</style>
+</head>
+<body>
+<script>window.FM_DATA = null; /*@@FM_DATA@@*/</script>
+<header class="top">
+  <div class="row">
+    <div class="brand"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 15c0-6 6-11 13-11s13 5 13 11c0 1-1 2-2 2H5c-1 0-2-1-2-2z" fill="currentColor"/><path d="M12 17h8l-1 10c0 1-1 2-3 2s-3-1-3-2z" fill="currentColor" opacity=".75"/></svg><span>Fungi Mati</span></div>
+    <label class="sr" for="lang" data-t="lang.label">Idioma</label>
+    <select id="lang" aria-label="Idioma"></select>
+    <button id="theme" type="button" aria-label="Cambiar modo claro u oscuro"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
+  </div>
+  <nav class="tabs" id="tabs"></nav>
+</header>
+<div id="i18nbanner" class="banner hidden" role="note"></div>
+<main>
+  <section class="view wrap" id="v-guia"></section>
+  <section class="view wrap" id="v-calculadora"></section>
+  <section class="view wrap wide" id="v-asistente" style="padding:0 16px"></section>
+  <section class="view wrap" id="v-bitacora"></section>
+  <section class="view wrap" id="v-fuentes"></section>
+</main>
+<footer><div class="wrap" id="foot"></div></footer>
+
+<script>
+"use strict";
+(async function main(){
+
+/* ============ datos ============ */
+async function loadData(){
+  if (window.FM_DATA) return window.FM_DATA;
+  // Copia sin build (por ejemplo GitHub Pages sirviendo la raíz del repo): leer los archivos.
+  const txt = p => fetch(p).then(r => r.ok ? r.text() : "").catch(() => "");
+  const js = p => fetch(p).then(r => r.ok ? r.json() : null).catch(() => null);
+  const langs = ["es","en","nah","yua","tsz","hch"];
+  const d = { protocolo: await txt("knowledge/protocolo.md"), fuentes: await txt("knowledge/FUENTES.md"),
+    instrucciones: await txt("knowledge/instrucciones-ia.md"), config: (await js("config.json")) || {}, i18n: {} };
+  for (const l of langs){ const j = await js("knowledge/i18n/"+l+".json"); if (j) d.i18n[l] = j; }
+  return d;
+}
+const D = await loadData();
+const CFG = D.config || {};
+const LANGS = ["es","en","nah","yua","tsz","hch"].filter(l => D.i18n && D.i18n[l]);
+const INDIG = new Set(["nah","yua","tsz","hch"]);
+const STAGES = ["a","b","c","d","e","f"];
+const STAGE_BLOCK = {a:"inicio", b:"preparacion", c:"incubacion", d:"fructificacion", e:"cosecha", f:"problemas"};
+const STAGE_ANIMS = {
+  a:["materiales","hidratacion"], b:["hidratacion","puno","pasteurizacion","inoculacion","sellado","perforaciones"],
+  c:["colonizacion","sellado"], d:["fructificacion"], e:["fructificacion"], f:["colonizacion","sellado","puno"]
+};
+const ANIMS = ["hidratacion","puno","pasteurizacion","inoculacion","sellado","perforaciones","colonizacion","fructificacion","materiales"];
+const VIEWS = ["guia","calculadora","asistente","bitacora","fuentes"];
+
+/* ============ almacenamiento local (solo comodidad) ============ */
+const LS = {
+  get(k, d){ try { const v = localStorage.getItem("fm."+k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v){ try { localStorage.setItem("fm."+k, JSON.stringify(v)); } catch {} }
+};
+
+/* ============ estado ============ */
+const S = {
+  lang: LS.get("lang", null) || "es", // español por defecto
+  stage: LS.get("stage", null),
+  calc: Object.assign({grams:400, type:"pellet", boilOpen:false, liters:5}, LS.get("calc", {})),
+  theme: LS.get("theme", "auto"),
+};
+if (!LANGS.includes(S.lang)) S.lang = "es";
+const caps = { sample:null, db:null, user:null, downloads:null, assets:null, uid:null, canEdit:false, imagesOK:false, toolsOK:false, sampleOff:false };
+
+/* ============ i18n ============ */
+function t(k, vars){
+  let s = (D.i18n[S.lang] && D.i18n[S.lang][k]);
+  if (s == null) s = D.i18n.es[k];
+  if (s == null) return k;
+  if (vars) s = String(s).replace(/\{(\w+)\}/g, (m, n) => vars[n] != null ? vars[n] : m);
+  return s;
+}
+const tes = k => D.i18n.es[k] != null ? D.i18n.es[k] : k;
+const isIndig = () => INDIG.has(S.lang);
+function cards(){ return (D.i18n[S.lang] && D.i18n[S.lang].cards) || D.i18n.es.cards; }
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const $ = (s, r=document) => r.querySelector(s);
+/* Una advertencia de seguridad: en lenguas indígenas siempre va también en español debajo. */
+function safe(k){
+  const main = `<span>${esc(t(k))}</span>`;
+  return isIndig() ? main + `<span class="es-below" lang="es">${esc(t("safety.spanishBelow"))} ${esc(tes(k))}</span>` : main;
+}
+
+/* ============ markdown mínimo ============ */
+function inline(s){
+  return s
+    .replace(/`([^`]+)`/g, "<code>$1</code>")
+    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+    .replace(/(^|[^*])\*([^*\s][^*]*)\*/g, "$1<em>$2</em>")
+    .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+}
+function md(src){
+  src = String(src || "").replace(/<!--[\s\S]*?-->/g, "");
+  const lines = esc(src).split(/\r?\n/);
+  let out = "", list = null, para = [], i = 0;
+  const flushP = () => { if (para.length){ out += "<p>"+inline(para.join(" "))+"</p>"; para = []; } };
+  const flushL = () => { if (list){ out += `</${list}>`; list = null; } };
+  while (i < lines.length){
+    const l = lines[i];
+    let m;
+    if (/^\s*$/.test(l)){ flushP(); flushL(); i++; continue; }
+    if ((m = l.match(/^(#{1,6})\s+(.*)$/))){ flushP(); flushL(); const n = Math.min(6, m[1].length+1); out += `<h${n}>${inline(m[2])}</h${n}>`; i++; continue; }
+    if (/^\s*(---|\*\*\*)\s*$/.test(l)){ flushP(); flushL(); out += "<hr>"; i++; continue; }
+    if (/^\s*\|/.test(l)){
+      flushP(); flushL();
+      const rows = [];
+      while (i < lines.length && /^\s*\|/.test(lines[i])){ rows.push(lines[i]); i++; }
+      const cells = r => r.trim().replace(/^\||\|$/g, "").split("|").map(c => c.trim());
+      let h = cells(rows[0]), body = rows.slice(1);
+      if (body.length && /^[\s|:-]+$/.test(body[0])) body = body.slice(1);
+      out += "<table><thead><tr>"+h.map(c=>"<th>"+inline(c)+"</th>").join("")+"</tr></thead><tbody>"+
+        body.map(r=>"<tr>"+cells(r).map(c=>"<td>"+inline(c)+"</td>").join("")+"</tr>").join("")+"</tbody></table>";
+      continue;
+    }
+    if ((m = l.match(/^\s*&gt;\s?(.*)$/))){ flushP(); flushL(); out += "<blockquote>"+inline(m[1])+"</blockquote>"; i++; continue; }
+    if ((m = l.match(/^\s*(\d+)[.)]\s+(.*)$/))){ flushP(); if (list !== "ol"){ flushL(); out += "<ol>"; list = "ol"; } out += "<li>"+inline(m[2])+"</li>"; i++; continue; }
+    if ((m = l.match(/^\s*[-*•]\s+(.*)$/))){ flushP(); if (list !== "ul"){ flushL(); out += "<ul>"; list = "ul"; } out += "<li>"+inline(m[1])+"</li>"; i++; continue; }
+    if (list){ // continuación de un elemento de lista
+      out = out.replace(/<\/li>$/, " "+inline(l.trim())+"</li>"); i++; continue;
+    }
+    para.push(l.trim()); i++;
+  }
+  flushP(); flushL();
+  return `<div class="md">${out}</div>`;
+}
+/* Bloques del protocolo: <!-- es:id --> ... hasta el siguiente marcador */
+function protoBlocks(lg){
+  const out = {}; const re = /<!--\s*(es|en):([\w-]+)\s*-->/g;
+  const src = D.protocolo || ""; let m, last = null;
+  const marks = [];
+  while ((m = re.exec(src))) marks.push({lang:m[1], id:m[2], start:m.index, end:re.lastIndex});
+  marks.forEach((mk, i) => { if (mk.lang !== lg) return; const stop = i+1 < marks.length ? marks[i+1].start : src.length; out[mk.id] = stripTodo(src.slice(mk.end, stop)).trim(); });
+  return out;
+}
+function protocolForAI(){
+  const src = D.protocolo || "";
+  const i = src.search(/<!--\s*en:/);
+  return stripTodo(i > 0 ? src.slice(0, i) : src).replace(/<!--[\s\S]*?-->/g, "");
+}
+
+/* Las notas para el autor no se muestran ni se mandan a la IA. */
+function stripTodo(s){ return String(s || "").split(/\r?\n/).filter(l => !/TODO Robert:/.test(l)).join("\n"); }
+
+/* ============ animaciones SVG ============ */
+let animSeq = 0;
+function kf(name, frames){ return `@keyframes ${name}{${frames}}`; }
+function wrapT(x, y, str, max, cls, extra){ // texto SVG en varias líneas
+  const words = String(str).split(/\s+/), lines = []; let cur = "";
+  for (const w of words){ if ((cur + " " + w).trim().length > max && cur){ lines.push(cur); cur = w; } else cur = (cur + " " + w).trim(); }
+  if (cur) lines.push(cur);
+  return `<text class="${cls}" x="${x}" y="${y}" text-anchor="middle"${extra||""}>${lines.map((l,i)=>`<tspan x="${x}" dy="${i?14:0}">${esc(l)}</tspan>`).join("")}</text>`;
+}
+function animSVG(name){
+  const u = "a" + (++animSeq); // ids únicos por instancia
+  const T = (k) => esc(t(k));
+  switch(name){
+  case "hidratacion": {
+    const pel = [70,92,114,136,158,180,98,150].map((x,i)=>`<rect x="${x}" y="${i>5?150:162}" width="18" height="12" rx="5" fill="var(--pellet)"/>`).join("");
+    const dots = Array.from({length:26},(_,i)=>`<circle cx="${70+((i*37)%140)}" cy="${120+((i*13)%50)}" r="2" fill="var(--pellet)"/>`).join("");
+    return `<svg viewBox="0 0 320 200" role="img" aria-label="${T("anim.hidratacion")}"><style>
+${kf(u+"w","0%{transform:scaleY(0)}35%,100%{transform:scaleY(1)}")}
+${kf(u+"p","0%,40%{opacity:1}65%,100%{opacity:0}")}
+${kf(u+"s","0%,40%{opacity:0;transform:scaleY(.3)}75%,100%{opacity:1;transform:scaleY(1)}")}
+.${u}w{transform-origin:140px 178px;animation:${u}w 5s ease-in-out infinite}
+.${u}p{animation:${u}p 5s infinite}
+.${u}s{transform-origin:140px 178px;animation:${u}s 5s infinite}
+</style>
+<path class="s-ln" d="M58 36 V178 H222 V36"/>
+<rect class="tb ${u}w" x="60" y="88" width="160" height="90" fill="var(--water)" opacity=".45"/>
+<g class="${u}p">${pel}</g>
+<g class="tb ${u}s"><path d="M62 178 Q140 104 218 178Z" fill="var(--saw)"/>${dots}</g>
+<line x1="52" y1="88" x2="232" y2="88" stroke="var(--water)" stroke-width="2" stroke-dasharray="6 4"/>
+<text class="s-tx" x="238" y="92">600 ml</text>
+<text class="s-tx" x="238" y="172">400 g</text>
+<text class="s-txs" x="238" y="112">× 1.5</text>
+</svg>`; }
+  case "puno": {
+    const fist = (x) => `<g class="tb ${u}f" style="transform-origin:${x+60}px 55px"><rect x="${x+28}" y="28" width="64" height="52" rx="20" fill="var(--saw)" stroke="var(--fg)" stroke-width="2.5"/><path class="s-ln" d="M${x+44} 34v20M${x+58} 32v22M${x+72} 34v20"/></g>`;
+    return `<svg viewBox="0 0 360 215" role="img" aria-label="${T("anim.puno")}"><style>
+${kf(u+"q","0%,15%{transform:scaleX(1)}35%,70%{transform:scaleX(.88)}90%,100%{transform:scaleX(1)}")}
+${kf(u+"d","0%,30%{transform:translateY(0);opacity:0}35%{opacity:1}70%{transform:translateY(60px);opacity:1}75%,100%{opacity:0}")}
+${kf(u+"st","0%,30%{transform:scaleY(0)}45%,75%{transform:scaleY(1)}90%,100%{transform:scaleY(0)}")}
+${kf(u+"c","0%,30%{transform:translate(0,0) rotate(0);opacity:0}35%{opacity:1}80%{transform:translate(var(--dx),70px) rotate(90deg);opacity:1}90%,100%{opacity:0}")}
+.${u}f{animation:${u}q 4s infinite}
+.${u}d{animation:${u}d 4s infinite}
+.${u}d2{animation-delay:.6s}
+.${u}st{transform-origin:0 84px;animation:${u}st 4s infinite}
+.${u}c{animation:${u}c 4s infinite}
+</style>
+${fist(0)}${fist(120)}${fist(240)}
+<circle class="${u}d" cx="60" cy="88" r="5" fill="var(--water)"/><circle class="${u}d ${u}d2" cx="64" cy="88" r="4" fill="var(--water)"/>
+<rect class="tb ${u}st" x="176" y="84" width="8" height="70" fill="var(--water)"/><ellipse cx="180" cy="158" rx="30" ry="6" fill="var(--water)" opacity=".5"/>
+${[-14,-4,6,14,0].map((dx,i)=>`<rect class="${u}c" style="--dx:${dx}px;animation-delay:${i*0.12}s" x="${296+dx/2}" y="84" width="7" height="5" fill="var(--saw)"/>`).join("")}
+<text class="s-tx s-ok" x="60" y="186" text-anchor="middle">✓</text>
+<text class="s-tx" x="60" y="206" text-anchor="middle">${T("anim.puno.ok")}</text>
+<text class="s-tx s-warn" x="180" y="186" text-anchor="middle">✗</text>
+<text class="s-tx" x="180" y="206" text-anchor="middle">${T("anim.puno.wet")}</text>
+<text class="s-tx s-warn" x="300" y="186" text-anchor="middle">✗</text>
+<text class="s-tx" x="300" y="206" text-anchor="middle">${T("anim.puno.dry")}</text>
+</svg>`; }
+  case "pasteurizacion": {
+    const X = m => 44 + m*4.6, Y = T => 180 - (T-20)*2;
+    const pour = [[0,95],[2,75],[5,60],[10,50],[20,42],[35,37],[60,33]].map(([m,T])=>X(m)+","+Y(T)).join(" ");
+    const hold = [[0,97],[18,97],[20,94],[40,85],[60,78]].map(([m,T])=>X(m)+","+Y(T)).join(" ");
+    return `<svg viewBox="0 0 340 225" role="img" aria-label="${T("anim.pasteurizacion")}"><style>
+${kf(u+"l","0%{stroke-dashoffset:100}70%,100%{stroke-dashoffset:0}")}
+.${u}l{stroke-dasharray:100;animation:${u}l 5s linear infinite}
+</style>
+<rect x="44" y="${Y(50)}" width="276" height="${Y(30)-Y(50)}" fill="var(--warn)" opacity=".18"/>
+<text class="s-txs" x="318" y="${Y(50)+14}" text-anchor="end" style="fill:var(--warn)">${T("anim.past.zone")}</text>
+<path class="s-ln" d="M44 16V180H322"/>
+${[100,50,30].map(v=>`<text class="s-txs" x="38" y="${Y(v)+4}" text-anchor="end">${v}°</text><line x1="40" x2="44" y1="${Y(v)}" y2="${Y(v)}" stroke="var(--fg)"/>`).join("")}
+${[0,30,60].map(v=>`<text class="s-txs" x="${X(v)}" y="196" text-anchor="middle">${v}</text>`).join("")}
+<text class="s-txs" x="322" y="212" text-anchor="end">${T("anim.past.time")}</text>
+<polyline class="${u}l" pathLength="100" points="${pour}" fill="none" stroke="var(--warn)" stroke-width="4" stroke-linecap="round"/>
+<polyline class="${u}l" pathLength="100" points="${hold}" fill="none" stroke="var(--ok)" stroke-width="4" stroke-linecap="round"/>
+<rect x="60" y="4" width="12" height="4" fill="var(--ok)"/><text class="s-txs" x="76" y="10">${T("anim.past.hold")}</text>
+<rect x="60" y="${Y(64)}" width="12" height="4" fill="var(--warn)"/><text class="s-txs" x="76" y="${Y(64)+6}">${T("anim.past.pour")}</text>
+</svg>`; }
+  case "inoculacion": {
+    let layers = "", style = "";
+    for (let i = 0; i < 6; i++){
+      const y = 170 - i*22, on = 5 + i*12;
+      style += kf(u+"L"+i, `0%,${on}%{opacity:0}${on+6}%,92%{opacity:1}100%{opacity:0}`) + `.${u}L${i}{animation:${u}L${i} 6s infinite}`;
+      layers += (i % 2 === 0)
+        ? `<rect class="${u}L${i}" x="64" y="${y}" width="132" height="20" fill="var(--saw)"/>`
+        : `<g class="${u}L${i}">${Array.from({length:11},(_,k)=>`<ellipse cx="${72+k*12}" cy="${y+10}" rx="5" ry="3.4" fill="var(--myc)" stroke="var(--gray)" stroke-width=".8"/>`).join("")}</g>`;
+    }
+    return `<svg viewBox="0 0 320 210" role="img" aria-label="${T("anim.inoculacion")}"><style>${style}</style>
+<path class="s-bag" d="M60 194 L60 52 Q60 40 80 36 L108 24 L152 24 L180 36 Q200 40 200 52 L200 194 Z" fill-opacity=".3"/>
+${layers}
+<rect x="236" y="44" width="34" height="146" fill="var(--saw)" stroke="var(--fg)" stroke-width="2"/>
+<rect x="236" y="44" width="34" height="15" fill="var(--myc)" stroke="var(--fg)" stroke-width="2"/>
+<text class="s-tx" x="253" y="204" text-anchor="middle">1 kg</text>
+<text class="s-tx" x="276" y="56">10 %</text>
+${wrapT(262, 14, t("anim.inoc.handful"), 14, "s-txs")}
+</svg>`; }
+  case "sellado": {
+    return `<svg viewBox="0 0 360 242" role="img" aria-label="${T("anim.sellado")}"><style>
+${kf(u+"b","0%,100%{transform:scale(1,1)}25%{transform:scale(1.05,1.03)}50%{transform:scale(.97,.99)}")}
+${kf(u+"in","0%{transform:translateY(-26px);opacity:0}20%{opacity:1}45%{transform:translateY(6px);opacity:0}100%{opacity:0}")}
+${kf(u+"out","0%,45%{transform:translateY(0);opacity:0}55%{opacity:1}80%{transform:translateY(-30px);opacity:0}100%{opacity:0}")}
+${kf(u+"g","0%,15%{fill:var(--card)}60%,100%{fill:var(--gray)}")}
+${kf(u+"s","0%,45%{opacity:0;transform:scale(.6)}60%,100%{opacity:1;transform:scale(1)}")}
+${kf(u+"h","0%,62%{transform:translateX(0)}72%,84%{transform:translateX(var(--hx))}94%,100%{transform:translateX(0)}")}
+${kf(u+"p","0%,70%{opacity:0}76%,86%{opacity:1}92%,100%{opacity:0}")}
+.${u}b{transform-origin:90px 200px;animation:${u}b 6s ease-in-out infinite}
+.${u}in{animation:${u}in 3s infinite}.${u}out{animation:${u}out 3s infinite}
+.${u}g{animation:${u}g 6s infinite}
+.${u}s{transform-origin:300px 70px;animation:${u}s 6s infinite}
+.${u}h{animation:${u}h 6s infinite}.${u}p{animation:${u}p 6s infinite}
+</style>
+<g class="tb ${u}b"><path class="s-bag" d="M40 196 L40 90 Q40 70 70 64 L84 44 L96 44 L110 64 Q140 70 140 90 L140 196 Z"/></g>
+<path class="s-ln" d="M80 42 q10 -14 20 0"/>
+<g class="${u}in"><path d="M70 10 v18 m-5 -6 l5 6 l5 -6" class="s-ln" style="stroke:var(--ok)"/><text class="s-txs" x="46" y="18" style="fill:var(--ok)">O₂</text></g>
+<g class="${u}out"><path d="M110 40 v-18 m-5 6 l5 -6 l5 6" class="s-ln" style="stroke:var(--muted)"/><text class="s-txs" x="118" y="30">CO₂</text></g>
+<path class="tb ${u}h" style="--hx:10px" d="M26 130 q-8 20 0 40" stroke="var(--pellet)" stroke-width="7" fill="none" stroke-linecap="round"/>
+<path class="tb ${u}h" style="--hx:-10px" d="M154 130 q8 20 0 40" stroke="var(--pellet)" stroke-width="7" fill="none" stroke-linecap="round"/>
+<g class="${u}p"><path class="s-ln" d="M82 34 l-8 -10 M90 32 v-12 M98 34 l8 -10" style="stroke:var(--water)"/></g>
+<text class="s-tx" x="90" y="214" text-anchor="middle"><tspan class="s-ok">✓</tspan> ${T("anim.sell.loose")}</text>
+<path class="s-bag ${u}g" d="M220 196 L220 92 Q220 76 248 72 L262 58 L278 58 L292 72 Q320 76 320 92 L320 196 Z"/>
+<rect x="260" y="50" width="20" height="10" rx="3" fill="var(--fg)"/>
+<g class="tb ${u}s"><circle cx="300" cy="70" r="34" fill="var(--warn-bg)" stroke="var(--warn)" stroke-width="2"/><text class="s-txs" x="300" y="74" text-anchor="middle" style="fill:var(--warn)">${T("anim.sell.sour")}</text></g>
+<text class="s-tx" x="270" y="214" text-anchor="middle"><tspan class="s-warn">✗</tspan> ${T("anim.sell.tight")}</text>
+<text class="s-txs" x="180" y="236" text-anchor="middle">${T("anim.sell.squeeze")}</text>
+</svg>`; }
+  case "perforaciones": {
+    const pts = [[90,80],[130,72],[170,82],[100,112],[145,104],[180,116]];
+    let style = "", holes = "";
+    pts.forEach(([x,y],i)=>{ const on = 8+i*12;
+      style += kf(u+"h"+i, `0%,${on}%{opacity:0;transform:scale(2.4)}${on+5}%{opacity:1;transform:scale(1)}92%{opacity:1}100%{opacity:0}`) + `.${u}h${i}{transform-origin:${x}px ${y}px;animation:${u}h${i} 5s infinite}`;
+      holes += `<g class="tb ${u}h${i}"><circle cx="${x}" cy="${y}" r="3.5" fill="var(--fg)"/><path d="M${x-8} ${y}h-4M${x+8} ${y}h4M${x} ${y-8}v-4" stroke="var(--fg)" stroke-width="1.5"/></g>`;
+    });
+    return `<svg viewBox="0 0 320 210" role="img" aria-label="${T("anim.perforaciones")}"><style>${style}</style>
+<path class="s-bag" d="M60 196 L60 64 Q60 50 86 46 L112 26 L158 26 L184 46 Q210 50 210 64 L210 196 Z"/>
+<line x1="56" y1="132" x2="214" y2="132" stroke="var(--muted)" stroke-dasharray="6 5" stroke-width="2"/>
+${holes}
+<line x1="240" y1="40" x2="282" y2="96" stroke="var(--gray)" stroke-width="3"/><circle cx="238" cy="37" r="7" fill="var(--warn)"/>
+<text class="s-tx" x="230" y="140">4–6 ×</text>
+<text class="s-txs" x="230" y="160">½ ↑</text>
+</svg>`; }
+  case "colonizacion": {
+    const spots = [[85,150],[115,110],[75,90],[120,170],[100,130]];
+    const grow = (dx, maxS, cls) => spots.map(([x,y],i)=>`<circle class="tb ${cls}" style="transform-origin:${x+dx}px ${y}px;animation-delay:${i*0.08}s" cx="${x+dx}" cy="${y}" r="28" fill="var(--myc)"/><ellipse cx="${x+dx}" cy="${y}" rx="4" ry="3" fill="var(--myc)" stroke="var(--gray)"/>`).join("");
+    const days = [0,7,14,21].map((d,i)=>{ const a = i*25, b = a+25;
+      return `<style>${kf(u+"d"+i, `0%,${a}%{opacity:0}${a+1}%,${b-1}%{opacity:1}${b}%,100%{opacity:${i===3?1:0}}`)}.${u}d${i}{animation:${u}d${i} 6s step-end infinite}</style><text class="s-tx ${u}d${i}" x="180" y="20" text-anchor="middle">${T("anim.col.day")} ${d}</text>`; }).join("");
+    const bag = (dx) => `M${dx+50} 200 L${dx+50} 70 Q${dx+50} 56 ${dx+74} 52 L${dx+92} 36 L${dx+118} 36 L${dx+136} 52 Q${dx+160} 56 ${dx+160} 70 L${dx+160} 200 Z`;
+    return `<svg viewBox="0 0 360 236" role="img" aria-label="${T("anim.colonizacion")}"><style>
+${kf(u+"g","0%{transform:scale(.08)}80%,100%{transform:scale(1.3)}")}
+${kf(u+"p","0%{transform:scale(.08)}25%,100%{transform:scale(.55)}")}
+${kf(u+"m","0%,22%{transform:scale(0);opacity:0}26%{opacity:1;transform:scale(.3)}70%,100%{transform:scale(1.2);opacity:1}")}
+${kf(u+"x","0%,40%{opacity:0}48%,100%{opacity:1}")}
+.${u}g{animation:${u}g 6s ease-out infinite}.${u}p{animation:${u}p 6s ease-out infinite}
+.${u}m{transform-origin:280px 120px;animation:${u}m 6s infinite}.${u}x{animation:${u}x 6s infinite}
+</style>
+<defs><clipPath id="${u}c1"><path d="${bag(0)}"/></clipPath><clipPath id="${u}c2"><path d="${bag(170)}"/></clipPath></defs>
+${days}
+<path d="${bag(0)}" fill="var(--saw)"/><g clip-path="url(#${u}c1)">${grow(0,1,u+"g")}</g><path class="s-ln" d="${bag(0)}"/>
+<path d="${bag(170)}" fill="var(--saw)"/><g clip-path="url(#${u}c2)">${grow(170,.55,u+"p")}<circle class="tb ${u}m" cx="280" cy="120" r="22" fill="var(--mold)"/></g><path class="s-ln" d="${bag(170)}"/>
+<g class="${u}x"><rect x="230" y="168" width="106" height="26" rx="6" fill="var(--warn)"/><text x="283" y="186" text-anchor="middle" style="fill:var(--card);font:700 13px system-ui">${T("anim.col.discard")}</text></g>
+<text class="s-tx" x="105" y="218" text-anchor="middle"><tspan class="s-ok">✓</tspan> ${T("anim.col.healthy")}</text>
+<text class="s-tx" x="275" y="218" text-anchor="middle"><tspan class="s-warn">✗</tspan> ${T("anim.col.contaminated")}</text>
+</svg>`; }
+  case "fructificacion": {
+    const mush = [[200,92,1],[214,116,.85],[198,138,.7]].map(([x,y,s],i)=>`<g class="tb ${u}m" style="transform-origin:160px ${y}px;animation-delay:${i*0.15}s"><g transform="translate(${x} ${y}) scale(${s})"><rect x="-40" y="-5" width="30" height="10" rx="4" fill="var(--myc)" stroke="var(--gray)"/><path d="M-12 -26 Q30 -30 34 0 Q30 30 -12 26 Q2 0 -12 -26Z" fill="var(--gray)" stroke="var(--fg)" stroke-width="1.5"/></g></g>`).join("");
+    return `<svg viewBox="0 0 320 220" role="img" aria-label="${T("anim.fructificacion")}"><style>
+${kf(u+"m","0%,8%{transform:scale(0)}15%{transform:scale(.2)}65%,88%{transform:scale(1);opacity:1}96%,100%{transform:scale(1);opacity:0}")}
+${kf(u+"k","0%,68%{transform:translateY(-70px);opacity:0}72%{opacity:1}86%{transform:translateY(70px);opacity:1}92%,100%{opacity:0}")}
+.${u}m{animation:${u}m 6s infinite}.${u}k{animation:${u}k 6s infinite}
+</style>
+<rect x="50" y="30" width="110" height="170" rx="16" fill="var(--myc)" stroke="var(--fg)" stroke-width="2.5"/>
+<path d="M160 80 v80" stroke="var(--fg)" stroke-width="4"/>
+${mush}
+<g class="${u}k"><rect x="168" y="70" width="6" height="80" fill="var(--gray)"/><rect x="166" y="40" width="10" height="32" rx="3" fill="var(--pellet)"/></g>
+
+</svg>`; }
+  case "materiales": {
+    let style = "";
+    [0,1,2].forEach(i=>{ const a = i*30; style += kf(u+"o"+i, `0%,${a}%{opacity:0}${a+5}%,${a+25}%{opacity:1}${a+30}%,100%{opacity:0}`) + `.${u}o${i}{animation:${u}o${i} 4.5s infinite}`; });
+    const box = (x, i) => `<rect class="${u}o${i}" x="${x}" y="6" width="92" height="150" rx="10" fill="none" stroke="var(--ok)" stroke-width="4"/>`;
+    const pel = [[18,40],[46,46],[26,68],[56,74],[18,98],[48,104]].map(([x,y])=>`<rect x="${x}" y="${y}" width="24" height="13" rx="6" fill="var(--pellet)" stroke="var(--fg)" stroke-width="1"/>`).join("");
+    const grains = `<rect x="110" y="30" width="76" height="104" rx="12" fill="var(--pellet)" opacity=".35"/>` + Array.from({length:15},(_,i)=>`<ellipse cx="${122+(i%4)*17}" cy="${46+Math.floor(i/4)*24}" rx="7" ry="4.5" fill="var(--myc)" stroke="var(--gray)" stroke-dasharray="1.5 1.5"/>`).join("");
+    const sack = (x, bad) => `<path d="M${x+16} 34 Q${x+46} 22 ${x+76} 34 L${x+80} 132 Q${x+46} 142 ${x+12} 132 Z" fill="var(--card)" stroke="var(--fg)" stroke-width="2"/><text x="${x+46}" y="70" text-anchor="middle" class="s-tx">${bad?"CaO":"Ca(OH)₂"}</text>${bad?`<path d="M${x+18} 84 L${x+74} 128 M${x+74} 84 L${x+18} 128" stroke="var(--warn)" stroke-width="5"/>`:""}`;
+    return `<svg viewBox="0 0 400 210" role="img" aria-label="${T("anim.materiales")}"><style>${style}</style>
+${pel}${grains}${sack(202,false)}${sack(302,true)}
+${box(4,0)}${box(102,1)}${box(202,2)}
+${wrapT(50, 174, t("anim.mat.pellet"), 14, "s-txs")}
+${wrapT(148, 174, t("anim.mat.spawn"), 14, "s-txs")}
+${wrapT(248, 174, t("anim.mat.hydrated"), 14, "s-txs")}
+${wrapT(348, 174, t("anim.mat.quick"), 14, "s-txs", ' style="fill:var(--warn)"')}
+</svg>`; }
+  }
+  return "";
+}
+const reduceMotion = () => window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+function animHTML(name){
+  const paused = reduceMotion();
+  return `<figure class="anim${paused?" paused":""}" data-anim="${name}">${animSVG(name)}<figcaption><span>${esc(t("anim."+name))}</span><button type="button" class="small" data-act="toggle-anim" aria-pressed="${paused}">${esc(t(paused?"anim.play":"anim.pause"))}</button></figcaption></figure>`;
+}
+
+/* ============ cálculos ============ */
+function frac(n){ // a cuartos, con símbolos
+  const q = Math.round(n*4)/4, w = Math.floor(q), r = q - w;
+  const f = r === .25 ? "¼" : r === .5 ? "½" : r === .75 ? "¾" : "";
+  return (w ? String(w) : (f ? "" : "0")) + f;
+}
+const fmt = (n, d=0) => Number(n).toLocaleString(S.lang === "en" ? "en-US" : "es-MX", {maximumFractionDigits:d, minimumFractionDigits:0});
+function cupsText(ml){ const c = ml/240; if (c < .2) return ""; if (Math.abs(c-1) < .13) return t("calc.cup1"); return t("calc.cups", {n: frac(c)}); }
+function tspFrac(x){ const opts = [[1/8,"⅛"],[1/4,"¼"],[1/3,"⅓"],[1/2,"½"],[2/3,"⅔"],[3/4,"¾"],[1,"1"]]; let best = opts[0]; for (const o of opts) if (Math.abs(o[0]-x) < Math.abs(best[0]-x)) best = o; return best[1]; }
+function limeText(g){ const x = g/4.5; if (g < .9) return t("calc.pinch"); if (x < 1.1) return t("calc.tspFrac", {n: tspFrac(x)}); return t("calc.tsp", {n: frac(x)}); }
+function spawnText(g){ const h = g/100; if (h < .35) return t("calc.halfHandful").replace(/^./, c=>c); if (h < .75) return t("calc.halfHandful"); if (h < 1.5) return t("calc.handful"); return t("calc.handfuls", {n: frac(h)}); }
+function calc(){
+  const c = S.calc, g = Number(c.grams);
+  if (!(g >= 50 && g <= 20000)) return null;
+  if (c.type === "fiber"){
+    const L = Math.max(1, Number(c.liters) || 5);
+    return {type:"fiber", grams:g, liters:L, lime:L*1};
+  }
+  const water = g*1.5*(c.boilOpen ? 1.05 : 1);
+  const wet = g*2.5, spawn = wet*.10;
+  return {type:"pellet", grams:g, water, lime: water/1000, wet, spawn, spawnMin:[wet*.03, wet*.05], micro:[Math.round(wet/1000*8*2)/2, Math.round(wet/1000*10*2)/2]};
+}
+function calcLines(r){
+  if (!r) return [];
+  if (r.type === "fiber") return [
+    [t("calc.water"), `${fmt(r.liters,1)} L`, ""],
+    [t("calc.lime"), `${fmt(r.lime,1)} g`, limeText(r.lime)],
+    [t("calc.spawn"), "10 %", t("calc.fiberText")],
+  ];
+  return [
+    [t("calc.water"), `${fmt(r.water)} ml`, cupsText(r.water)],
+    [t("calc.lime"), `${fmt(r.lime, r.lime < 1 ? 2 : 1)} g`, limeText(r.lime)],
+    [t("calc.wet"), `${fmt(r.wet)} g`, ""],
+    [t("calc.spawn"), `${fmt(r.spawn)} g`, spawnText(r.spawn)],
+    [t("calc.spawnMin"), `${fmt(r.spawnMin[0])}–${fmt(r.spawnMin[1])} g`, ""],
+    [t("calc.stove"), "", t("calc.stoveText")],
+    [t("calc.micro"), "", t("calc.microText", {min:fmt(r.micro[0],1), max:fmt(r.micro[1],1)})],
+  ];
+}
+
+/* ============ render: encabezado ============ */
+function renderChrome(){
+  document.documentElement.lang = S.lang;
+  document.title = t("app.title");
+  const sel = $("#lang");
+  sel.setAttribute("aria-label", t("lang.label"));
+  sel.innerHTML = LANGS.map(l => { const m = D.i18n[l]._meta || {}; const label = m.nameEs && m.nameEs !== m.name ? `${m.name} (${m.nameEs})` : m.name; return `<option value="${l}"${l===S.lang?" selected":""}>${esc(label || l)}</option>`; }).join("");
+  $("#theme").setAttribute("aria-label", t("theme.toggle"));
+  $("#theme").title = t("theme.toggle");
+  const showChat = !!caps.sample && !caps.sampleOff;
+  $("#tabs").innerHTML = VIEWS.filter(v => v !== "asistente" || showChat).map(v => {
+    const key = {guia:"nav.guide", calculadora:"nav.calc", asistente:"nav.chat", bitacora:"nav.log", fuentes:"nav.sources"}[v];
+    return `<a href="#${v}"${currentView()===v?' aria-current="page"':""}>${esc(t(key))}</a>`; }).join("");
+  const b = $("#i18nbanner");
+  if (isIndig()){
+    b.classList.remove("hidden");
+    const repo = esc(CFG.repoUrl || "#");
+    b.innerHTML = `<div>${esc(t("i18n.note"))} — <a href="${repo}" target="_blank" rel="noopener">${esc(t("i18n.link"))}</a></div><div lang="es" class="es-below">${esc(tes("i18n.note"))} — <a href="${repo}" target="_blank" rel="noopener">${esc(tes("i18n.link"))}</a></div>`;
+  } else b.classList.add("hidden");
+  const repo = esc(CFG.repoUrl || "#");
+  $("#foot").innerHTML = `<p>${esc(t("app.tagline"))} · ${esc(t("footer.offline"))}</p><p>${esc(t("footer.license"))} <a href="${repo}" target="_blank" rel="noopener">${esc(t("footer.repo"))}</a></p>`;
+}
+
+/* ============ render: guía ============ */
+function costHTML(){
+  const c = CFG.costoUnidad || {};
+  const v = (c.min != null && c.max != null) ? `${c.min}–${c.max} ${esc(c.moneda || "")}` : esc(t("cost.pending"));
+  return `<p class="note">${esc(t("cost.label"))}: ${v}${c.min != null ? " ("+esc(t("cost.pending"))+")" : ""}</p>`;
+}
+function stageCardHTML(st){
+  const c = cards()[st] || D.i18n.es.cards[st];
+  const blocks = protoBlocks(S.lang === "en" ? "en" : "es");
+  const full = blocks[STAGE_BLOCK[st]];
+  const fullLabel = isIndig() ? `${t("card.full")} (español)` : t("card.full");
+  const ai = caps.sample && !caps.sampleOff;
+  const idx = STAGES.indexOf(st);
+  return `<div class="card" id="stagecard">
+  <h2 style="margin-top:0">${esc(st)}) ${esc(c.title)}</h2>
+  <h3>${esc(t("card.short"))}</h3>
+  <ol class="steps">${c.steps.map(s=>`<li>${esc(s)}</li>`).join("")}</ol>
+  <div class="box"><strong>${esc(t("card.test"))}:</strong> ${esc(c.test)}</div>
+  <div class="box warn"><strong>${esc(t("card.ifWrong"))}:</strong> ${esc(c.ifWrong)}</div>
+  ${st === "b" ? `<div class="box warn">${safe("safety.lime")}</div><div class="box warn">${safe("safety.water")}</div>` : ""}
+  ${st === "e" || st === "f" ? `<div class="box">${safe("safety.toxic")}</div>` : ""}
+  <h3>${esc(t("card.see"))}</h3>
+  <div class="animgrid">${STAGE_ANIMS[st].map(animHTML).join("")}</div>
+  <div class="media" id="media-${st}"></div>
+  ${full ? `<details><summary>${esc(fullLabel)}</summary><div${isIndig()?' lang="es"':""}>${md(full)}</div></details>` : ""}
+  ${ai ? `<form class="card" data-act="ask-stage" style="background:var(--soft)"><label for="askstage">${esc(t("card.askAI"))}</label><div class="row"><input id="askstage" name="q" placeholder="${esc(t("card.askPlaceholder"))}" style="flex:1 1 220px"><button class="primary" type="submit">${esc(t("card.ask"))}</button></div></form>` : ""}
+  <div class="row">${idx < 4 ? `<button type="button" data-stage="${STAGES[idx+1]}">${esc(t("stage.next"))} →</button>` : ""}<button type="button" data-act="change-stage">${esc(t("stage.change"))}</button></div>
+</div>`;
+}
+function renderGuide(){
+  const el = $("#v-guia");
+  el.innerHTML = `
+<h1>${esc(t("hero.destination"))}</h1>
+<p class="lead" id="stageq">${esc(t("hero.question"))}</p>
+<div class="grid2" role="group" aria-labelledby="stageq">${STAGES.map(s=>`<button type="button" class="stage" data-stage="${s}" aria-pressed="${S.stage===s}"><b>${s}</b><span>${esc(t("stage."+s))}</span></button>`).join("")}</div>
+${S.stage ? stageCardHTML(S.stage) : ""}
+<h2>${esc(t("tests.title"))}</h2>
+<div class="grid2">
+ <div class="card"><h3 style="margin-top:0">${esc(t("tests.fist.title"))}</h3><p>${esc(t("tests.fist.body"))}</p></div>
+ <div class="card"><h3 style="margin-top:0">${esc(t("tests.air.title"))}</h3><p>${esc(t("tests.air.body"))}</p></div>
+</div>
+<h2>${esc(t("alerts.title"))}</h2>
+<div class="card">
+ <div class="box warn">${safe("alerts.green")}</div>
+ <div class="box">${esc(t("alerts.sour"))}</div>
+ <div class="box">${esc(t("alerts.nogrowth"))}</div>
+ <div class="box">${esc(t("alerts.warranty"))}</div>
+</div>
+<h2>${esc(t("safety.title"))}</h2>
+<div class="card">
+ ${["safety.lime","safety.noLime","safety.water","safety.ppe","safety.eat"].map(k=>`<div class="box warn">${safe(k)}</div>`).join("")}
+ <div class="box">${safe("safety.toxic")}</div>
+</div>
+${downloadHTML()}
+${costHTML()}`;
+  if (S.stage) attachMedia(S.stage);
+}
+function downloadHTML(){
+  const hasChat = chat.msgs.some(m => m.role === "ai" && m.text);
+  return `<h2>${esc(t("download.title"))}</h2><div class="card"><p>${esc(t("download.body"))}</p>
+${hasChat ? `<label class="inline"><input type="checkbox" id="dlchat" checked> ${esc(t("download.includeChat"))}</label>` : ""}
+<div class="row"><button type="button" class="primary" data-act="dl" data-fmt="html">${esc(t("download.html"))}</button><button type="button" data-act="dl" data-fmt="txt">${esc(t("download.txt"))}</button></div>
+<p class="note" id="dlmsg" role="status"></p></div>`;
+}
+
+/* ============ render: calculadora ============ */
+function renderCalc(){
+  const c = S.calc;
+  $("#v-calculadora").innerHTML = `<h1>${esc(t("calc.title"))}</h1><p>${esc(t("calc.intro"))}</p>
+<div class="card"><form id="calcform" novalidate>
+<label for="cg">${esc(t("calc.grams"))}</label>
+<input id="cg" name="grams" type="number" inputmode="numeric" min="50" max="20000" step="10" value="${esc(c.grams)}">
+<div class="row" style="margin-top:8px">${[200,400,500,1000].map(n=>`<button type="button" class="small" data-g="${n}">${n} g</button>`).join("")}</div>
+<p class="note">${esc(t("calc.noScale"))}</p>
+<fieldset style="border:0;padding:0;margin:12px 0 0"><legend style="font-weight:600">${esc(t("calc.type"))}</legend>
+<label class="inline"><input type="radio" name="type" value="pellet"${c.type==="pellet"?" checked":""}>${esc(t("calc.type.pellet"))}</label>
+<label class="inline"><input type="radio" name="type" value="fiber"${c.type==="fiber"?" checked":""}>${esc(t("calc.type.fiber"))}</label></fieldset>
+${c.type==="pellet" ? `<label class="inline"><input type="checkbox" name="boilOpen"${c.boilOpen?" checked":""}>${esc(t("calc.boilOpen"))}</label>`
+ : `<label for="cl">${esc(t("calc.potLiters"))}</label><input id="cl" name="liters" type="number" inputmode="decimal" min="1" max="100" step="0.5" value="${esc(c.liters)}">`}
+</form><div id="calcout" aria-live="polite"></div></div>
+<div class="box warn">${safe("safety.lime")}</div>
+<div class="box warn">${safe("safety.water")}</div>
+${c.type==="pellet" ? animHTML("hidratacion") : ""}`;
+  renderCalcOut();
+}
+function renderCalcOut(){
+  const r = calc(), out = $("#calcout");
+  if (!out) return;
+  if (!r){ out.innerHTML = `<p class="err">${esc(t("calc.invalid"))}</p>`; return; }
+  out.innerHTML = `<dl class="res">${calcLines(r).map(([k,v,h])=>`<dt>${esc(k)}</dt><dd>${v?`<span class="big">${esc(v)}</span> `:""}${h?esc(h):""}</dd>`).join("")}</dl>`;
+}
+
+/* ============ render: fuentes ============ */
+function renderSources(){
+  $("#v-fuentes").innerHTML = `<h1>${esc(t("sources.title"))}</h1><p>${esc(t("sources.intro"))}</p><div class="card"${S.lang!=="es"?' lang="es"':""}>${md(D.fuentes || "")}</div>`;
+}
+
+/* ============ medios del dueño (assets + db) ============ */
+const mediaSubs = {};
+const mediaData = {};
+function attachMedia(st){
+  for (const k of Object.keys(mediaSubs)) if (k !== st){ mediaSubs[k](); delete mediaSubs[k]; }
+  if (caps.db && !mediaSubs[st]){
+    try { mediaSubs[st] = caps.db.doc("media/"+st).onSnapshot(s => { mediaData[st] = s.exists ? (s.data().items || []) : []; renderMedia(st); }, () => {}); } catch {}
+  }
+  renderMedia(st);
+}
+function renderMedia(st){
+  const el = $("#media-"+st); if (!el) return;
+  const items = mediaData[st] || [];
+  let h = "";
+  if (items.length) h += `<h3>${esc(t("media.title"))}</h3><div class="animgrid">` + items.map((it,i)=>{
+    const src = "/_blob/" + encodeURIComponent(it.id);
+    const media = /^video\//.test(it.type) ? `<video controls preload="metadata" src="${src}"></video>` : `<img alt="${esc(it.caption||"")}" src="${src}" loading="lazy">`;
+    return `<figure class="anim">${media}<figcaption><span>${esc(it.caption||"")}</span>${caps.assets?`<button type="button" class="small" data-act="media-del" data-i="${i}" data-st="${st}">${esc(t("media.delete"))}</button>`:""}</figcaption></figure>`; }).join("") + `</div>`;
+  if (caps.assets && caps.db) h += `<details><summary>${esc(t("media.upload"))}</summary><form data-act="media-up" data-st="${st}"><input type="file" name="f" accept="image/png,image/jpeg,image/webp,image/gif,video/mp4,video/webm" required><label>${esc(t("media.caption"))}</label><input name="cap" maxlength="160"><div class="row" style="margin-top:8px"><button class="primary" type="submit">${esc(t("media.upload"))}</button></div><p class="note" role="status"></p></form></details>`;
+  el.innerHTML = h;
+}
+async function mediaUpload(form){
+  const st = form.dataset.st, f = form.f.files[0], msg = form.querySelector("[role=status]");
+  if (!f) return;
+  if (f.size > 20*1024*1024){ msg.textContent = t("media.tooLarge"); return; }
+  msg.textContent = t("media.uploading");
+  try {
+    const r = await caps.assets.upload(f);
+    const ref = caps.db.doc("media/"+st); const s = await ref.get();
+    const items = (s.exists ? (s.data().items || []) : []).slice();
+    items.push({id:r.id, type:r.contentType, caption: form.cap.value.slice(0,160)});
+    await ref.set({items});
+    msg.textContent = "";
+  } catch(e){ msg.textContent = t("media.error") + (e && e.code === "too_large" ? " " + t("media.tooLarge") : ""); }
+}
+async function mediaDelete(st, i){
+  const items = (mediaData[st] || []).slice(); const it = items[i]; if (!it) return;
+  items.splice(i,1);
+  try { await caps.db.doc("media/"+st).set({items}); await caps.assets.delete(it.id); } catch {}
+}
+
+/* ============ chat ============ */
+const chat = { turns:[], msgs:[], busy:false, ctl:null, photo:null, photoURL:null };
+function rules(){
+  return (D.instrucciones || "") + "\n\n# PROTOCOLO (versión 2)\n\n" + protocolForAI();
+}
+function langName(l){ const m = (D.i18n[l] && D.i18n[l]._meta) || {}; return (m.nameEs || m.name || l) + " (" + l + ")"; }
+function contextLine(){
+  const r = calc();
+  const parts = [`idioma del selector: ${langName(S.lang)}`];
+  parts.push(S.stage ? `etapa: ${S.stage}) ${tes("stage."+S.stage)}` : "etapa: desconocida");
+  if (r) parts.push(r.type === "pellet" ? `en la calculadora puso ${r.grams} g de pellet seco` : `en la calculadora puso ${r.grams} g de fibra seca y ${r.liters} L de agua`);
+  return `[Contexto de la página — ${parts.join("; ")}]`;
+}
+function renderAIText(text){
+  // Marcas de respaldo [[mostrar:nombre]] cuando no hay herramientas.
+  const clean = String(text).replace(/\[\[mostrar:([a-z]+)\]\]/g, (m, n) => ANIMS.includes(n) ? `(${t("chat.shown")})` : "");
+  return md(clean);
+}
+function showAnimation(name){
+  const v = $("#chatvisual"); if (!v || !ANIMS.includes(name)) return false;
+  v.innerHTML = animHTML(name);
+  v.scrollIntoView({behavior: reduceMotion() ? "auto" : "smooth", block:"nearest"});
+  return true;
+}
+function renderChat(){
+  const el = $("#v-asistente");
+  if (!caps.sample || caps.sampleOff){
+    el.innerHTML = `<div class="wrap"><h1>${esc(t("chat.title"))}</h1><div class="card"><p>${esc(t(caps.sampleOff ? "chat.declined" : "chat.unavailable"))}</p><p><a href="#guia">${esc(t("nav.guide"))}</a></p></div></div>`;
+    return;
+  }
+  el.innerHTML = `<h1>${esc(t("chat.title"))}</h1><p>${esc(t("chat.intro"))}</p>
+<p class="note">${S.stage ? `${esc(t("hero.question"))} <strong>${S.stage}) ${esc(t("stage."+S.stage))}</strong> · <a href="#guia" data-act="change-stage">${esc(t("stage.change"))}</a>` : ""}</p>
+<div id="chatvisual"></div>
+<div id="chatlog" aria-live="polite"></div>
+<div class="composer"><form id="chatform">
+<label class="sr" for="chatin">${esc(t("chat.placeholder"))}</label>
+<textarea id="chatin" name="q" placeholder="${esc(t("chat.placeholder"))}" rows="3"></textarea>
+<div class="row" style="margin-top:8px">
+<button class="primary" type="submit" id="chatsend">${esc(t(chat.photo ? "chat.diagnose" : "chat.send"))}</button>
+<button type="button" id="chatstop" class="hidden">${esc(t("chat.stop"))}</button>
+${caps.imagesOK ? `<label class="btn" style="margin:0;display:inline-flex;align-items:center" for="chatphoto">📷 ${esc(t("chat.photo"))}</label><input id="chatphoto" type="file" class="sr" accept="${esc(caps.imageTypes || "image/*")}">` : ""}
+<button type="button" class="small" data-act="chat-reset">${esc(t("chat.reset"))}</button>
+</div>
+<div id="photoprev" class="row"></div>
+<p class="note">${esc(t("chat.disclaimer"))}</p>
+</form></div>`;
+  renderMsgs(); renderPhoto();
+}
+function renderPhoto(){
+  const p = $("#photoprev"); if (!p) return;
+  p.innerHTML = chat.photo ? `<img src="${chat.photoURL}" alt="" style="max-width:120px;border-radius:8px"><button type="button" class="small" data-act="photo-rm">${esc(t("chat.photoRemove"))}</button>` : "";
+  const s = $("#chatsend"); if (s) s.textContent = t(chat.photo ? "chat.diagnose" : "chat.send");
+}
+function msgHTML(m, i){
+  if (m.role === "user") return `<div class="msg user"><div class="who">${esc(t("chat.you"))}</div>${m.photoURL?`<img src="${m.photoURL}" alt="">`:""}<div>${esc(m.text).replace(/\n/g,"<br>")}</div></div>`;
+  const body = m.text ? renderAIText(m.text) : `<p class="thinking">${esc(t(m.status || "chat.thinking"))}</p>`;
+  const tail = (m.done && m.text && !chat.busy) ? `<div class="row"><button type="button" class="small" data-act="simpler" data-i="${i}">${esc(t("chat.simpler"))}</button></div>` : "";
+  return `<div class="msg ai"><div class="who">${esc(t("chat.ai"))}</div><div data-body>${body}</div>${m.note?`<p class="note">${esc(m.note)}</p>`:""}${tail}</div>`;
+}
+function renderMsgs(){
+  const log = $("#chatlog"); if (!log) return;
+  log.innerHTML = chat.msgs.map(msgHTML).join("");
+  $("#chatstop") && $("#chatstop").classList.toggle("hidden", !chat.busy);
+  $("#chatsend") && ($("#chatsend").disabled = chat.busy);
+}
+function updateLast(text){
+  const nodes = document.querySelectorAll("#chatlog .msg.ai [data-body]");
+  const n = nodes[nodes.length-1]; if (n) n.innerHTML = renderAIText(text);
+}
+function errText(code){
+  return t({rate_limited:"chat.err.rate", refused:"chat.err.refused", session_expired:"chat.err.session", image_rejected:"chat.err.image"}[code] || "chat.err.generic");
+}
+const HIDE_CODES = new Set(["not_granted","sampling_disabled","not_declared","capability_disabled","capability_removed"]);
+function trimTurns(turns){
+  const R = new TextEncoder().encode(rules()).length, cap = 200000 - R;
+  const out = turns.slice(); let size = out.reduce((a,x)=>a+new TextEncoder().encode(x.content).length, 0);
+  while (out.length > 1 && size > cap){ const x = out.shift(); size -= new TextEncoder().encode(x.content).length; }
+  while (out.length && out[0].role !== "user") out.shift();
+  return out;
+}
+async function classifyStage(text){
+  try {
+    const r = await caps.sample.json(`Clasifica en qué etapa de cultivo de setas está la persona según su mensaje. Etapas: a = apenas empieza y no tiene nada; b = ya tiene sustrato y micelio; c = ya inoculó y está incubando; d = la bolsa ya está blanca; e = ya salieron hongos; f = tiene un problema o contaminación. Si no se puede saber, usa null. Responde solo JSON como {"etapa":"b"}.\n\nMensaje: """${text.slice(0,1500)}"""`, {modelTier:"quick"});
+    if (r && STAGES.includes(r.etapa)) return r.etapa;
+  } catch(e){ if (e && HIDE_CODES.has(e.code)) throw e; }
+  return null;
+}
+function handleSampleError(e, m){
+  if (e && HIDE_CODES.has(e.code)){ caps.sampleOff = true; renderChrome(); renderChat(); renderGuide(); return; }
+  if (e && e.code === "images_unavailable"){ caps.imagesOK = false; }
+  if (e && e.code === "refused") m.text = "";
+  else m.text = (e && e.text) || m.text || "";
+  if (!e || e.code !== "cancelled") m.note = errText(e && e.code);
+}
+async function sendChat(text, opts = {}){
+  if (chat.busy || !caps.sample) return;
+  text = String(text || "").trim();
+  const photo = chat.photo;
+  if (!text && photo) text = t("chat.diagnoseDefault");
+  if (!text) return;
+  chat.busy = true;
+  const uMsg = {role:"user", text, photoURL: photo ? chat.photoURL : null};
+  chat.msgs.push(uMsg);
+  const m = {role:"ai", text:"", done:false, status:"chat.thinking"};
+  chat.msgs.push(m);
+  chat.photo = null; renderPhoto();
+  chat.ctl = new AbortController(); const ctl = chat.ctl;
+  renderMsgs();
+  try {
+    if (!S.stage && !photo){
+      m.status = "chat.classifying"; renderMsgs();
+      const st = await classifyStage(text);
+      if (ctl.signal.aborted) throw {code:"cancelled"};
+      if (st){ S.stage = st; LS.set("stage", st); }
+      m.status = "chat.thinking"; renderMsgs();
+    }
+    const content = contextLine() + "\n" + (photo ? "[La persona adjuntó una foto de su bolsa para diagnóstico.]\n" : "") + text;
+    chat.turns.push({role:"user", content});
+    const sopts = {
+      cache:false, modelTier:"default", signal: ctl.signal,
+      onText: ({text}) => { m.text = text; updateLast(text); }
+    };
+    if (photo) sopts.images = [photo];
+    if (caps.toolsOK) sopts.tools = [{
+      name:"showAnimation",
+      description:"Muestra en la página, arriba del chat, una de las nueve animaciones: hidratacion, puno, pasteurizacion, inoculacion, sellado, perforaciones, colonizacion, fructificacion, materiales. Devuelve 'mostrada' o un error.",
+      inputSchema:{type:"object", properties:{nombre:{type:"string", enum:ANIMS}}, required:["nombre"]},
+      execute(input){ const n = String(input && (input.nombre || input.name) || ""); if (!showAnimation(n)) throw new Error("Animación desconocida: "+n); return "mostrada"; }
+    }];
+    const res = await caps.sample([{role:"user", content: rules()}, ...trimTurns(chat.turns)], sopts);
+    m.text = res.text;
+    if (res.truncated) m.note = t("chat.cut");
+    chat.turns.push({role:"assistant", content: res.text});
+    for (const mm of res.text.matchAll(/\[\[mostrar:([a-z]+)\]\]/g)) showAnimation(mm[1]);
+  } catch(e){
+    handleSampleError(e, m);
+    if (m.text) chat.turns.push({role:"assistant", content: m.text});
+  } finally {
+    m.done = true; chat.busy = false; chat.ctl = null;
+    if (!caps.sampleOff){ renderMsgs(); }
+  }
+}
+async function simpler(i){
+  const src = chat.msgs[i]; if (!src || !src.text || chat.busy) return;
+  chat.busy = true;
+  const m = {role:"ai", text:"", done:false, status:"chat.thinking"};
+  chat.msgs.push({role:"user", text:t("chat.simpler")}); chat.msgs.push(m);
+  chat.ctl = new AbortController(); const ctl = chat.ctl; renderMsgs();
+  try {
+    const prompt = `Reescribe este texto en lenguaje mucho más simple, para alguien sin estudios técnicos, en el mismo idioma (${langName(S.lang)}). Máximo 5 pasos numerados y cortos. Conserva todas las cantidades y TODAS las advertencias de seguridad. No agregues información nueva. Devuelve solo el texto reescrito.\n\n"""${src.text.slice(0, 8000)}"""`;
+    const res = await caps.sample(prompt, {modelTier:"quick", cache:false, signal:ctl.signal, onText:({text})=>{ m.text = text; updateLast(text); }});
+    m.text = res.text;
+    chat.turns.push({role:"user", content: contextLine()+"\n"+tes("chat.simpler")}); chat.turns.push({role:"assistant", content: res.text});
+  } catch(e){ handleSampleError(e, m); }
+  finally { m.done = true; chat.busy = false; chat.ctl = null; if (!caps.sampleOff) renderMsgs(); }
+}
+
+/* ============ descarga del protocolo personalizado ============ */
+function protocolDoc(){
+  const r = calc(), cs = cards();
+  const includeChat = $("#dlchat") ? $("#dlchat").checked : false;
+  const blocks = protoBlocks(S.lang === "en" ? "en" : "es");
+  const stageFull = S.stage ? blocks[STAGE_BLOCK[S.stage]] : "";
+  const sections = [];
+  sections.push({h: t("download.myAmounts"), items: calcLines(r).map(([k,v,h]) => `${k}: ${v}${v&&h?" — ":""}${h}`)});
+  for (const s of ["a","b","c","d","e"]){ const c = cs[s]; sections.push({h:`${s}) ${c.title}`, ol:c.steps, extra:[`${t("card.test")}: ${c.test}`, `${t("card.ifWrong")}: ${c.ifWrong}`]}); }
+  sections.push({h:t("tests.title"), items:[`${t("tests.fist.title")}: ${t("tests.fist.body")}`, `${t("tests.air.title")}: ${t("tests.air.body")}`]});
+  sections.push({h:t("alerts.title"), items:["alerts.green","alerts.sour","alerts.nogrowth","alerts.warranty"].map(k=>t(k) + (isIndig() && k==="alerts.green" ? ` / ${tes(k)}` : ""))});
+  sections.push({h:t("safety.title"), items:["safety.lime","safety.noLime","safety.water","safety.ppe","safety.eat","safety.toxic"].map(k=>t(k) + (isIndig() ? ` / ${tes(k)}` : ""))});
+  const convo = includeChat ? chat.msgs.filter(m=>m.text).map(m=>`${m.role==="user"?t("chat.you"):t("chat.ai")}: ${m.text}`) : [];
+  return {sections, stageFull, convo};
+}
+function docTXT(){
+  const d = protocolDoc(); let s = `FUNGI MATI — ${t("download.title")}\n${new Date().toISOString().slice(0,10)}\n${t("hero.destination")}\n\n`;
+  for (const x of d.sections){ s += `== ${x.h} ==\n`; (x.items||[]).forEach(i=>s+=`- ${i}\n`); (x.ol||[]).forEach((i,k)=>s+=`${k+1}. ${i}\n`); (x.extra||[]).forEach(i=>s+=`* ${i}\n`); s += "\n"; }
+  if (d.stageFull) s += `== ${t("card.full")} ==\n${d.stageFull.replace(/<!--[\s\S]*?-->/g,"")}\n\n`;
+  if (d.convo.length) s += `== ${t("download.conversation")} ==\n${d.convo.join("\n\n")}\n`;
+  s += `\n${t("footer.license")} ${CFG.repoUrl || ""}\n`;
+  return s;
+}
+function docHTML(){
+  const d = protocolDoc();
+  let b = `<h1>Fungi Mati</h1><p><strong>${esc(t("hero.destination"))}</strong></p><p>${new Date().toISOString().slice(0,10)}</p>`;
+  for (const x of d.sections){ b += `<h2>${esc(x.h)}</h2>`; if (x.items) b += "<ul>"+x.items.map(i=>`<li>${esc(i)}</li>`).join("")+"</ul>"; if (x.ol) b += "<ol>"+x.ol.map(i=>`<li>${esc(i)}</li>`).join("")+"</ol>"; if (x.extra) b += x.extra.map(i=>`<p><em>${esc(i)}</em></p>`).join(""); }
+  if (d.stageFull) b += `<h2>${esc(t("card.full"))}</h2>${md(d.stageFull)}`;
+  if (d.convo.length) b += `<h2>${esc(t("download.conversation"))}</h2>` + d.convo.map(c=>`<p>${esc(c).replace(/\n/g,"<br>")}</p>`).join("");
+  b += `<hr><p>${esc(t("footer.license"))} ${esc(CFG.repoUrl||"")}</p>`;
+  return `<!DOCTYPE html><html lang="${S.lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fungi Mati</title><style>body{font:18px/1.5 system-ui,sans-serif;max-width:760px;margin:24px auto;padding:0 16px;color:#111}h2{border-bottom:2px solid #22412c;color:#22412c}table{border-collapse:collapse}td,th{border:1px solid #999;padding:4px}@media print{body{font-size:14px}}</style></head><body>${b}</body></html>`;
+}
+async function saveFile(filename, data, msgEl){
+  const say = k => { if (msgEl) msgEl.textContent = t(k); };
+  if (caps.downloads){
+    try { await caps.downloads.save({filename, data}); say("download.saved"); }
+    catch(e){ say(e && e.code === "declined" ? "download.declined" : "download.error"); }
+    return;
+  }
+  if (!window.claude){ // copia fuera de Claude (GitHub Pages): descarga normal del navegador
+    try { const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([data], {type: filename.endsWith(".csv") ? "text/csv" : filename.endsWith(".html") ? "text/html" : "text/plain"})); a.download = filename; document.body.appendChild(a); a.click(); a.remove(); say("download.saved"); }
+    catch { say("download.error"); }
+    return;
+  }
+  say("download.error");
+}
+
+/* ============ bitácora ============ */
+const LOG = { mine:[], all:[], unsubMine:null, unsubAll:null, editing:null, readonly:false, loading:true, slow:false, allLoading:true, delArm:null, warn:"" };
+const SPECIES = ["ostreatus","columbinus","pulmonarius","otra"];
+const SPECIES_LABEL = {ostreatus:"Pleurotus ostreatus", columbinus:"P. ostreatus var. columbinus", pulmonarius:"P. pulmonarius"};
+const SUBS = ["pellet_aserrin","pellet_agave","fibra_agave","cafe","coco","otro"];
+const METHODS = ["hervir","aislar","microondas","verter","ninguno"];
+const ENVS = ["closet","caja","cama","alacena","cuarto","otro"];
+const STATUS = ["","colonizado","parcial","contaminado","sin_crecimiento"];
+const today = () => { const d = new Date(); d.setMinutes(d.getMinutes()-d.getTimezoneOffset()); return d.toISOString().slice(0,10); };
+const daysBetween = (a, b) => Math.round((Date.parse(b) - Date.parse(a))/86400000);
+function opt(list, val, lab){ return list.map(v=>`<option value="${v}"${v===val?" selected":""}>${esc(lab(v))}</option>`).join(""); }
+function field(name, label, inner, help){ return `<div data-f="${name}"><label for="lf-${name}">${esc(label)}</label>${inner}${help?`<p class="note">${esc(help)}</p>`:""}<p class="err" id="le-${name}"></p></div>`; }
+function logFormHTML(v){
+  v = v || {};
+  const num = (n, min, max, step) => `<input id="lf-${n}" name="${n}" type="number" inputmode="decimal" min="${min}" max="${max}" step="${step}" value="${esc(v[n] ?? "")}">`;
+  const sel = (n, list, lab) => `<select id="lf-${n}" name="${n}">${opt(list, v[n] ?? list[0], lab)}</select>`;
+  const st = s => t("log.st."+s);
+  return `<form id="logform" class="card" novalidate>
+<h2 style="margin-top:0">${esc(t(LOG.editing ? "log.edit" : "log.new"))}</h2>
+${field("bagId", t("log.bagId"), `<input id="lf-bagId" name="bagId" maxlength="40" autocomplete="off" value="${esc(v.bagId||"")}">`, t("log.bagIdHelp"))}
+${field("group", t("log.group"), `<input id="lf-group" name="group" maxlength="40" autocomplete="off" value="${esc(v.group||"")}">`)}
+<div class="grid2">
+${field("date", t("log.date"), `<input id="lf-date" name="date" type="date" max="${today()}" value="${esc(v.date||"")}">`)}
+${field("species", t("log.species"), sel("species", SPECIES, s => SPECIES_LABEL[s] || t("log.sub.otro")))}
+${field("substrate", t("log.substrate"), sel("substrate", SUBS, s => t("log.sub."+s)))}
+${field("dryGrams", t("log.dryGrams"), num("dryGrams", 50, 20000, 1))}
+${field("waterMl", t("log.waterMl"), num("waterMl", 0, 30000, 1))}
+${field("limeG", t("log.limeG"), num("limeG", 0, 100, 0.1))}
+${field("method", t("log.method"), sel("method", METHODS, s => t("log.m."+s)))}
+${field("knot", t("log.knot"), sel("knot", ["flojo","apretado"], s => t("log.knot."+s)))}
+${field("holes", t("log.holes"), sel("holes", ["si","no"], s => t(s==="si"?"log.yes":"log.no")))}
+${field("env", t("log.env"), sel("env", ENVS, s => t("log.env."+s)))}
+${field("tempC", t("log.temp"), num("tempC", 5, 45, 0.5))}
+${field("d7", t("log.d7"), sel("d7", STATUS, st))}
+${field("d14", t("log.d14"), sel("d14", STATUS, st))}
+${field("d21", t("log.d21"), sel("d21", STATUS, st))}
+${field("harvestDate", t("log.harvestDate"), `<input id="lf-harvestDate" name="harvestDate" type="date" max="${today()}" value="${esc(v.harvestDate||"")}">`)}
+</div>
+<fieldset style="border:0;padding:0;margin:8px 0"><legend style="font-weight:600">${esc(t("log.flushes"))}</legend><div class="grid2">
+${[0,1,2,3].map(i=>field("flush"+i, t("log.flush",{n:i+1}), `<input id="lf-flush${i}" name="flush${i}" type="number" inputmode="numeric" min="0" max="20000" step="1" value="${esc((v.flushes||[])[i] ?? "")}">`)).join("")}
+</div></fieldset>
+${field("notes", t("log.notes"), `<textarea id="lf-notes" name="notes" maxlength="600" rows="3">${esc(v.notes||"")}</textarea>`, t("log.notesWarn"))}
+<p class="note" id="logwarn">${esc(LOG.warn)}</p>
+<div class="row"><button class="primary" type="submit">${esc(t("log.save"))}</button>${LOG.editing?`<button type="button" data-act="log-cancel">${esc(t("log.cancel"))}</button>`:""}</div>
+<p role="status" id="logmsg" class="note"></p>
+</form>`;
+}
+function readForm(f){
+  const g = n => f.elements[n] ? f.elements[n].value.trim() : "";
+  const n = x => x === "" ? null : Number(x);
+  return { bagId:g("bagId"), group:g("group"), date:g("date"), species:g("species"), substrate:g("substrate"),
+    dryGrams:n(g("dryGrams")), waterMl:n(g("waterMl")), limeG:n(g("limeG")), method:g("method"), knot:g("knot"), holes:g("holes"),
+    env:g("env"), tempC:n(g("tempC")), d7:g("d7"), d14:g("d14"), d21:g("d21"), harvestDate:g("harvestDate"),
+    flushes:[0,1,2,3].map(i=>n(g("flush"+i))).filter(x=>x!=null), notes:g("notes") };
+}
+function validate(v){
+  const e = {}, td = today();
+  const range = (k, min, max, req) => { if (v[k] == null){ if (req) e[k] = t("log.v.required"); return; } if (!(v[k] >= min && v[k] <= max)) e[k] = t("log.v.range", {min, max}); };
+  if (!v.bagId) e.bagId = t("log.v.required");
+  else if (LOG.mine.some(b => b.data.bagId.toLowerCase() === v.bagId.toLowerCase() && b.id !== LOG.editing)) e.bagId = t("log.v.duplicateId");
+  if (!v.date || !/^\d{4}-\d{2}-\d{2}$/.test(v.date) || isNaN(Date.parse(v.date))) e.date = t("log.v.required");
+  else if (v.date > td) e.date = t("log.v.dateFuture");
+  else if (v.date < "2020-01-01") e.date = t("log.v.dateOld");
+  range("dryGrams", 50, 20000, true); range("waterMl", 0, 30000, true); range("limeG", 0, 100, true); range("tempC", 5, 45, false);
+  const age = e.date ? -1 : daysBetween(v.date, td);
+  [["d7",7],["d14",14],["d21",21]].forEach(([k,d]) => { if (v[k] && age < d) e[k] = t("log.v.tooEarly"); });
+  if (v.harvestDate){
+    if (v.harvestDate > td) e.harvestDate = t("log.v.dateFuture");
+    else if (!e.date && daysBetween(v.date, v.harvestDate) < 10) e.harvestDate = t("log.v.harvestBefore");
+  }
+  v.flushes.forEach((x,i)=>{ if (!(x >= 0 && x <= 20000)) e["flush"+i] = t("log.v.range",{min:0,max:20000}); });
+  if (v.flushes.some(x=>x>0) && !v.harvestDate) e.harvestDate = t("log.v.required");
+  // avisos suaves
+  const warns = [];
+  if (/^pellet/.test(v.substrate) && v.dryGrams && v.waterMl != null && Math.abs(v.waterMl - v.dryGrams*1.5) > v.dryGrams*0.3) warns.push(t("log.v.ratio", {ml: Math.round(v.dryGrams*1.5)}));
+  const sig = x => JSON.stringify([x.date,x.species,x.substrate,x.dryGrams,x.waterMl,x.limeG,x.method,x.knot,x.holes,x.env,x.tempC,x.d7,x.d14,x.d21,x.harvestDate,x.flushes,x.notes]);
+  if (LOG.mine.some(b => b.id !== LOG.editing && sig(b.data) === sig(v))) warns.push(t("log.v.copied"));
+  return {errors:e, warns};
+}
+function anon(v, logId){
+  return { schema:1, species:v.species, substrate:v.substrate, dryGrams:v.dryGrams, waterMl:v.waterMl, limeG:v.limeG, method:v.method,
+    knot:v.knot, holes:v.holes==="si", env:v.env, tempC:v.tempC, inoculationDate:v.date, d7:v.d7||null, d14:v.d14||null, d21:v.d21||null,
+    firstHarvestDate:v.harvestDate||null, flushGrams:v.flushes, totalGrams:v.flushes.reduce((a,b)=>a+b,0), group:v.group||null,
+    notes:v.notes||null, lang:S.lang, updatedAt:new Date().toISOString() };
+}
+const rid = () => (crypto.randomUUID ? crypto.randomUUID().replace(/-/g,"") : Math.random().toString(36).slice(2)+Date.now().toString(36)).slice(0,20);
+async function saveBag(f){
+  const v = readForm(f), {errors, warns} = validate(v);
+  f.querySelectorAll("[data-f]").forEach(d => { const k = d.dataset.f; d.classList.toggle("field-bad", !!errors[k]); $("#le-"+k).textContent = errors[k] || ""; });
+  $("#logwarn").textContent = warns.join(" ");
+  const msg = $("#logmsg");
+  if (Object.keys(errors).length){ msg.textContent = t("log.v.fix"); const first = f.querySelector(".field-bad input,.field-bad select"); first && first.focus(); return; }
+  if (warns.length && f.dataset.warned !== JSON.stringify(warns)){ f.dataset.warned = JSON.stringify(warns); msg.textContent = warns.join(" "); return; } // segundo clic guarda
+  msg.textContent = t("log.saving");
+  const prev = LOG.editing ? LOG.mine.find(b => b.id === LOG.editing) : null;
+  const id = prev ? prev.id : rid(), logId = prev && prev.data.logId ? prev.data.logId : rid();
+  const now = new Date().toISOString();
+  const doc = Object.assign({}, v, {logId, createdAt: prev ? prev.data.createdAt : now, updatedAt: now});
+  try {
+    await caps.db.collection("data/users/"+caps.uid).doc(id).set(doc);
+    await caps.db.doc("logs/"+logId).set(anon(v, logId));
+    LOG.editing = null; LOG.warn = "";
+    renderLog(); $("#logmsg").textContent = t("log.saved");
+  } catch(e){
+    if (e && e.code === "invalid_argument"){ LOG.readonly = true; renderLog(); return; }
+    msg.textContent = e && e.code === "quota_exceeded" ? (e.message || t("log.error")) : t("log.error");
+  }
+}
+async function deleteBag(id){
+  const b = LOG.mine.find(x => x.id === id); if (!b) return;
+  if (LOG.delArm !== id){ LOG.delArm = id; renderLogLists(); return; }
+  LOG.delArm = null;
+  try { await caps.db.collection("data/users/"+caps.uid).doc(id).delete(); if (b.data.logId) await caps.db.doc("logs/"+b.data.logId).delete(); } catch {}
+}
+function statusLabel(s){ return s ? t("log.st."+s) : "—"; }
+function renderLogLists(){
+  const mine = $("#mybags");
+  if (mine){
+    if (LOG.loading) mine.innerHTML = `<p class="note">${esc(t(LOG.slow ? "log.slow" : "log.loading"))}</p>`;
+    else if (!LOG.mine.length) mine.innerHTML = `<p>${esc(t("log.empty"))}</p>`;
+    else mine.innerHTML = LOG.mine.slice().sort((a,b)=> (b.data.date||"").localeCompare(a.data.date||"")).map(b=>{ const d = b.data;
+      const total = (d.flushes||[]).reduce((a,x)=>a+x,0);
+      return `<div class="bag"><strong>${esc(d.bagId)}</strong> · ${esc(d.date)} · ${esc(SPECIES_LABEL[d.species]||d.species)} · ${esc(t("log.sub."+d.substrate))} · ${esc(d.dryGrams)} g
+<div class="note">7: ${esc(statusLabel(d.d7))} · 14: ${esc(statusLabel(d.d14))} · 21: ${esc(statusLabel(d.d21))}${total?` · ${esc(total)} g`:""}</div>
+<div class="row" style="margin-top:6px"><button type="button" class="small" data-act="log-edit" data-id="${esc(b.id)}">${esc(t("log.editBtn"))}</button><button type="button" class="small" data-act="log-del" data-id="${esc(b.id)}">${esc(t(LOG.delArm===b.id?"log.deleteConfirm":"log.deleteBtn"))}</button></div></div>`; }).join("");
+    if (LOG.slow && !LOG.loading) mine.insertAdjacentHTML("afterbegin", `<p class="note">${esc(t("log.slow"))}</p>`);
+  }
+  const all = $("#allbags");
+  if (all){
+    if (LOG.allLoading) all.innerHTML = `<p class="note">${esc(t("log.loading"))}</p>`;
+    else if (!LOG.all.length) all.innerHTML = `<p>${esc(t("log.allEmpty"))}</p>`;
+    else {
+      const cols = CSV_COLS.slice(0, 12);
+      all.innerHTML = `<p>${esc(t("log.count",{n:LOG.all.length}))}</p><div class="scrollx"><table class="data"><thead><tr>${cols.map(c=>`<th>${esc(c)}</th>`).join("")}</tr></thead><tbody>${LOG.all.slice(0,200).map(r=>`<tr>${cols.map(c=>`<td>${esc(csvVal(r, c))}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+    }
+  }
+}
+const CSV_COLS = ["logId","inoculationDate","species","substrate","dryGrams","waterMl","limeG","method","knot","holes","env","tempC","d7","d14","d21","firstHarvestDate","flush1","flush2","flush3","flush4","totalGrams","group","lang","updatedAt","notes"];
+function csvVal(r, c){
+  const d = r.data;
+  if (c === "logId") return r.id;
+  const m = c.match(/^flush(\d)$/); if (m) return (d.flushGrams||[])[m[1]-1] ?? "";
+  const v = d[c]; return v == null ? "" : typeof v === "boolean" ? (v ? "si" : "no") : String(v);
+}
+function toCSV(rows){
+  const q = s => /[",\n\r]/.test(s) ? '"' + s.replace(/"/g,'""') + '"' : s;
+  return "﻿" + CSV_COLS.join(",") + "\r\n" + rows.map(r => CSV_COLS.map(c => q(csvVal(r,c))).join(",")).join("\r\n") + "\r\n";
+}
+function renderLog(){
+  const el = $("#v-bitacora");
+  const formVals = LOG.editing ? (LOG.mine.find(b=>b.id===LOG.editing)||{}).data : null;
+  if (!caps.db || !caps.uid){
+    el.innerHTML = `<h1>${esc(t("log.title"))}</h1><p>${esc(t("log.intro"))}</p><div class="card"><p>${esc(t("log.signin"))}</p></div>`;
+    return;
+  }
+  el.innerHTML = `<h1>${esc(t("log.title"))}</h1><p>${esc(t("log.intro"))}</p>
+${LOG.readonly ? `<div class="card"><p>${esc(t("log.readonly"))}</p></div>` : logFormHTML(formVals)}
+<h2>${esc(t("log.mine"))}</h2><div id="mybags"></div>
+${caps.canEdit ? `<h2>${esc(t("log.all"))}</h2><div class="row"><button type="button" class="primary" data-act="csv">${esc(t("log.export"))}</button></div><p class="note" id="csvmsg" role="status"></p><div id="allbags"></div>` : ""}`;
+  renderLogLists();
+}
+function startLog(){
+  if (!caps.db || !caps.uid || LOG.unsubMine) return;
+  const timer = setTimeout(() => { LOG.slow = true; renderLogLists(); }, 10000);
+  try {
+    LOG.unsubMine = caps.db.collection("data/users/"+caps.uid).onSnapshot(s => {
+      LOG.mine = s.docs.map(d => ({id:d.id, data:d.data()})).filter(b => b.data && b.data.bagId);
+      LOG.loading = false; if (!s.metadata.fromCache){ clearTimeout(timer); LOG.slow = false; }
+      renderLogLists();
+    }, () => { clearTimeout(timer); LOG.loading = false; renderLogLists(); });
+  } catch { LOG.loading = false; }
+  if (caps.canEdit){
+    try {
+      LOG.unsubAll = caps.db.collection("logs").limit(1000).onSnapshot(s => {
+        LOG.all = s.docs.map(d => ({id:d.id, data:d.data()})); LOG.allLoading = false; renderLogLists();
+      }, () => { LOG.allLoading = false; renderLogLists(); });
+    } catch { LOG.allLoading = false; }
+  }
+}
+
+/* ============ vistas y eventos ============ */
+function currentView(){ const h = location.hash.replace("#",""); return VIEWS.includes(h) ? h : "guia"; }
+function showView(){
+  const v = currentView();
+  for (const x of VIEWS) $("#v-"+x).classList.toggle("on", x === v);
+  document.querySelectorAll("#tabs a").forEach(a => a.toggleAttribute("aria-current", a.getAttribute("href") === "#"+v) || a.setAttribute("aria-current","page"));
+  document.querySelectorAll("#tabs a").forEach(a => { if (a.getAttribute("href") === "#"+v) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+}
+function renderAll(){
+  const keep = $("#logform") ? readForm($("#logform")) : null;
+  renderChrome(); renderGuide(); renderCalc(); renderChat(); renderLog(); renderSources(); showView();
+  if (keep && $("#logform")){ // conservar lo escrito al cambiar de idioma
+    const f = $("#logform");
+    for (const [k,v] of Object.entries(keep)){ if (k === "flushes") v.forEach((x,i)=>{ if (f.elements["flush"+i]) f.elements["flush"+i].value = x; }); else if (f.elements[k]) f.elements[k].value = v ?? ""; }
+  }
+}
+function applyTheme(){ const r = document.documentElement; if (S.theme === "auto") r.removeAttribute("data-theme"); else r.setAttribute("data-theme", S.theme); }
+function setStage(s){
+  S.stage = s; LS.set("stage", s); renderGuide();
+  const c = $("#stagecard"); if (c) c.scrollIntoView({behavior: reduceMotion() ? "auto" : "smooth", block:"start"});
+}
+
+document.addEventListener("click", e => {
+  const b = e.target.closest("button,a"); if (!b) return;
+  if (b.dataset.stage){ setStage(b.dataset.stage); return; }
+  const act = b.dataset.act;
+  if (act === "toggle-anim"){ const f = b.closest(".anim"); const p = !f.classList.contains("paused"); f.classList.toggle("paused", p); b.setAttribute("aria-pressed", p); b.textContent = t(p ? "anim.play" : "anim.pause"); f.querySelectorAll("svg").forEach(s => s.pauseAnimations && (p ? s.pauseAnimations() : s.unpauseAnimations())); }
+  else if (act === "change-stage"){ e.preventDefault(); S.stage = null; LS.set("stage", null); location.hash = "#guia"; renderGuide(); renderChat(); scrollTo(0,0); }
+  else if (act === "dl"){ const fmtx = b.dataset.fmt; const d = today(); saveFile(`fungi-mati-protocolo-${d}.${fmtx}`, fmtx === "html" ? docHTML() : docTXT(), $("#dlmsg")); }
+  else if (act === "chat-reset"){ if (chat.ctl) chat.ctl.abort(); chat.turns = []; chat.msgs = []; renderChat(); }
+  else if (act === "photo-rm"){ chat.photo = null; renderPhoto(); }
+  else if (act === "simpler"){ simpler(Number(b.dataset.i)); }
+  else if (act === "log-edit"){ LOG.editing = b.dataset.id; LOG.warn = ""; renderLog(); $("#logform").scrollIntoView({block:"start"}); }
+  else if (act === "log-cancel"){ LOG.editing = null; renderLog(); }
+  else if (act === "log-del"){ deleteBag(b.dataset.id); }
+  else if (act === "csv"){ saveFile(`fungi-mati-bitacora-${today()}.csv`, toCSV(LOG.all), $("#csvmsg")); }
+  else if (act === "media-del"){ mediaDelete(b.dataset.st, Number(b.dataset.i)); }
+  else if (b.id === "chatstop"){ chat.ctl && chat.ctl.abort(); }
+  else if (b.id === "theme"){ S.theme = S.theme === "auto" ? (matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "dark") : S.theme === "dark" ? "light" : "dark"; LS.set("theme", S.theme); applyTheme(); }
+  else if (b.dataset.g){ S.calc.grams = Number(b.dataset.g); LS.set("calc", S.calc); $("#cg").value = S.calc.grams; renderCalcOut(); }
+});
+document.addEventListener("submit", e => {
+  const f = e.target; e.preventDefault();
+  if (f.id === "chatform"){ const q = f.q.value; f.q.value = ""; sendChat(q); }
+  else if (f.dataset.act === "ask-stage"){ const q = f.q.value; if (!q.trim()) return; location.hash = "#asistente"; sendChat(q); }
+  else if (f.id === "logform"){ saveBag(f); }
+  else if (f.dataset.act === "media-up"){ mediaUpload(f); }
+});
+document.addEventListener("input", e => {
+  const f = e.target.form;
+  if (f && f.id === "calcform"){
+    const el = e.target;
+    if (el.name === "grams") S.calc.grams = el.value;
+    if (el.name === "liters") S.calc.liters = el.value;
+    if (el.name === "boilOpen") S.calc.boilOpen = el.checked;
+    LS.set("calc", S.calc);
+    if (el.name === "type"){ S.calc.type = el.value; LS.set("calc", S.calc); renderCalc(); return; }
+    renderCalcOut();
+  }
+  if (f && f.id === "logform"){ delete f.dataset.warned; }
+});
+document.addEventListener("change", e => {
+  if (e.target.id === "lang"){ S.lang = e.target.value; LS.set("lang", S.lang); renderAll(); }
+  else if (e.target.id === "chatphoto"){ const file = e.target.files[0]; if (!file) return; if (chat.photoURL) URL.revokeObjectURL(chat.photoURL); chat.photo = file; chat.photoURL = URL.createObjectURL(file); renderPhoto(); }
+  else if (e.target.form && e.target.form.id === "calcform" && e.target.name === "type"){ S.calc.type = e.target.value; LS.set("calc", S.calc); renderCalc(); }
+});
+window.addEventListener("hashchange", () => { showView(); scrollTo(0,0); });
+
+applyTheme();
+renderAll();
+
+/* ============ capacidades (llegan después, nunca bloquean la guía) ============ */
+const use = n => (window.claude && typeof window.claude.use === "function") ? Promise.resolve(window.claude.use(n)).catch(() => null) : Promise.resolve(null);
+const [sample, db, user, downloads, assets] = await Promise.all(["sample","db","user","downloads","assets"].map(use));
+Object.assign(caps, {sample, db, user, downloads, assets});
+if (sample){
+  const lim = await sample.limits().catch(() => null);
+  caps.imagesOK = !!(lim && lim.images); caps.toolsOK = !!(lim && lim.tools);
+  if (lim && lim.images) caps.imageTypes = lim.images.mediaTypes.join(",");
+}
+if (user){ caps.uid = await user.id(); caps.canEdit = await user.canEdit(); }
+renderAll();
+startLog();
+
+})();
+</script>
+</body>
+</html>
