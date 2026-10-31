@@ -234,7 +234,7 @@
   "cost.pending": "hixɨa (por confirmar)",
   "i18n.note": "IA niukieya yu'ɨkiame (traducción generada por IA); wixárika niukieya yeutari ka me'ɨmaive hixɨa (pendiente de revisión por hablantes nativos); 'ekɨ wixárika pe'enanaita 'arika, pe'unitika, pe'uxeime (ayúdanos a corregirla)",
   "i18n.link": "repositorio mɨ",
-  "footer.license": "Código MIT. Protocolo metá textos CC BY-SA 4.0.",
+  "footer.license": "Código abierto: página 'ena metá protocolo pe'copiar, pe'adaptar, pe'compartir 'aixɨ, Fungi Mati 'ana (licencias MIT metá CC BY-SA 4.0).",
   "footer.repo": "Código abierto",
   "footer.offline": "Página 'ena 'aixɨ yuyeika IA ka: yeiyari (guía), tamatsiyari (calculadora), descarga.",
   "calc.pellet": "Pellet xure (seco)",
@@ -251,6 +251,11 @@
   "calc.tsp1": "1 cuchara yɨ'ɨtsɨ ketsɨ mieme, 'aixɨ parejo, ka pe'utatsiwa (cucharadita medidora rasa, 5 ml)",
   "calc.tbsp1": "1 cuchara ketsɨ mieme, 'aixɨ parejo, ka pe'utatsiwa (cucharada medidora rasa, 15 ml)",
   "calc.fiberStove": "Tai mɨ, estufa (Protocolo A, fibra)",
+  "chat.signin": "IA pe'enanaita o bolsa nierika (foto) diagnóstico: Claude pe'iniciar sesión (cuenta gratis 'aixɨ), ma página 'ena pe'utɨa (vuelve a abrir).",
+  "chat.signinBtn": "Claude pe'iniciar sesión",
+  "chat.signinNote": "Yeiyari (guía), tamatsiyari (calculadora) metá protocolo descarga 'aixɨ yuyeika, cuenta ka.",
+  "chat.openInClaude": "Pe'enanaita IA (asistente con IA) 'aixɨ yuyeika página 'ena Claude 'ana (cuenta gratis 'aixɨ).",
+  "chat.openBtn": "Claude 'ana pe'utɨa (abrir en Claude)",
   "cards": {
     "a": {
       "title": "'Ena pe'aitɨa (empieza aquí)",

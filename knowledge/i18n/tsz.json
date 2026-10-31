@@ -234,7 +234,7 @@
   "cost.pending": "no mítikata",
   "i18n.note": "Ini uandakua IA jimbo ukata jarhasti, p'urhépecha uandariecha no exeska; engaksï thu ini uandakua uandasïni, jarhuataku sési ukani",
   "i18n.link": "repositoriurhu",
-  "footer.license": "Código MIT. Protocolo ka karakatecha CC BY-SA 4.0.",
+  "footer.license": "Código jurhiakurhiti (abierto): ini página ka protocolo copiarini, mójtakuni ka ijtsïni uaa, Fungi Mati arhini (licencias MIT ka CC BY-SA 4.0).",
   "footer.repo": "Código jurhiakurhiti (abierto)",
   "footer.offline": "Ini página IA no jimbo sési jarhuasti: jorhenguarhikua, kontarhikua ka descarga.",
   "calc.pellet": "Pellet p'ukuarhiti",
@@ -251,6 +251,11 @@
   "calc.tsp1": "1 cuchara sapichu nájki mítini jimbo, parejo ka no k'ururhiti (cucharadita medidora rasa, 5 ml)",
   "calc.tbsp1": "1 cuchara k'éri nájki mítini jimbo, parejo ka no k'ururhiti (cucharada medidora rasa, 15 ml)",
   "calc.fiberStove": "Estufa (Protocolo A, fibra jimbo)",
+  "chat.signin": "IA kurhamarhini o bolsa foto jimbo exeni (diagnosticar), Claude jimbo uenani (iniciar sesión) (cuenta gratis uni uaa) ka ménderu ini página jurhiakuni.",
+  "chat.signinBtn": "Claude jimbo uenani (iniciar sesión)",
+  "chat.signinNote": "Ixu, jorhenguarhikua, kontarhikua ka protocolo descarga sési jarhuasti cuenta no jimbo.",
+  "chat.openInClaude": "Jarhuatiri IA jimbo sési jarhuasti ini página Claude jimbo (cuenta gratis uni uaa).",
+  "chat.openBtn": "Claude jimbo jurhiakuni (abrir)",
   "cards": {
     "a": {
       "title": "Ixu uenani",

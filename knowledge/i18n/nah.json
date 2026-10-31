@@ -234,7 +234,7 @@
   "cost.pending": "noja monekij moitas",
   "i18n.note": "Inin tlajtolkuepalli okichiwak IA, noja monekij ma kiitakan tlen kitlajtowaj inin tlajtolli; tla tikitlajtowa inin tlajtolli, xitechpalewi tikkwalichiwaskej",
   "i18n.link": "ipan repositorio",
-  "footer.license": "Código MIT. Protocolo wan tlajkuilolli CC BY-SA 4.0.",
+  "footer.license": "Tekitl tlatlapojtok: welis tikkopiaros, tikpatlas wan tikmakas inin página wan protocolo, tla tikijtos Fungi Mati (licencias MIT wan CC BY-SA 4.0).",
   "footer.repo": "Código tlatlapojtok",
   "footer.offline": "Inin página tekiti ika amo IA: tlayakanalli, tlapowaloni wan tlatemowilistli.",
   "calc.pellet": "Pellet wakki",
@@ -251,6 +251,11 @@
   "calc.tsp1": "1 cucharita tlen ika tlatamachiwa, san hasta itenko, amo tlapanawia (cucharadita medidora rasa)",
   "calc.tbsp1": "1 cuchara tlen ika tlatamachiwa, san hasta itenko, amo tlapanawia (cucharada medidora rasa)",
   "calc.fiberStove": "Tlikuilli (estufa) (Protocolo A, ichtli)",
+  "chat.signin": "Tla tikneki tiktlajtlanis IA o tikitas mobolsa ika se foto, xikalaki ipan Claude (iniciar sesión) (welis tikchiwas se cuenta amo tlakowtli) wan sampa xiktlapo inin página.",
+  "chat.signinBtn": "Xikalaki ipan Claude (iniciar sesión)",
+  "chat.signinNote": "Axkan, tlayakanalli, tlapowaloni wan tlatemowilistli (descarga) tlen protocolo tekitij ika amo cuenta.",
+  "chat.openInClaude": "Tepalewijketl ika IA tekiti ipan inin página kampa Claude (welis tikchiwas se cuenta amo tlakowtli).",
+  "chat.openBtn": "Xiktlapo ipan Claude (abrir)",
   "cards": {
     "a": {
       "title": "Nikan xipewa",

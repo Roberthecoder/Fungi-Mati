@@ -234,7 +234,7 @@
   "cost.pending": "ma' jaajkúunsa'ak",
   "i18n.note": "Le k'eexil t'aana' (traducción) beeta'an tumen IA, táan u páa'tik u xak'alta'al tumen máaxo'ob ku t'aniko'ob maaya t'aan tu kuxtal; wa ka t'anik le t'aana', áantoj to'on utia'al k-utskíinsik",
   "i18n.link": "ichil le repositorio",
-  "footer.license": "Código MIT. U bejil meyaj yéetel ts'íibo'ob CC BY-SA 4.0.",
+  "footer.license": "Je'ek'ab meyaj: je'el u páajtal a copiartik, a k'exik yéetel a t'oxik le ju'una' yéetel u protocolo, wa ka a ya'al Fungi Mati (licencias MIT yéetel CC BY-SA 4.0).",
   "footer.repo": "Código je'ek'ab",
   "footer.offline": "Le ju'una' ku meyaj kex mina'an IA: bejil meyaj, xookil p'iis yéetel u ch'a'abal archivo.",
   "calc.pellet": "Pellet tikin",
@@ -251,6 +251,11 @@
   "calc.tsp1": "1 cucharadita u ti'al p'iis, chéen tak u chi', ma' asab (cucharadita medidora rasa)",
   "calc.tbsp1": "1 cuchara u ti'al p'iis, chéen tak u chi', ma' asab (cucharada medidora rasa)",
   "calc.fiberStove": "K'óoben yéetel k'áak' (Protocolo A, sóos)",
+  "chat.signin": "Utia'al a k'áatik ti' IA wa a xak'altik a bolsa yéetel u oochel, oken ti' Claude (iniciar sesión) (je'el u páajtal a beetik a cuenta ma' tu bo'olil) ka a ka' je'ik le ju'una'.",
+  "chat.signinBtn": "Oken ti' Claude (iniciar sesión)",
+  "chat.signinNote": "Bejla'e', le bejil meyaj, le xookil p'iis yéetel u ch'a'abal u protocolo ku meyajo'ob kex mina'an cuenta.",
+  "chat.openInClaude": "Le j-áantaj yéetel IA ku meyaj ti' le ju'una' ichil Claude (je'el u páajtal a beetik a cuenta ma' tu bo'olil).",
+  "chat.openBtn": "Je'e ti' Claude (abrir)",
   "cards": {
     "a": {
       "title": "Káajs way",

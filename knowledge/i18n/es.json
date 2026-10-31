@@ -233,7 +233,7 @@
   "cost.pending": "por confirmar",
   "i18n.note": "Traducción generada por IA, pendiente de revisión por hablantes nativos; si hablas esta lengua, ayúdanos a corregirla",
   "i18n.link": "en el repositorio",
-  "footer.license": "Código MIT. Protocolo y textos CC BY-SA 4.0.",
+  "footer.license": "Proyecto abierto: puedes copiar, adaptar y compartir esta página y el protocolo, citando a Fungi Mati (licencias MIT y CC BY-SA 4.0).",
   "footer.repo": "Código abierto",
   "footer.offline": "Esta página funciona sin IA: guía, calculadora y descarga.",
   "calc.pellet": "Pellet seco",
@@ -250,6 +250,11 @@
   "calc.tsp1": "1 cucharadita medidora rasa",
   "calc.tbsp1": "1 cucharada medidora rasa",
   "calc.fiberStove": "Estufa (Protocolo A, fibra)",
+  "chat.signin": "Para preguntarle a la IA o diagnosticar tu bolsa con una foto, inicia sesión en Claude (puedes crear una cuenta gratis) y vuelve a abrir esta página.",
+  "chat.signinBtn": "Iniciar sesión en Claude",
+  "chat.signinNote": "Mientras tanto, la guía, la calculadora y la descarga del protocolo funcionan sin cuenta.",
+  "chat.openInClaude": "El asistente con IA funciona en la versión de esta página dentro de Claude (puedes crear una cuenta gratis).",
+  "chat.openBtn": "Abrir en Claude",
   "cards": {
     "a": {
       "title": "Empieza aquí",

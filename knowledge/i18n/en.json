@@ -233,7 +233,7 @@
   "cost.pending": "to be confirmed",
   "i18n.note": "AI-generated translation, awaiting review by native speakers; if you speak this language, help us fix it",
   "i18n.link": "in the repository",
-  "footer.license": "Code: MIT. Protocol and texts: CC BY-SA 4.0.",
+  "footer.license": "Open project: you may copy, adapt and share this page and the protocol, crediting Fungi Mati (MIT and CC BY-SA 4.0 licenses).",
   "footer.repo": "Open source",
   "footer.offline": "This page works without AI: guide, calculator and download.",
   "calc.pellet": "Dry pellets",
@@ -250,6 +250,11 @@
   "calc.tsp1": "1 level measuring teaspoon",
   "calc.tbsp1": "1 level measuring tablespoon",
   "calc.fiberStove": "Stove (Protocol A, fiber)",
+  "chat.signin": "To ask the AI or diagnose your bag from a photo, sign in to Claude (you can create a free account) and open this page again.",
+  "chat.signinBtn": "Sign in to Claude",
+  "chat.signinNote": "Meanwhile, the guide, calculator and protocol download work without an account.",
+  "chat.openInClaude": "The AI assistant works in the version of this page inside Claude (you can create a free account).",
+  "chat.openBtn": "Open in Claude",
   "cards": {
     "a": {
       "title": "Start here",

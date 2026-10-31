@@ -186,7 +186,7 @@ const S = {
   theme: LS.get("theme", "auto"),
 };
 if (!LANGS.includes(S.lang)) S.lang = "es";
-const caps = { sample:null, db:null, user:null, downloads:null, assets:null, uid:null, canEdit:false, imagesOK:false, toolsOK:false, sampleOff:false };
+const caps = { sample:null, db:null, user:null, downloads:null, assets:null, uid:null, canEdit:false, imagesOK:false, toolsOK:false, sampleOff:false, resolved:false };
 
 /* ============ i18n ============ */
 function t(k, vars){
@@ -531,8 +531,7 @@ function renderChrome(){
   sel.innerHTML = LANGS.map(l => { const m = D.i18n[l]._meta || {}; const label = m.nameEs && m.nameEs !== m.name ? `${m.name} (${m.nameEs})` : m.name; return `<option value="${l}"${l===S.lang?" selected":""}>${esc(label || l)}</option>`; }).join("");
   $("#theme").setAttribute("aria-label", t("theme.toggle"));
   $("#theme").title = t("theme.toggle");
-  const showChat = !!caps.sample && !caps.sampleOff;
-  $("#tabs").innerHTML = VIEWS.filter(v => v !== "asistente" || showChat).map(v => {
+  $("#tabs").innerHTML = VIEWS.map(v => {
     const key = {guia:"nav.guide", calculadora:"nav.calc", asistente:"nav.chat", bitacora:"nav.log", fuentes:"nav.sources"}[v];
     return `<a href="#${v}"${currentView()===v?' aria-current="page"':""}>${esc(t(key))}</a>`; }).join("");
   const b = $("#i18nbanner");
@@ -570,6 +569,7 @@ function stageCardHTML(st){
   <div class="animgrid">${STAGE_ANIMS[st].map(animHTML).join("")}</div>
   <div class="media" id="media-${st}"></div>
   ${full ? `<details><summary>${esc(fullLabel)}</summary><div${isIndig()?' lang="es"':""}>${md(full)}</div></details>` : ""}
+  ${!ai && caps.resolved && !caps.sampleOff ? `<div class="card" style="background:var(--soft)">${noAIHTML()}</div>` : ""}
   ${ai ? `<form class="card" data-act="ask-stage" style="background:var(--soft)"><label for="askstage">${esc(t("card.askAI"))}</label><div class="row"><input id="askstage" name="q" placeholder="${esc(t("card.askPlaceholder"))}" style="flex:1 1 220px"><button class="primary" type="submit">${esc(t("card.ask"))}</button></div></form>` : ""}
   <div class="row">${idx < 4 ? `<button type="button" data-stage="${STAGES[idx+1]}">${esc(t("stage.next"))} →</button>` : ""}<button type="button" data-act="change-stage">${esc(t("stage.change"))}</button></div>
 </div>`;
@@ -710,10 +710,19 @@ function showAnimation(name){
   v.scrollIntoView({behavior: reduceMotion() ? "auto" : "smooth", block:"nearest"});
   return true;
 }
+/* Sin IA: explica cómo activarla según dónde se abrió la página. */
+function noAIHTML(){
+  if (caps.sampleOff) return `<p>${esc(t("chat.declined"))}</p>`;
+  if (!window.claude){ // copia fuera de Claude (GitHub Pages)
+    const url = esc(CFG.artifactUrl || "https://claude.ai");
+    return `<p>${esc(t("chat.openInClaude"))}</p><p><a class="btn" style="display:inline-block;text-decoration:none" href="${url}" target="_blank" rel="noopener">${esc(t("chat.openBtn"))}</a></p>`;
+  }
+  return `<p>${esc(t("chat.signin"))}</p><p><a class="btn" style="display:inline-block;text-decoration:none" href="https://claude.ai/login" target="_blank" rel="noopener">${esc(t("chat.signinBtn"))}</a></p><p class="note">${esc(t("chat.signinNote"))}</p>`;
+}
 function renderChat(){
   const el = $("#v-asistente");
   if (!caps.sample || caps.sampleOff){
-    el.innerHTML = `<div class="wrap"><h1>${esc(t("chat.title"))}</h1><div class="card"><p>${esc(t(caps.sampleOff ? "chat.declined" : "chat.unavailable"))}</p><p><a href="#guia">${esc(t("nav.guide"))}</a></p></div></div>`;
+    el.innerHTML = `<div class="wrap"><h1>${esc(t("chat.title"))}</h1><div class="card">${caps.resolved ? noAIHTML() : `<p class="thinking">${esc(t("log.loading"))}</p>`}<p><a href="#guia">${esc(t("nav.guide"))}</a></p></div></div>`;
     return;
   }
   el.innerHTML = `<h1>${esc(t("chat.title"))}</h1><p>${esc(t("chat.intro"))}</p>
@@ -1145,7 +1154,7 @@ renderAll();
 /* ============ capacidades (llegan después, nunca bloquean la guía) ============ */
 const use = n => (window.claude && typeof window.claude.use === "function") ? Promise.resolve(window.claude.use(n)).catch(() => null) : Promise.resolve(null);
 const [sample, db, user, downloads, assets] = await Promise.all(["sample","db","user","downloads","assets"].map(use));
-Object.assign(caps, {sample, db, user, downloads, assets});
+Object.assign(caps, {sample, db, user, downloads, assets, resolved:true});
 if (sample){
   const lim = await sample.limits().catch(() => null);
   caps.imagesOK = !!(lim && lim.images); caps.toolsOK = !!(lim && lim.tools);
