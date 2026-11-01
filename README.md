@@ -57,7 +57,7 @@ La versión 1 (mayo de 2026) alimentó al primer chatbot en Botpress. El experim
 | Fibra | Hervir 1 h | Hervir 1 h | Material más crudo que el pellet |
 | Micelio | ~6 meses a temperatura ambiente | Refrigerar (1–4 °C), salvo *P. djamor* | Bacterias oportunistas a temperatura ambiente |
 | Medidas | Cucharada, puñado, pizca | Taza y cucharas medidoras rasas, botella de 600 ml, fracción del paquete de micelio (densidades editables en `config.json`) | Que cualquiera pueda replicarlas igual |
-| Costo | ~10 USD | Rango configurable en `config.json`, pendiente de confirmar | Había dos cifras distintas (10 y 30 USD) |
+| Costo | ~10 USD | La página no muestra cifra hasta confirmarla; el FAQ dice que el sustrato puede ser residuo gratuito y el micelio se compra por peso | Había dos cifras distintas (10 y 30 USD) |
 | Nuevo | — | Glosario en línea, identificación visual de materiales, escalado a cualquier cantidad, bloque de seguridad, seguimiento posinoculación, respuesta al miedo a la toxicidad | Vocabulario y miedo fueron barreras en W4 |
 
 Las cifras validadas en W4 se conservaron salvo decisión explícita del autor (la cal pasó de 1 g/L a 10 g/L). Las diferencias pendientes están en `knowledge/FUENTES.md` como `TODO Robert:`; las decisiones tomadas, en su sección «Decisiones del autor».

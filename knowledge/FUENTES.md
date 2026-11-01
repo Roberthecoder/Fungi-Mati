@@ -67,7 +67,7 @@ Berne, S., Lah, L., & Sepčić, K. (2009). Aegerolysins: Structure, function, an
 
 Bhatti, M. I., Jiskani, M. M., Wagan, K. H., Pathan, M. A., & Magsi, M. R. (2007). Growth, development and yield of oyster mushroom, *Pleurotus ostreatus* (Jacq. ex. Fr.) Kummer as affected by different spawn rates. *Pakistan Journal of Botany, 39*(7), 2685–2692. https://www.pakbs.org/pjbot/PDFs/39(7)/PJB39(7)2685.pdf
 
-Blancarte-Contreras, E., Corral-Rivas, S., Domínguez-Gómez, T. G., Lujan-Soto, J. E., Goche-Télles, J. R., & Montiel-Antuna, E. (2022). Improving the physical, mechanical and energetic characteristics of pine sawdust by the addition of up to 40% *Agave durangensis* Gentry pellets. *Energies, 15*(10), 3711. https://www.mdpi.com/1996-1073/15/10/3711
+Blancarte-Contreras, E., Corral-Rivas, S., Domínguez-Gómez, T. G., Lujan-Soto, J. E., Goche-Télles, J. R., & Montiel-Antuna, E. (2022). Improving the physical, mechanical and energetic characteristics of pine sawdust by the addition of up to 40% *Agave durangensis* Gentry pellets. *Energies, 15*(10), 3711. https://doi.org/10.3390/en15103711
 
 Contreras, E. P., Sokolov, M., Mejía, G., & Sánchez, J. E. (2004). Soaking of substrate in alkaline water as a pretreatment for the cultivation of *Pleurotus ostreatus*. *The Journal of Horticultural Science and Biotechnology, 79*(2), 234–240. https://doi.org/10.1080/14620316.2004.11511754
 

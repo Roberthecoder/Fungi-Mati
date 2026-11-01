@@ -1,6 +1,6 @@
 # Sources for the Fungi Mati protocol (v2)
 
-Every operating figure in the protocol is backed by peer-reviewed literature on the genus *Pleurotus*, or was validated in the Fungi Mati kitchen workshop with 16 first-time volunteers (May 2026). Citations are kept out of the AI's instructions to keep its answers short; they live here. The full Spanish version, with detailed notes, is in `knowledge/FUENTES.md` in the open repository. License: CC BY-SA 4.0.
+Every operating figure in the protocol is backed by peer-reviewed literature on the genus *Pleurotus*, or was validated in practice: in May 2026, 16 volunteers in the Fungi Mati course grew a bag at home guided by the AI (experiment W4). Citations are kept out of the AI's instructions to keep its answers short; they live here. The full Spanish version, with detailed notes, is in `knowledge/FUENTES.md` in the open repository. License: CC BY-SA 4.0.
 
 ## Parameters and evidence
 

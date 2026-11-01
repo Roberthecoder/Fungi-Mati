@@ -244,7 +244,7 @@ Un crecimiento blanco algodonoso, aunque tenga zonas amarillentas con gotitas (e
 
 **¿Cómo guardo el micelio?** En el refrigerador (1 a 4 °C), en su bolsa cerrada, y úsalo lo antes posible; a temperatura ambiente lo pueden invadir bacterias oportunistas. La seta rosa (*P. djamor*) es la excepción: no la refrigeres.
 
-**¿Cuánto cuesta empezar?** Ver el costo por bolsa en la página (rango por confirmar). El sustrato puede conseguirse gratis como residuo local.
+**¿Cuánto cuesta empezar?** El sustrato puede conseguirse gratis como residuo local, y el micelio se compra por peso.
 
 > TODO Robert: confirmar costo por unidad (v1 decía unos 10 USD con micelio; otros materiales decían 30 USD). La página lo muestra como rango desde config.json.
 
@@ -426,7 +426,7 @@ When you finish inoculating, continue with stage c) for follow-up.
 **Which bag?** A thick clean plastic bag, 2–5 kg capacity. Never put boiling substrate in a thin bag.
 **Where to buy spawn in Mexico?** Mercado Libre ("micelio Pleurotus"), sellers with recent good reviews.
 **How do I store spawn?** In the fridge (1–4 °C), closed, and use it soon; pink oyster (*P. djamor*) is the exception.
-**How much does it cost?** See the cost range on the page (to be confirmed). Substrate can be free local waste.
+**How much does it cost?** Substrate can be free local waste, and spawn is bought by weight.
 **Special equipment?** No: a pot, water, hydrated lime, a spray bottle, a thick bag.
 **Any organic waste?** Materials rich in lignin or cellulose: agave bagasse, wood pellets and sawdust, coconut coir, straw, coffee grounds (best mixed), cardboard, corn stalks. No greasy, meat or chemical waste.
 **No growth after 21 days?** No spots or smell: too dry, old spawn or light-exposed. Spots or sour smell: contamination.

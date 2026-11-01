@@ -9,12 +9,6 @@
     "whatsapp": "+52 33 1759 1130"
   },
   "_envioBitacora": "Contactos a los que los voluntarios envían su archivo de bitácora. Se muestran en la página pública.",
-  "costoUnidad": {
-    "min": 10,
-    "max": 30,
-    "moneda": "USD",
-    "nota": "TODO Robert: confirmar costo por unidad. 10 USD sale del protocolo v1 y 30 USD de otros materiales; mientras no se confirme, la página muestra el rango."
-  },
   "garantiaDias": 8,
   "mercadoLibre": true,
   "medidas": {
