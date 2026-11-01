@@ -5,7 +5,7 @@
     "nameEs": "Wixárika (huichol)",
     "machineTranslated": true
   },
-  "app.title": "Fungi Mati: kiye 'ena hongo (setas) pekwiniya",
+  "app.title": "Fungi Mati: mai kwaxi (bagazo de agave) metá tsiere (residuos) mɨ, hongo (setas) kwaiyari mɨ yeika",
   "app.tagline": "Tsiere mɨ kwaxi, kwaiyari mɨ yeika",
   "lang.label": "Niukieya",
   "theme.toggle": "Tau / tikari (modo claro u oscuro)",
@@ -14,7 +14,7 @@
   "nav.chat": "Pe'enanaita (asistente)",
   "nav.log": "Hongo hapuri (bitácora)",
   "nav.sources": "Mana 'utiarika (fuentes)",
-  "hero.destination": "Kiye pellet (pellets de madera) hongo kwaiyari mɨ yeika, 'auxúwi xewí semana (unas seis semanas).",
+  "hero.destination": "Kiye tsiere (residuos), mai kwaxi (bagazo de agave) tequila mɨ 'ena yeika ya, hongo kwaiyari mɨ yeika, 'auxúwi xewí semana (unas seis semanas).",
   "hero.question": "¿Kepaucha peyeika hiki? (¿en qué etapa estás?)",
   "stage.a": "Hiki nepɨtiu'aitɨa, ka nemɨ yeika",
   "stage.b": "Hongo ki (sustrato) metá hongo semiya (micelio) nemɨ yeika",
@@ -74,7 +74,7 @@
   "calc.intro": "Pe'u'ɨkia ketsɨ hongo ki xure (sustrato seco) peyeika. Gramos metá taza, cucharadita ya.",
   "calc.grams": "Gramos hongo ki xure (sustrato seco)",
   "calc.type": "Hongo ki (sustrato) 'aimieme",
-  "calc.type.pellet": "Pellet o kwaxi (aserrín, bagazo de café)",
+  "calc.type.pellet": "Pellet o kwaxi (mai kwaxi (bagazo de agave), aserrín, bagazo de café)",
   "calc.type.fiber": "Fibra (bagazo de agave, fibra de coco, paja)",
   "calc.boilOpen": "Hâ hervir ka pe'utata (5 % hâ peuxeitɨa, evaporación)",
   "calc.potLiters": "Litros hâ xari mɨ (olla, para fibra)",
@@ -272,7 +272,7 @@
       "title": "'Ena pe'aitɨa (empieza aquí)",
       "steps": [
         "Hongo semiya (micelio, «semilla» del hongo) Pleurotus ostreatus pe'ukwiniya: grano tuxa arroz ya, algodón ya. Refrigerador mɨ pe'u'ɨyeika (1 a 4 °C).",
-        "Hongo ki (sustrato, el material donde crece) pe'ukwiniya: pellet de aserrín, madera dura 'aixɨ yuku (de preferencia madera dura, KA pino), o pellet de bagazo de agave. Misu kwaiyari ya (croquetas de gato), café claro.",
+        "Hongo ki (sustrato, el material donde crece) pe'ukwiniya: pellet mai kwaxi (bagazo de agave) o pellet de aserrín, madera dura 'aixɨ yuku (KA pino). Misu kwaiyari ya (croquetas de gato), café claro.",
         "Cal hidratada (cal apagada o para pintar) pe'ukwiniya. NUNCA cal viva. Pellet bolsa 400 g xewí: cal 6 g.",
         "Peyeika: taza metá cucharas ketsɨ mieme (taza y cucharas medidoras), xari (olla) o recipiente resistente al calor, bolsa de plástico gruesa, aspersor, cubrebocas, guantes metá lentes."
       ],

@@ -5,7 +5,7 @@
     "nameEs": "Purépecha",
     "machineTranslated": true
   },
-  "app.title": "Fungi Mati: jorhenguarhikua terékua k'éraatani k'umanchikuarhu",
+  "app.title": "Fungi Mati: akamba sapichu (bagazo de agave) ka máteru basura (residuos) jimbo terékua k'éraatani, t'irekua ukani",
   "app.tagline": "Basura jimbo t'irekua ukani",
   "lang.label": "Uandakua",
   "theme.toggle": "Mojtakuni: jurhiata exekua o turhipiti exekua",
@@ -14,7 +14,7 @@
   "nav.chat": "Jarhuatiri",
   "nav.log": "Karakata",
   "nav.sources": "Uératakuecha",
-  "hero.destination": "Thu chkari pellet jimbo terékua t'iretakua ukaa, kuimu semanaecharhu ma k'uanitsï.",
+  "hero.destination": "Thu chkari basura (residuos), akamba sapichu (bagazo de agave) tequila jimbo p'ámarhikata jimboka, terékua t'iretakua ukaa, kuimu semanaecharhu ma k'uanitsï.",
   "hero.question": "Ambe etaparhu jarhasïni?",
   "stage.a": "Ji iasï uenani ka no ambe jatsiska",
   "stage.b": "Ya jatsiska terékua t'irekua (sustrato) ka terékua urapiti (micelio)",
@@ -74,7 +74,7 @@
   "calc.intro": "Kara nájki terékua t'irekua p'ukuarhiti (sustrato seco) jatsiska. Iámendu thu nájki jimbo kontarhini, gramurhu ka cocina medida jimbo.",
   "calc.grams": "Gramu terékua t'irekua p'ukuarhiti (sustrato seco)",
   "calc.type": "Ambe terékua t'irekua (sustrato)",
-  "calc.type.pellet": "Pellet o p'ukuarhiti pupu (aserrín, bagazo de café)",
+  "calc.type.pellet": "Pellet o p'ukuarhiti pupu (akamba sapichu (bagazo de agave), aserrín, bagazo de café)",
   "calc.type.fiber": "Fibra (bagazo de agave, fibra de coco, paja)",
   "calc.boilOpen": "Itsï no k'ujchiti kurhúndaa (5 % sánteru jatsikuni, itsï tarhiatarhu uératini jimbo)",
   "calc.potLiters": "Litru itsï ollarhu (fibra jimbo)",
@@ -272,7 +272,7 @@
       "title": "Ixu uenani",
       "steps": [
         "Terékua urapiti (micelio, terékua «tsïri») Pleurotus ostreatus jimbo jirhini: tsïri urapiti arroz jimboka, algodón urapiti jimbo k'ujchiti. Refrigerador-rhu jatsini (1 ka 4 °C).",
-        "Terékua t'irekua (sustrato, nani terékua k'éraani) jirhini: pellet de aserrín, sánteru sési madera dura jimbo (ásï pino), o pellet de bagazo de agave. Misitu croqueta jimboka jarhasti, café sáni urapiti.",
+        "Terékua t'irekua (sustrato, nani terékua k'éraani) jirhini: pellet akamba sapichu jimbo (bagazo de agave) o pellet de aserrín madera dura jimbo (ásï pino). Misitu croqueta jimboka jarhasti, café sáni urapiti.",
         "Cal hidratada (cal apagada o cal para pintar) jirhini, ásï cal viva. Ma bolsa 400 g pellet jimbo, 6 g jatsikuni.",
         "Jatsini: taza ka cuchara nájki mítini jimbo (taza y cucharas medidoras), ma olla o recipiente ts'ïrhipiti jimbo sési, ma bolsa plástiku k'éri (gruesa), ma aspersor, cubrebocas, guantes ka lentes."
       ],

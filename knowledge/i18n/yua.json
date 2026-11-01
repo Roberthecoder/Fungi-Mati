@@ -5,7 +5,7 @@
     "nameEs": "Maya yucateco",
     "machineTranslated": true
   },
-  "app.title": "Fungi Mati: u bejil u pak'al xikin che' (setas) ichil a wotoch",
+  "app.title": "Fungi Mati: u sóosil agave (bagazo de agave) yéetel u láak' ba'al ku pu'ulul (residuos) ku suut xikin che' (setas) ku jaanta'al",
   "app.tagline": "Ti' ba'al ku pu'ulul tak janal",
   "lang.label": "T'aan",
   "theme.toggle": "K'ex sáasil wa éek'joch'e'enil",
@@ -14,7 +14,7 @@
   "nav.chat": "J-áantaj",
   "nav.log": "U ts'íibil meyaj (bitácora)",
   "nav.sources": "Tu'ux ch'a'abij",
-  "hero.destination": "Yaan a k'exik pellets u ti'al che' ti' xikin che' (setas) ku jaanta'al, ichil kex wakp'éel semanas.",
+  "hero.destination": "Yaan a k'exik ba'al ku pu'ulul (residuos), beey u sóosil agave (bagazo de agave) ku p'áatal tumen le tequila, ti' xikin che' (setas) ku jaanta'al, ichil kex wakp'éel semanas.",
   "hero.question": "¿Tu'ux yaanech ichil le meyaja'?",
   "stage.a": "Chéen táan in káajal, mix ba'al yaan ten",
   "stage.b": "Yaan ten u janal xikin che' (sustrato) yéetel u motsil (micelio)",
@@ -74,7 +74,7 @@
   "calc.intro": "Ts'íibt jayp'éel gramos u janal xikin che' (sustrato) tikin yaan tech. Tuláakal ku ka' xo'okol yéetel a p'iis, ichil gramos yéetel ichil u p'iisil k'óoben.",
   "calc.grams": "Gramos u janal xikin che' tikin",
   "calc.type": "Ba'ax u janal xikin che'",
-  "calc.type.pellet": "Pellets wa p'u'uk (u ts'u'il che', u yeek'il café)",
+  "calc.type.pellet": "Pellets wa p'u'uk (u sóosil agave (bagazo de agave), u ts'u'il che', u yeek'il café)",
   "calc.type.fiber": "Su'uk wa sóos (u sóosil agave, u sóosil coco, su'uk)",
   "calc.boilOpen": "Yaan in chakik le ja' ma' k'ala'an (ts'áa 5 % tu yo'olal u náakal ja' ti' buts')",
   "calc.potLiters": "Litros ja' ichil le kum (ti' sóos)",
@@ -272,7 +272,7 @@
       "title": "Káajs way",
       "steps": [
         "Kaxt u motsil xikin che' (micelio, u «i'inaj» xikin che') ti' Pleurotus ostreatus: sak i'inaj beey arroz tapa'an yéetel jun sak chuuy beey taman. Kanáant ichil refrigerador (1 tak 4 °C).",
-        "Kaxt u janal xikin che' (sustrato, tu'ux ku ch'íijil): pellets ti' u ts'u'il che', asab ma'alob ti' k'a'am che' (madera dura; ma' ti' pino), wa ti' u sóosil agave. Je'el beey u janal miis, chak k'aank'an boon sáasil (café claro).",
+        "Kaxt u janal xikin che' (sustrato, tu'ux ku ch'íijil): pellets ti' u sóosil agave (bagazo de agave) wa ti' u ts'u'il k'a'am che' (madera dura; ma' ti' pino). Je'el beey u janal miis, chak k'aank'an boon sáasil (café claro).",
         "Kaxt cal ts'o'ok u ts'a'abal ja' ti' (cal hidratada, cal apagada wa utia'al bo'on), mix juntéen cal kuxa'an (cal viva). Ti' jun bolsa ti' 400 g pellet yaan a meyajtik 6 g.",
         "Ts'áa naats' tech: taasa yéetel cucharas u ti'al p'iis (taza y cucharas medidoras), jun p'éel kum wa nu'ukul ma' tu k'aschajal yéetel chokolil, jun p'éel bolsa plástico piim, nu'ukul utia'al u xi'ixit'il ja' (aspersor), cubrebocas, guantes yéetel lentes."
       ],

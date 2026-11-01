@@ -5,7 +5,7 @@
     "nameEs": "Náhuatl",
     "machineTranslated": true
   },
-  "app.title": "Fungi Mati: tlayakanalli para tikixtis kwawnanakatl (setas) mochan",
+  "app.title": "Fungi Mati: ika bagazo tlen metl (bagazo de agave) wan okse tlen tiktlaxaj (residuos) tikixtis kwawnanakatl (setas) tlen kwalo",
   "app.tagline": "Tlen tiktlaxaj mokwepa tlakwalli",
   "lang.label": "Tlajtolli",
   "theme.toggle": "Xikpatla: tlawilli o tlayowa",
@@ -14,7 +14,7 @@
   "nav.chat": "Tepalewijketl",
   "nav.log": "Tlajkuilolamatl",
   "nav.sources": "Kanin ewa tlamatilistli",
-  "hero.destination": "Tikinkwepas pellet tlen kwawtextli ipan kwawnanakatl tlen kwalo, kentsin ipan chikuase semanas.",
+  "hero.destination": "Tikinkwepas tlen tiktlaxaj (residuos), kenin bagazo tlen metl (bagazo de agave) tlen kikawa tequila, ipan kwawnanakatl tlen kwalo, kentsin ipan chikuase semanas.",
   "hero.question": "¿Kanin tiitstok axkan?",
   "stage.a": "Sa nipewa, amo tlen nikpia",
   "stage.b": "Ya nikpia nanakatl itlakwal (sustrato) wan nanakatl inelwayo (micelio)",
@@ -74,7 +74,7 @@
   "calc.intro": "Xiktlajkuilo kech nanakatl itlakwal (sustrato) wakki tikpia. Nochi mopowa sampa ika tlen tikpia, ipan gramos wan ipan tlatamachiwalli tlen tlakwalchiwaloyan.",
   "calc.grams": "Gramos tlen sustrato wakki",
   "calc.type": "Tlen sustrato",
-  "calc.type.pellet": "Pellet o textli (kwawtextli, bagazo tlen café)",
+  "calc.type.pellet": "Pellet o textli (bagazo tlen metl (bagazo de agave), kwawtextli, bagazo tlen café)",
   "calc.type.fiber": "Ichtli (bagazo tlen metl, ichtli tlen koko, sakatl)",
   "calc.boilOpen": "Nikposonis atl amo tlatsakwalli (xiktlalili 5 % ipampa atl kisa kenin poktli)",
   "calc.potLiters": "Litros atl ipan komitl (ipampa ichtli)",
@@ -272,7 +272,7 @@
       "title": "Nikan xipewa",
       "steps": [
         "Xikonana nanakatl inelwayo (micelio; inon «ixinach» nanakatl) tlen Pleurotus ostreatus: tlaolli istak kenin arros tlapachotok ika istak kenin ichkatl. Xikpia ijtik refrigerador (1 hasta 4 °C).",
-        "Xikonana nanakatl itlakwal (sustrato; kanin mooskaltia): pellet tlen kwawtextli, achi kwali tlen kwawitl chikawak (madera dura; amo tlen okotl, pino), o tlen bagazo tlen metl. Monextia kenin croquetas tlen mistli, achi kafentik (café claro).",
+        "Xikonana nanakatl itlakwal (sustrato; kanin mooskaltia): pellet tlen bagazo tlen metl (bagazo de agave) o tlen kwawtextli tlen kwawitl chikawak (madera dura; amo tlen okotl, pino). Monextia kenin croquetas tlen mistli, achi kafentik (café claro).",
         "Xikonana tenextli tlaawachilli (cal hidratada; cal apagada o cal para pintar); amo keman tenextli yoltok (cal viva). Ipampa se bolsa tlen 400 g pellet tikwikas 6 g.",
         "Xikpia: taza wan cucharas tlen ika tlatamachiwa (taza y cucharas medidoras), se komitl o kaxitl tlen amo atiya ika totonkayotl, se bolsa tlen plástico tilawak, se tlaawachiloni (aspersor), cubrebocas, guantes wan lentes."
       ],
