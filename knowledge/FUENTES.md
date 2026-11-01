@@ -117,7 +117,8 @@ Tisdale, T. E., Miyasaka, S. C., & Hemmes, D. E. (2006). Cultivation of the oyst
 
 University of California Cooperative Extension. (2011). *Cultivating mushrooms on small farms* [Presentación]. University of California Agriculture and Natural Resources. https://ucanr.edu/sites/sfp/files/144812.pdf
 
-Wiesnerová, L., Hřebečková, T., Jablonský, I., & Koudela, M. (2023). Effect of different water contents in the substrate on cultivation of *Pleurotus ostreatus* Jacq. P. Kumm. *Folia Horticulturae, 35*(1), 25–31. https://doi.org/10.2478/fhort-2023-0002
+Warren-Vega, W. M., Fonseca-Aguiñaga, R., López de la Cruz, C. F., Campos-Rodríguez, A., Zárate Guzmán, A. I., & Romero Cano, L. A. (2025). Valorization of agave bagasse as a bio-template for circular economy: Applications in energy conversion, metabolite production, and sustainable material synthesis. *Biomass and Bioenergy, 197*, 107797. https://doi.org/10.1016/j.biombioe.2025.107797
 
+Wiesnerová, L., Hřebečková, T., Jablonský, I., & Koudela, M. (2023). Effect of different water contents in the substrate on cultivation of *Pleurotus ostreatus* Jacq. P. Kumm. *Folia Horticulturae, 35*(1), 25–31. https://doi.org/10.2478/fhort-2023-0002
 
 Zharare, G. E., Kabanda, S. M., & Poku, J. Z. (2010). Effects of temperature and hydrogen peroxide on mycelial growth of eight *Pleurotus* strains. *Scientia Horticulturae, 125*(2), 95–102. https://doi.org/10.1016/j.scienta.2010.03.006
