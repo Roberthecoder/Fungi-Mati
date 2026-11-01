@@ -1,6 +1,6 @@
 # Fungi Mati
 
-**De residuos a alimento.** Un asistente gratuito que guía a cualquier persona, en su idioma y a cualquier hora, para convertir residuos lignocelulósicos (pellets de aserrín o de bagazo de agave, bagazo de café, fibra de coco) en setas comestibles del género *Pleurotus*: desde elegir el sustrato hasta la cosecha. También diagnostica problemas con una foto y registra datos de cultivo para publicar un dataset abierto.
+**De residuos a alimento.** Un asistente gratuito que guía a cualquier persona, en su idioma y a cualquier hora, para convertir residuos lignocelulósicos (bagazo de agave, el residuo del tequila y el mezcal; aserrín; bagazo de café; fibra de coco) en setas comestibles del género *Pleurotus*: desde elegir el sustrato hasta la cosecha. También diagnostica problemas con una foto y registra datos de cultivo para publicar un dataset abierto.
 
 Proyecto de Roberto Carlos Navarro Félix (Ingeniería en Biotecnología, Tec de Monterrey, campus Guadalajara), con apoyo temprano del RISE Innovation Fund de Equitech Futures.
 
@@ -90,7 +90,7 @@ Si hablas alguna de estas lenguas:
 
 ## English
 
-**From waste to food.** Fungi Mati is a free assistant that guides anyone, in their language and at any hour, through turning lignocellulosic waste (sawdust or agave-bagasse pellets, spent coffee grounds, coconut coir) into edible *Pleurotus* oyster mushrooms, from choosing a substrate to harvest. It diagnoses problems from a photo and logs grow data for an open dataset. Built by Roberto Carlos Navarro Félix (Biotechnology Engineering, Tec de Monterrey, Guadalajara), with early support from Equitech Futures' RISE Innovation Fund.
+**From waste to food.** Fungi Mati is a free assistant that guides anyone, in their language and at any hour, through turning lignocellulosic waste (agave bagasse left over from tequila and mezcal, sawdust, spent coffee grounds, coconut coir) into edible *Pleurotus* oyster mushrooms, from choosing a substrate to harvest. It diagnoses problems from a photo and logs grow data for an open dataset. Built by Roberto Carlos Navarro Félix (Biotechnology Engineering, Tec de Monterrey, Guadalajara), with early support from Equitech Futures' RISE Innovation Fund.
 
 - **Live AI version:** a claude.ai Artifact published from `dist/index.html`, using each visitor's own Claude account.
 - **No-AI version:** any copy of `index.html` (e.g. GitHub Pages) works as a full guide: stages, calculator, tests, warning signs, safety, and a downloadable protocol.

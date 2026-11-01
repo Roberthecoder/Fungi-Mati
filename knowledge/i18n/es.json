@@ -4,7 +4,7 @@
     "name": "Español",
     "machineTranslated": false
   },
-  "app.title": "Fungi Mati: guía para cultivar setas en casa",
+  "app.title": "Fungi Mati: del bagazo de agave y otros residuos a setas comestibles",
   "app.tagline": "De residuos a alimento",
   "lang.label": "Idioma",
   "theme.toggle": "Cambiar modo claro u oscuro",
@@ -13,7 +13,7 @@
   "nav.chat": "Asistente",
   "nav.log": "Bitácora",
   "nav.sources": "Fuentes",
-  "hero.destination": "Vas a convertir pellets de madera en setas comestibles en unas seis semanas.",
+  "hero.destination": "Vas a convertir residuos, como el bagazo de agave que deja el tequila, en setas comestibles en unas seis semanas.",
   "hero.question": "¿En qué etapa estás?",
   "stage.a": "Apenas empiezo y no tengo nada",
   "stage.b": "Ya tengo sustrato y micelio",
@@ -73,7 +73,7 @@
   "calc.intro": "Escribe cuánto sustrato seco tienes. Todo se recalcula a tu cantidad, en gramos y en medidas de cocina.",
   "calc.grams": "Gramos de sustrato seco",
   "calc.type": "Tipo de sustrato",
-  "calc.type.pellet": "Pellets o polvo (aserrín, bagazo de café)",
+  "calc.type.pellet": "Pellets o polvo (bagazo de agave, aserrín, bagazo de café)",
   "calc.type.fiber": "Fibra (bagazo de agave, fibra de coco, paja)",
   "calc.boilOpen": "Voy a hervir el agua destapada (agrega 5 % por evaporación)",
   "calc.potLiters": "Litros de agua en la olla (para fibra)",
@@ -271,7 +271,7 @@
       "title": "Empieza aquí",
       "steps": [
         "Consigue micelio (la «semilla» del hongo) de Pleurotus ostreatus: granos blancos como arroz cubiertos de una capa algodonosa. Guárdalo en el refrigerador (1 a 4 °C).",
-        "Consigue sustrato (el material donde crece): pellets de aserrín, de preferencia de madera dura (no de pino), o de bagazo de agave. Parecen croquetas de gato café claro.",
+        "Consigue sustrato (el material donde crece): pellets de bagazo de agave o de aserrín de madera dura (no de pino). Parecen croquetas de gato café claro.",
         "Consigue cal hidratada (cal apagada o para pintar), nunca cal viva. Para una bolsa de 400 g de pellet usarás 6 g.",
         "Ten a mano: taza y cucharas medidoras, una olla o recipiente resistente al calor, una bolsa de plástico gruesa, un aspersor, cubrebocas, guantes y lentes."
       ],

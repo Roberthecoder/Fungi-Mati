@@ -6,7 +6,7 @@ Las cifras marcadas «validada W4» salieron del taller con 16 voluntarios (15 a
 <!-- es:destino -->
 ## Qué vas a lograr
 
-Vas a convertir pellets de madera (o bagazo de agave, bagazo de café o fibra de coco) en setas comestibles del género *Pleurotus* en unas seis semanas, en una cocina normal, sin báscula ni termómetro. No hace falta tierra, electricidad especial ni experiencia previa.
+Vas a convertir residuos agroindustriales en setas comestibles del género *Pleurotus* en unas seis semanas: bagazo de agave (el residuo que deja la producción de tequila y mezcal), aserrín de madera, bagazo de café o fibra de coco, de preferencia en pellets. Todo en una cocina normal, sin báscula ni termómetro. No hace falta tierra, electricidad especial ni experiencia previa.
 
 Recorrido completo:
 1. Conseguir micelio, sustrato y cal hidratada.
@@ -63,7 +63,7 @@ Otras especies (shiitake, reishi, oreja de Judas) piden más experiencia y no fo
 ## Etapa a) Apenas empiezo: qué conseguir
 
 1. **Micelio de *Pleurotus ostreatus*** (o var. *columbinus*). Cómo se ve: granos blancos, como arroz o sorgo, cubiertos de una capa algodonosa blanca; huele a hongo fresco. En México, Mercado Libre es una opción con protección al comprador: busca «micelio Pleurotus» y elige vendedores con reseñas recientes positivas. Próximamente habrá micelio directo de Fungi Mati.
-2. **Sustrato.** Estándar: pellets de aserrín o de bagazo de agave (se almacenan bien y dan resultados parejos). De preferencia pellets de madera dura (encino, álamo, haya): el aserrín de pino y otras coníferas tiene resinas que hacen más lenta la colonización y bajan la cosecha. Cómo se ven los pellets: parecen croquetas de gato color café claro, cilindros duros de 6 a 8 mm. Alternativas: bagazo de agave en fibra, bagazo de café (mejor mezclado con otro sustrato), fibra de coco.
+2. **Sustrato.** Estándar: pellets de bagazo de agave o de aserrín (se almacenan bien y dan resultados parejos). El bagazo de agave rinde más con el suplemento de nitrógeno (abajo). Si usas aserrín, de preferencia pellets de madera dura (encino, álamo, haya): el aserrín de pino y otras coníferas tiene resinas que hacen más lenta la colonización y bajan la cosecha. Cómo se ven los pellets: parecen croquetas de gato color café claro, cilindros duros de 6 a 8 mm. Alternativas: bagazo de agave en fibra, bagazo de café (mejor mezclado con otro sustrato), fibra de coco.
    **Suplemento opcional:** hasta 20 % del peso seco de cascarilla de soya en pellets (para 400 g de sustrato: 320 g de pellet de madera + 80 g de soya). Aporta nitrógeno, baja la relación carbono-nitrógeno (C:N) y sube la cosecha. Más no es mejor: con demasiado nitrógeno la fructificación se retrasa y aumenta el riesgo de contaminación.
 3. **Cal hidratada** (ver Seguridad). Para una bolsa de 400 g de pellet necesitas 6 g (2½ cucharaditas medidoras rasas).
 4. **Equipo de cocina**: taza y cucharas medidoras (o una botella de agua de 600 ml); una olla o recipiente resistente al calor con tapa; una toalla o una hielera si vas a aislar; una bolsa de plástico gruesa y limpia (de 2 a 5 kg de capacidad); un aspersor; cubrebocas, guantes y lentes; alfiler. Recomendado: un termómetro de ambiente.
@@ -263,7 +263,7 @@ Un crecimiento blanco algodonoso, aunque tenga zonas amarillentas con gotitas (e
 <!-- en:destino -->
 ## What you will achieve
 
-You will turn wood pellets (or agave bagasse, spent coffee grounds or coconut coir) into edible *Pleurotus* oyster mushrooms in about six weeks, in an ordinary kitchen, without a scale or thermometer.
+You will turn agro-industrial waste into edible *Pleurotus* oyster mushrooms in about six weeks: agave bagasse (the waste left over from tequila and mezcal), wood sawdust, spent coffee grounds or coconut coir, preferably as pellets. All in an ordinary kitchen, without a scale or thermometer.
 
 The whole path:
 1. Get spawn, substrate and hydrated lime.
@@ -318,7 +318,7 @@ Lion's mane (*Hericium erinaceus*) is a future Fungi Mati line, not yet a protoc
 ## Stage a) Just starting: what to get
 
 1. **Spawn of *Pleurotus ostreatus*** (or var. *columbinus*): white grains, like rice or sorghum, covered with a cottony white layer; smells like fresh mushroom. In Mexico, Mercado Libre offers buyer protection: search "micelio Pleurotus" and pick sellers with recent good reviews.
-2. **Substrate.** Standard: sawdust or agave-bagasse pellets, preferably hardwood (oak, poplar, beech): pine and other conifer sawdust has resins that slow colonization and lower yields. Pellets look like light-brown cat kibble, hard cylinders 6–8 mm wide. Alternatives: agave bagasse fiber, spent coffee grounds (best mixed), coconut coir. Optional supplement: up to 20 % of dry weight as soybean-hull pellets (for 400 g: 320 g wood pellets + 80 g soy). It adds nitrogen, lowers the carbon-to-nitrogen (C:N) ratio and raises yield; more is not better, since too much nitrogen delays fruiting and invites contamination.
+2. **Substrate.** Standard: agave-bagasse or sawdust pellets. Agave bagasse yields more with the nitrogen supplement (below). For sawdust, preferably hardwood (oak, poplar, beech): pine and other conifer sawdust has resins that slow colonization and lower yields. Pellets look like light-brown cat kibble, hard cylinders 6–8 mm wide. Alternatives: agave bagasse fiber, spent coffee grounds (best mixed), coconut coir. Optional supplement: up to 20 % of dry weight as soybean-hull pellets (for 400 g: 320 g wood pellets + 80 g soy). It adds nitrogen, lowers the carbon-to-nitrogen (C:N) ratio and raises yield; more is not better, since too much nitrogen delays fruiting and invites contamination.
 3. **Hydrated lime** (see Safety). A 400 g pellet bag needs 6 g (2½ level measuring teaspoons).
 4. **Kitchen gear**: measuring cup and spoons (or a 600 ml water bottle); a heat-resistant pot with a lid; a towel or cooler for insulating; a thick clean plastic bag (2–5 kg capacity); a spray bottle; mask, gloves and glasses; a pin. Recommended: a room thermometer.
 5. **Place**: a dark corner with no drafts for incubation; later a spot with indirect light.
@@ -428,7 +428,7 @@ When you finish inoculating, continue with stage c) for follow-up.
 **How do I store spawn?** In the fridge (1–4 °C), closed, and use it soon; pink oyster (*P. djamor*) is the exception.
 **How much does it cost?** See the cost range on the page (to be confirmed). Substrate can be free local waste.
 **Special equipment?** No: a pot, water, hydrated lime, a spray bottle, a thick bag.
-**Any organic waste?** Materials rich in lignin or cellulose: wood pellets and sawdust, agave bagasse, coconut coir, straw, coffee grounds (best mixed), cardboard, corn stalks. No greasy, meat or chemical waste.
+**Any organic waste?** Materials rich in lignin or cellulose: agave bagasse, wood pellets and sawdust, coconut coir, straw, coffee grounds (best mixed), cardboard, corn stalks. No greasy, meat or chemical waste.
 **No growth after 21 days?** No spots or smell: too dry, old spawn or light-exposed. Spots or sour smell: contamination.
 **How many harvests?** 2–3, about every 2 weeks.
 **Is it toxic?** See Safety, point 6.

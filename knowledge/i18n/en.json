@@ -4,7 +4,7 @@
     "name": "English",
     "machineTranslated": false
   },
-  "app.title": "Fungi Mati: a guide to growing mushrooms at home",
+  "app.title": "Fungi Mati: from agave bagasse and other waste to edible mushrooms",
   "app.tagline": "From waste to food",
   "lang.label": "Language",
   "theme.toggle": "Switch light or dark mode",
@@ -13,7 +13,7 @@
   "nav.chat": "Assistant",
   "nav.log": "Grow log",
   "nav.sources": "Sources",
-  "hero.destination": "You'll turn wood pellets into edible mushrooms in about six weeks.",
+  "hero.destination": "You'll turn waste, like the agave bagasse left over from tequila, into edible mushrooms in about six weeks.",
   "hero.question": "What stage are you at?",
   "stage.a": "I'm just starting and have nothing yet",
   "stage.b": "I have substrate and spawn (mycelium)",
@@ -73,7 +73,7 @@
   "calc.intro": "Enter how much dry substrate you have. Everything is recalculated for your amount, in grams and in kitchen measures.",
   "calc.grams": "Grams of dry substrate",
   "calc.type": "Type of substrate",
-  "calc.type.pellet": "Pellets or powder (sawdust, spent coffee grounds)",
+  "calc.type.pellet": "Pellets or powder (agave bagasse, sawdust, spent coffee grounds)",
   "calc.type.fiber": "Fiber (agave bagasse, coconut coir, straw)",
   "calc.boilOpen": "I'll boil the water uncovered (add 5 % for evaporation)",
   "calc.potLiters": "Liters of water in the pot (for fiber)",
@@ -271,7 +271,7 @@
       "title": "Start here",
       "steps": [
         "Get spawn (the mushroom's \"seed\") of Pleurotus ostreatus: white grains like rice covered in a cottony layer. Keep it in the fridge (1–4 °C).",
-        "Get substrate (the material it grows on): sawdust pellets, preferably hardwood (not pine), or agave-bagasse pellets. They look like light-brown cat kibble.",
+        "Get substrate (the material it grows on): agave-bagasse pellets or hardwood sawdust pellets (not pine). They look like light-brown cat kibble.",
         "Get hydrated lime (slaked or builder's lime), never quicklime. A 400 g pellet bag needs 6 g.",
         "Have ready: measuring cup and spoons, a heat-resistant pot, a thick plastic bag, a spray bottle, face mask, gloves and glasses."
       ],
