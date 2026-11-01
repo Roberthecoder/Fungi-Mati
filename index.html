@@ -1114,8 +1114,13 @@ async function copyMine(btn){
   catch { msg.textContent = t("log.copyFail"); }
 }
 function sendHTML(){
-  const c = CFG.envioBitacora;
-  return `<p class="note">${esc(c ? t("log.sendTo", {c}) : t("log.sendGeneric"))}</p>`;
+  const c = CFG.envioBitacora || {};
+  if (!c.correo && !c.whatsapp) return `<p class="note">${esc(t("log.sendGeneric"))}</p>`;
+  const wa = c.whatsapp ? String(c.whatsapp).replace(/\D/g, "") : "";
+  const parts = [];
+  if (c.whatsapp) parts.push(`WhatsApp: <a href="https://wa.me/${wa}" target="_blank" rel="noopener">${esc(c.whatsapp)}</a>`);
+  if (c.correo) parts.push(`✉ <a href="mailto:${esc(c.correo)}">${esc(c.correo)}</a>`); // el correo queda visible como texto si el enlace no abre
+  return `<p>${esc(t("log.sendTo", {c: "@@C@@"})).replace("@@C@@", parts.join(" · "))}</p>`;
 }
 function renderLog(){
   const el = $("#v-bitacora");
