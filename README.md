@@ -14,7 +14,7 @@ Proyecto de Roberto Carlos Navarro Félix (Ingeniería en Biotecnología, Tec de
 3. **Asistente (solo dentro de Claude).** Conversación con respuestas cortas y numeradas, glosario en línea, diagnóstico por foto, botón «Explícalo más simple» y animaciones que la IA puede mostrar arriba del chat. Si el visitante no da permiso, el chat se esconde y la guía sigue completa.
 4. **Bitácora.** Registro validado de cada bolsa, guardado en el navegador de cada persona (sin cuenta). Cada quien descarga su archivo y lo envía a Fungi Mati; el dueño lo suma al dataset abierto desde la misma pestaña y exporta todo a CSV. Ver `data/README.md`.
 5. **Descargar mi protocolo.** Un archivo HTML imprimible o TXT con tus cantidades, los pasos, las pruebas, la seguridad y (opcional) tu conversación, para usarlo en la cocina sin internet.
-6. **Idiomas.** Inglés (idioma inicial; se cambia en `config.json`, campo `idiomaInicial`) y español, más náhuatl, maya yucateco, purépecha y wixárika (ver «Lenguas indígenas»).
+6. **Idiomas.** Inglés (la página siempre abre en inglés; se cambia en `config.json`, campo `idiomaInicial`) y español, más náhuatl, maya yucateco, purépecha y wixárika (ver «Lenguas indígenas»).
 
 ## Estructura
 

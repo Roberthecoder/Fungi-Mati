@@ -1,7 +1,7 @@
 {
   "_comment": "Valores editables sin tocar el código. El build los inyecta en dist/index.html.",
   "idiomaInicial": "en",
-  "_idiomaInicial": "Idioma con el que abre la página la primera vez: es, en, nah, yua, tsz o hch. Si la persona elige otro, se recuerda en su navegador.",
+  "_idiomaInicial": "Idioma con el que abre siempre la página: es, en, nah, yua, tsz o hch. El selector cambia el idioma solo durante esa visita.",
   "repoUrl": "https://github.com/Roberthecoder/Fungi-Mati",
   "artifactUrl": "https://claude.ai/artifact/KRws5yJZenBA15sWcRuY9v",
   "envioBitacora": {

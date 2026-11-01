@@ -180,7 +180,7 @@ const LS = {
 
 /* ============ estado ============ */
 const S = {
-  lang: LS.get("lang", null) || CFG.idiomaInicial || "es", // idioma inicial desde config.json
+  lang: CFG.idiomaInicial || "es", // siempre abre en el idioma de config.json; el selector cambia solo la visita actual
   stage: LS.get("stage", null),
   calc: Object.assign({grams:400, type:"pellet", boilOpen:false, liters:5, pack:""}, LS.get("calc", {})),
   theme: LS.get("theme", "auto"),
