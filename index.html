@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>Fungi Mati: guía para cultivar setas en casa</title>
+<title>Fungi Mati: grow oyster mushrooms at home</title>
 <style>
 :root{
   --bg:#f6f0e1; --card:#fffaf0; --fg:#1c1a15; --muted:#544e42; --line:#d8cdb4;
@@ -180,7 +180,7 @@ const LS = {
 
 /* ============ estado ============ */
 const S = {
-  lang: LS.get("lang", null) || "es", // español por defecto
+  lang: LS.get("lang", null) || CFG.idiomaInicial || "es", // idioma inicial desde config.json
   stage: LS.get("stage", null),
   calc: Object.assign({grams:400, type:"pellet", boilOpen:false, liters:5, pack:""}, LS.get("calc", {})),
   theme: LS.get("theme", "auto"),
