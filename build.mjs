@@ -39,6 +39,7 @@ const data = {
   builtAt: new Date().toISOString(),
   protocolo,
   fuentes: await r("knowledge/FUENTES.md"),
+  sourcesEn: await r("knowledge/SOURCES.en.md"),
   instrucciones: await r("knowledge/instrucciones-ia.md"),
   config: JSON.parse(await r("config.json")),
   i18n: ordered,

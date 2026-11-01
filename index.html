@@ -154,7 +154,7 @@ async function loadData(){
   const txt = p => fetch(p).then(r => r.ok ? r.text() : "").catch(() => "");
   const js = p => fetch(p).then(r => r.ok ? r.json() : null).catch(() => null);
   const langs = ["es","en","nah","yua","tsz","hch"];
-  const d = { protocolo: await txt("knowledge/protocolo.md"), fuentes: await txt("knowledge/FUENTES.md"),
+  const d = { protocolo: await txt("knowledge/protocolo.md"), fuentes: await txt("knowledge/FUENTES.md"), sourcesEn: await txt("knowledge/SOURCES.en.md"),
     instrucciones: await txt("knowledge/instrucciones-ia.md"), config: (await js("config.json")) || {}, i18n: {} };
   for (const l of langs){ const j = await js("knowledge/i18n/"+l+".json"); if (j) d.i18n[l] = j; }
   return d;
@@ -211,7 +211,7 @@ function safe(k){
 function inline(s){
   return s
     .replace(/`([^`]+)`/g, "<code>$1</code>")
-    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*\*((?:[^*]|\*[^*]+\*)+)\*\*/g, "<strong>$1</strong>")
     .replace(/(^|[^*])\*([^*\s][^*]*)\*/g, "$1<em>$2</em>")
     .replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
 }
@@ -641,8 +641,18 @@ function renderCalcOut(){
 }
 
 /* ============ render: fuentes ============ */
+/* Versión pública de las fuentes: sin las notas internas para el autor (esas viven en el repositorio). */
+function publicFuentes(src){
+  src = String(src || "");
+  const a = src.indexOf("## Decisiones del autor"), b = src.indexOf("## Referencias");
+  if (a >= 0 && b > a) src = src.slice(0, a) + src.slice(b);
+  return src.split(/\r?\n/).filter(l => !/TODO Robert|Discrepancias y decisiones pendientes/.test(l)).join("\n").replace(/\s*\(ver Discrepancias\)/g, "");
+}
+function referencesOf(src){ const i = String(src || "").indexOf("## Referencias"); return i >= 0 ? src.slice(i).replace("## Referencias", "## References") : ""; }
 function renderSources(){
-  $("#v-fuentes").innerHTML = `<h1>${esc(t("sources.title"))}</h1><p>${esc(t("sources.intro"))}</p><div class="card"${S.lang!=="es"?' lang="es"':""}>${md(D.fuentes || "")}</div>`;
+  const en = S.lang === "en" && D.sourcesEn;
+  const body = en ? D.sourcesEn + "\n\n" + referencesOf(D.fuentes) : publicFuentes(D.fuentes);
+  $("#v-fuentes").innerHTML = `<h1>${esc(t("sources.title"))}</h1><p>${esc(t("sources.intro"))}</p><div class="card"${!en && S.lang!=="es"?' lang="es"':""}>${md(body)}</div>`;
 }
 
 /* ============ medios del dueño (assets + db) ============ */
